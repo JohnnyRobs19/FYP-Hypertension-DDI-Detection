@@ -427,37 +427,61 @@ class PlaywrightDDIScraper:
                     return "No interaction"
 
             # Step 3: Check for severity labels (Major, Moderate, Minor)
-            # Look for severity badges/labels
+            # Look for severity badges/labels with specific class
             severity_found = None
 
-            # Try to find severity span elements
-            if interaction_wrapper:
-                severity_elements = await interaction_wrapper.query_selector_all("span")
-            else:
-                severity_elements = await self.page.query_selector_all("#content span")
+            # Look for the specific severity label span with class "ddc-status-label"
+            try:
+                severity_selector = "span.ddc-status-label"
+                severity_element = None
 
-            for element in severity_elements:
-                try:
-                    element_text = await element.inner_text()
-                    element_class = await element.get_attribute("class") or ""
+                logging.debug(f"Looking for severity with selector: {severity_selector}")
+                logging.debug(f"interaction_wrapper is: {type(interaction_wrapper)}")
 
-                    # Check if this span contains severity info
+                # Try multiple approaches to find the severity label
+                # 1. Try in interaction_wrapper if available
+                if interaction_wrapper:
+                    severity_element = await interaction_wrapper.query_selector(severity_selector)
+                    logging.debug(f"Search in wrapper result: {severity_element is not None}")
+
+                # 2. If not found, try in main content
+                if not severity_element:
+                    severity_element = await self.page.query_selector("#content " + severity_selector)
+                    logging.debug(f"Search in #content result: {severity_element is not None}")
+
+                # 3. If still not found, try global search
+                if not severity_element:
+                    severity_element = await self.page.query_selector(severity_selector)
+                    logging.debug(f"Global search result: {severity_element is not None}")
+
+                if severity_element:
+                    element_class = await severity_element.get_attribute("class") or ""
+                    element_text = await severity_element.inner_text()
+                    logging.debug(f"Found element with class: {element_class}, text: {element_text}")
+
+                    # Check class for severity category
+                    if "status-category-major" in element_class:
+                        logging.info("Found Major severity label via class")
+                        return "Major"
+                    elif "status-category-moderate" in element_class:
+                        logging.info("Found Moderate severity label via class")
+                        return "Moderate"
+                    elif "status-category-minor" in element_class:
+                        logging.info("Found Minor severity label via class")
+                        return "Minor"
+
+                    # Fallback: check text content
                     element_text_upper = element_text.strip().upper()
-
-                    if element_text_upper == "MAJOR":
-                        logging.info("Found Major severity label")
-                        severity_found = "Major"
-                        break
-                    elif element_text_upper == "MODERATE":
-                        logging.info("Found Moderate severity label")
-                        severity_found = "Moderate"
-                        break
-                    elif element_text_upper == "MINOR":
-                        logging.info("Found Minor severity label")
-                        severity_found = "Minor"
-                        break
-                except Exception:
-                    continue
+                    if element_text_upper in ["MAJOR", "MODERATE", "MINOR"]:
+                        severity_found = element_text.strip().capitalize()
+                        logging.info(f"Found {severity_found} severity label via text")
+                        return severity_found
+                else:
+                    logging.debug("Could not find any element with ddc-status-label class")
+            except Exception as e:
+                logging.debug(f"Error finding ddc-status-label: {e}")
+                import traceback
+                logging.debug(traceback.format_exc())
 
             if severity_found:
                 return severity_found
@@ -467,21 +491,16 @@ class PlaywrightDDIScraper:
             content_lower = page_content.lower()
 
             # Check for severity in specific order (Major first as it's most important)
-            if 'class="ddc-alert-level ddc-alert-level-major"' in content_lower or \
-               '<span>major</span>' in content_lower or \
-               'severity: major' in content_lower:
+            # Look for the ddc-status-label class with status-category-{severity}
+            if 'status-category-major' in content_lower and 'ddc-status-label' in content_lower:
                 logging.info("Found Major severity in HTML")
                 return "Major"
 
-            if 'class="ddc-alert-level ddc-alert-level-moderate"' in content_lower or \
-               '<span>moderate</span>' in content_lower or \
-               'severity: moderate' in content_lower:
+            if 'status-category-moderate' in content_lower and 'ddc-status-label' in content_lower:
                 logging.info("Found Moderate severity in HTML")
                 return "Moderate"
 
-            if 'class="ddc-alert-level ddc-alert-level-minor"' in content_lower or \
-               '<span>minor</span>' in content_lower or \
-               'severity: minor' in content_lower:
+            if 'status-category-minor' in content_lower and 'ddc-status-label' in content_lower:
                 logging.info("Found Minor severity in HTML")
                 return "Minor"
 
@@ -548,9 +567,12 @@ async def process_drug_pairs(input_file, output_file=None, checkpoint_file="ddi_
         logging.info(f"Found columns: {df.columns.tolist()}")
         return
 
-    # Add DDI_Severity column if it doesn't exist
+    # Add DDI_Severity column if it doesn't exist, or ensure it's object dtype
     if 'DDI_Severity' not in df.columns:
         df['DDI_Severity'] = pd.Series(dtype='object')  # Explicitly set to object dtype to avoid dtype warnings
+    else:
+        # Ensure the column is object dtype even if it exists
+        df['DDI_Severity'] = df['DDI_Severity'].astype('object')
 
     # Set output file
     if output_file is None:
