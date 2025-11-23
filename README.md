@@ -2,7 +2,7 @@
 
 **Final Year Project - University of Malaya**
 **Project:** ML-Driven Detection of Drug Interactions in Hypertensive Patients
-**Supervisors:** Unaizah, Nurulhuda
+**Supervisors:** Dr. Unaizah, Dr. Nurulhuda
 
 ---
 
