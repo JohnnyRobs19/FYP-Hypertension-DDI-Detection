@@ -176,28 +176,97 @@ class PlaywrightDDIScraper:
             logging.debug(f"Adding second drug: {drug2}")
             await self._add_drug(drug2)
 
+            # Verify that both drugs were added to the list
+            await asyncio.sleep(random.uniform(0.5, 1.0))
+            logging.debug("Verifying drugs were added to the list")
+            try:
+                # Check if the interaction list has drugs
+                interaction_list = await self.page.query_selector("#interaction_list")
+                if interaction_list:
+                    list_content = await interaction_list.inner_text()
+                    logging.debug(f"Interaction list content: {list_content}")
+
+                    # Verify at least some drugs are in the list
+                    if not list_content or len(list_content.strip()) < 5:
+                        logging.warning("Interaction list appears empty. Drugs may not have been added properly.")
+                else:
+                    logging.warning("Could not find interaction list element")
+            except Exception as e:
+                logging.warning(f"Could not verify drug list: {e}")
+
             # Random delay before clicking check button (human-like)
             await asyncio.sleep(random.uniform(1.0, 2.0))
 
             # Click the "Check Interactions" button
             logging.debug("Clicking check interactions button")
-            check_button_selector = "#interaction_list > div > a"
-            await self.page.wait_for_selector(check_button_selector, timeout=5000)
-            await self.page.click(check_button_selector)
+
+            # Try multiple selectors for the check button
+            check_button_selectors = [
+                "#interaction_list > div > a",
+                "#interaction_list a",
+                "a.ddc-btn.ddc-btn-default",
+                "a[href*='interactions-between']",
+                "//a[contains(text(), 'Check Interactions')]"
+            ]
+
+            button_clicked = False
+            for selector in check_button_selectors:
+                try:
+                    logging.debug(f"Trying selector: {selector}")
+                    # Check if it's an XPath selector
+                    if selector.startswith('//'):
+                        await self.page.wait_for_selector(f"xpath={selector}", state='visible', timeout=15000)
+                        await self.page.click(f"xpath={selector}")
+                    else:
+                        await self.page.wait_for_selector(selector, state='visible', timeout=15000)
+                        await self.page.click(selector)
+                    button_clicked = True
+                    logging.debug(f"Successfully clicked button with selector: {selector}")
+                    break
+                except Exception as e:
+                    logging.debug(f"Selector {selector} failed: {str(e)}")
+                    continue
+
+            if not button_clicked:
+                # Save screenshot for debugging
+                screenshot_path = f"error_screenshot_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+                await self.page.screenshot(path=screenshot_path)
+                logging.error(f"Screenshot saved to {screenshot_path} for debugging")
+
+                # Also save the page HTML for inspection
+                html_path = f"error_page_{datetime.now().strftime('%Y%m%d_%H%M%S')}.html"
+                page_content = await self.page.content()
+                with open(html_path, 'w', encoding='utf-8') as f:
+                    f.write(page_content)
+                logging.error(f"Page HTML saved to {html_path} for debugging")
+
+                raise Exception("Could not find or click the 'Check Interactions' button with any known selector")
 
             # Wait for results page to load
             await asyncio.sleep(2)
-            await self.page.wait_for_load_state('load', timeout=15000)
+            await self.page.wait_for_load_state('load', timeout=30000)  # Increased from 15s to 30s
             await asyncio.sleep(1)  # Additional wait for dynamic content
 
             # Extract the DDI severity
             severity = await self._extract_severity()
 
             result['DDI_Severity'] = severity
-            result['Status'] = 'Success'
+
+            # Set status based on severity result
+            if severity in ['Error', 'NA']:
+                result['Status'] = 'Completed with issues'
+            else:
+                result['Status'] = 'Success'
+
             result['Error_Message'] = None
 
-            logging.info(f"Result: {drug1} + {drug2} = {severity}")
+            # Log with appropriate level based on result
+            if severity == 'Error':
+                logging.warning(f"Result: {drug1} + {drug2} = {severity} (extraction error)")
+            elif severity == 'NA':
+                logging.warning(f"Result: {drug1} + {drug2} = {severity} (could not determine)")
+            else:
+                logging.info(f"Result: {drug1} + {drug2} = {severity}")
 
         except PlaywrightTimeoutError as e:
             error_msg = f"Timeout error: {str(e)}"
@@ -265,70 +334,188 @@ class PlaywrightDDIScraper:
 
     async def _extract_severity(self):
         """
-        Extract DDI severity from the results page
+        Extract DDI severity from the results page using proper logic:
+        1. Find the "Interactions between your drugs" wrapper section
+        2. Check for 'No interaction' text
+        3. Check for severity labels (Major, Moderate, Minor)
+        4. Return 'NA' if none found
 
         Returns:
-            str: Severity level (Minor, Moderate, Major, or N/A)
+            str: Severity level (Major, Moderate, Minor, No interaction, or NA)
         """
         try:
-            # Try multiple possible selectors for severity
-            severity_selectors = [
-                "#content > div:nth-child(9) > div > div > span",
-                "#content > div > div > div > span",
-                "span.ddc-alert-level",
-                ".ddc-alert-level",
-                "span[class*='alert']"
+            # Step 1: Find the "Interactions between your drugs" section
+            logging.debug("Looking for 'Interactions between your drugs' section...")
+
+            # Try to find the heading first
+            heading_found = False
+            interaction_wrapper = None
+
+            # Look for the h2 heading "Interactions between your drugs"
+            headings = await self.page.query_selector_all("h2")
+            for heading in headings:
+                heading_text = await heading.inner_text()
+                if "Interactions between your drugs" in heading_text:
+                    logging.debug(f"Found heading: {heading_text}")
+                    heading_found = True
+
+                    # Get the next sibling div which should contain the interaction info
+                    try:
+                        # The content should be in the next div after this heading
+                        parent = await heading.evaluate_handle('el => el.parentElement')
+                        wrapper = await parent.query_selector('xpath=following-sibling::div[1]')
+                        if wrapper:
+                            interaction_wrapper = wrapper
+                            logging.debug("Found interaction wrapper div")
+                        else:
+                            # Try alternative: get parent's next sibling
+                            wrapper = await heading.evaluate_handle('el => el.nextElementSibling')
+                            if wrapper:
+                                interaction_wrapper = wrapper.as_element()
+                                logging.debug("Found interaction wrapper as next sibling")
+                    except Exception as e:
+                        logging.debug(f"Error finding wrapper: {e}")
+
+                    break
+
+            if not heading_found:
+                logging.warning("Could not find 'Interactions between your drugs' heading")
+                # Save debugging info
+                await self._save_debug_info("no_heading_found")
+                return "NA"
+
+            # If we couldn't get the wrapper element directly, try CSS selectors
+            if not interaction_wrapper:
+                logging.debug("Trying CSS selectors for interaction content...")
+                potential_selectors = [
+                    "#content > div:nth-child(9)",
+                    "#content > div.interactions-content",
+                    "div.ddc-media-list",
+                    "#content > div[class*='interaction']"
+                ]
+
+                for selector in potential_selectors:
+                    try:
+                        element = await self.page.query_selector(selector)
+                        if element:
+                            interaction_wrapper = element
+                            logging.debug(f"Found wrapper with selector: {selector}")
+                            break
+                    except Exception:
+                        continue
+
+            # If still no wrapper, get content after the heading
+            if not interaction_wrapper:
+                logging.debug("Getting page content to search for interaction info...")
+                page_content = await self.page.content()
+            else:
+                page_content = await interaction_wrapper.inner_html()
+
+            logging.debug(f"Content length: {len(page_content)}")
+
+            # Step 2: Check for "No interaction" message
+            # Must specifically look for "No drug ↔ drug interactions were found"
+            no_interaction_phrases = [
+                "No drug ↔ drug interactions were found",
+                "No interactions were found",
+                "no drug interactions were found between the drugs in your list"
             ]
 
-            for selector in severity_selectors:
+            for phrase in no_interaction_phrases:
+                if phrase.lower() in page_content.lower():
+                    logging.info("Found 'No interaction' message")
+                    return "No interaction"
+
+            # Step 3: Check for severity labels (Major, Moderate, Minor)
+            # Look for severity badges/labels
+            severity_found = None
+
+            # Try to find severity span elements
+            if interaction_wrapper:
+                severity_elements = await interaction_wrapper.query_selector_all("span")
+            else:
+                severity_elements = await self.page.query_selector_all("#content span")
+
+            for element in severity_elements:
                 try:
-                    # Check if element exists
-                    element = await self.page.query_selector(selector)
-                    if element:
-                        severity_text = await element.inner_text()
-                        severity_text = severity_text.strip()
+                    element_text = await element.inner_text()
+                    element_class = await element.get_attribute("class") or ""
 
-                        # Check if it's a valid severity level
-                        if any(level in severity_text.upper() for level in ['MINOR', 'MODERATE', 'MAJOR']):
-                            # Extract just the severity level
-                            for level in ['Minor', 'Moderate', 'Major']:
-                                if level.upper() in severity_text.upper():
-                                    logging.debug(f"Found severity: {level}")
-                                    return level
+                    # Check if this span contains severity info
+                    element_text_upper = element_text.strip().upper()
 
+                    if element_text_upper == "MAJOR":
+                        logging.info("Found Major severity label")
+                        severity_found = "Major"
+                        break
+                    elif element_text_upper == "MODERATE":
+                        logging.info("Found Moderate severity label")
+                        severity_found = "Moderate"
+                        break
+                    elif element_text_upper == "MINOR":
+                        logging.info("Found Minor severity label")
+                        severity_found = "Minor"
+                        break
                 except Exception:
                     continue
 
-            # Check if "No interactions found" message is present
-            page_content = await self.page.content()
+            if severity_found:
+                return severity_found
 
-            if any(phrase in page_content.lower() for phrase in [
-                'no interactions found',
-                'no known interaction',
-                'no results found',
-                'did not match any'
-            ]):
-                logging.debug("No interaction found")
-                return "N/A"
+            # Alternative: Search in the HTML content directly
+            logging.debug("Checking HTML content for severity labels...")
+            content_lower = page_content.lower()
 
-            # If we couldn't find severity, log page content for debugging
-            logging.warning("Could not find severity indicator on page")
+            # Check for severity in specific order (Major first as it's most important)
+            if 'class="ddc-alert-level ddc-alert-level-major"' in content_lower or \
+               '<span>major</span>' in content_lower or \
+               'severity: major' in content_lower:
+                logging.info("Found Major severity in HTML")
+                return "Major"
 
-            # Try to extract from page title or headers
-            try:
-                title = await self.page.title()
-                if "interaction" in title.lower():
-                    for level in ['Minor', 'Moderate', 'Major']:
-                        if level.lower() in title.lower():
-                            return level
-            except Exception:
-                pass
+            if 'class="ddc-alert-level ddc-alert-level-moderate"' in content_lower or \
+               '<span>moderate</span>' in content_lower or \
+               'severity: moderate' in content_lower:
+                logging.info("Found Moderate severity in HTML")
+                return "Moderate"
 
-            return "Unknown"
+            if 'class="ddc-alert-level ddc-alert-level-minor"' in content_lower or \
+               '<span>minor</span>' in content_lower or \
+               'severity: minor' in content_lower:
+                logging.info("Found Minor severity in HTML")
+                return "Minor"
+
+            # Step 4: If none found, return NA
+            logging.warning("Could not determine severity - no matching patterns found")
+            await self._save_debug_info("no_severity_found")
+            return "NA"
 
         except Exception as e:
             logging.error(f"Error extracting severity: {str(e)}")
+            import traceback
+            logging.error(traceback.format_exc())
+            await self._save_debug_info("extraction_error")
             return "Error"
+
+    async def _save_debug_info(self, reason="debug"):
+        """Save screenshot and HTML for debugging purposes"""
+        try:
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+
+            # Save screenshot
+            screenshot_path = f"debug_screenshot_{reason}_{timestamp}.png"
+            await self.page.screenshot(path=screenshot_path, full_page=True)
+            logging.info(f"Debug screenshot saved to {screenshot_path}")
+
+            # Save HTML
+            html_path = f"debug_page_{reason}_{timestamp}.html"
+            page_content = await self.page.content()
+            with open(html_path, 'w', encoding='utf-8') as f:
+                f.write(page_content)
+            logging.info(f"Debug HTML saved to {html_path}")
+
+        except Exception as e:
+            logging.error(f"Could not save debug info: {e}")
 
     async def close(self):
         """Close the browser"""
@@ -363,7 +550,7 @@ async def process_drug_pairs(input_file, output_file=None, checkpoint_file="ddi_
 
     # Add DDI_Severity column if it doesn't exist
     if 'DDI_Severity' not in df.columns:
-        df['DDI_Severity'] = None
+        df['DDI_Severity'] = pd.Series(dtype='object')  # Explicitly set to object dtype to avoid dtype warnings
 
     # Set output file
     if output_file is None:
