@@ -245,7 +245,19 @@ class PlaywrightDDIScraper:
             # Wait for results page to load
             await asyncio.sleep(2)
             await self.page.wait_for_load_state('load', timeout=30000)  # Increased from 15s to 30s
-            await asyncio.sleep(1)  # Additional wait for dynamic content
+
+            # CRITICAL: Wait for the interaction results to be rendered
+            # The page loads dynamic content after the 'load' event
+            logging.info("Waiting for interaction results to render...")
+            try:
+                # Wait specifically for the "Interactions between your drugs" heading
+                await self.page.wait_for_selector('h2:has-text("Interactions between your drugs")', timeout=10000)
+                logging.info("Found 'Interactions between your drugs' heading")
+                # Additional wait for content to fully render
+                await asyncio.sleep(2)
+            except Exception as e:
+                logging.warning(f"Timeout waiting for interaction heading: {e}")
+                # Continue anyway, might still find content
 
             # Extract the DDI severity
             severity = await self._extract_severity()
@@ -335,177 +347,230 @@ class PlaywrightDDIScraper:
     async def _extract_severity(self):
         """
         Extract DDI severity from the results page using proper logic:
-        1. Find the "Interactions between your drugs" wrapper section
-        2. Check for 'No interaction' text
-        3. Check for severity labels (Major, Moderate, Minor)
-        4. Return 'NA' if none found
+        1. FIRST check for "No drug ⬌ drug interactions were found" message in specific div
+        2. If no interaction message exists, THEN look for severity labels ONLY in drug-drug interaction section
+        3. Return 'NA' if none found
 
         Returns:
             str: Severity level (Major, Moderate, Minor, No interaction, or NA)
         """
         try:
-            # Step 1: Find the "Interactions between your drugs" section
-            logging.debug("Looking for 'Interactions between your drugs' section...")
+            # STEP 1: CRITICAL - Check for "No interaction" message FIRST
+            # This specific div appears when there are no drug-drug interactions
+            logging.debug("STEP 1: Checking for 'No interaction' message...")
 
-            # Try to find the heading first
-            heading_found = False
+            try:
+                no_interaction_selector = "div.interactions-reference-wrapper"
+                no_interaction_element = await self.page.query_selector(no_interaction_selector)
+
+                if no_interaction_element:
+                    element_text = await no_interaction_element.inner_text()
+                    logging.debug(f"Found interactions-reference-wrapper with text: {element_text[:100]}...")
+
+                    # Check for the specific "No drug ⬌ drug interactions" message
+                    if "No drug" in element_text and "drug interactions were found" in element_text:
+                        logging.info("Found 'No drug ⬌ drug interactions were found' message - returning 'No interaction'")
+                        return "No interaction"
+            except Exception as e:
+                logging.debug(f"Error checking for no-interaction div: {e}")
+
+            # STEP 2: Find the "Interactions between your drugs" section and its wrapper
+            logging.info("STEP 2: Looking for drug-drug interaction section...")
+
             interaction_wrapper = None
 
-            # Look for the h2 heading "Interactions between your drugs"
-            headings = await self.page.query_selector_all("h2")
-            for heading in headings:
-                heading_text = await heading.inner_text()
-                if "Interactions between your drugs" in heading_text:
-                    logging.debug(f"Found heading: {heading_text}")
-                    heading_found = True
+            # Strategy: Use XPath to find the div immediately after the h2 heading
+            # This is more reliable than traversing from heading element
+            try:
+                xpath_selector = 'xpath=//h2[contains(text(), "Interactions between your drugs")]/following-sibling::div[1]'
+                interaction_wrapper = await self.page.query_selector(xpath_selector)
 
-                    # Get the next sibling div which should contain the interaction info
-                    try:
-                        # The content should be in the next div after this heading
-                        parent = await heading.evaluate_handle('el => el.parentElement')
-                        wrapper = await parent.query_selector('xpath=following-sibling::div[1]')
-                        if wrapper:
-                            interaction_wrapper = wrapper
-                            logging.debug("Found interaction wrapper div")
-                        else:
-                            # Try alternative: get parent's next sibling
-                            wrapper = await heading.evaluate_handle('el => el.nextElementSibling')
-                            if wrapper:
-                                interaction_wrapper = wrapper.as_element()
-                                logging.debug("Found interaction wrapper as next sibling")
-                    except Exception as e:
-                        logging.debug(f"Error finding wrapper: {e}")
+                if interaction_wrapper:
+                    # Verify it's the right wrapper by checking its class
+                    wrapper_class = await interaction_wrapper.get_attribute('class') or ''
+                    logging.info(f"Found interaction wrapper with XPath (class: {wrapper_class})")
+                else:
+                    logging.warning("XPath did not find wrapper element")
+            except Exception as e:
+                logging.warning(f"XPath wrapper selection failed: {e}")
 
-                    break
+            # Fallback: Try CSS selector if XPath failed
+            if not interaction_wrapper:
+                logging.info("Trying CSS selector fallback for wrapper...")
+                try:
+                    # This will find the first div.interactions-reference-wrapper
+                    # which should be the drug-drug interaction section
+                    interaction_wrapper = await self.page.query_selector("div.interactions-reference-wrapper")
+                    if interaction_wrapper:
+                        logging.info("Found wrapper with CSS selector")
+                    else:
+                        logging.warning("CSS selector did not find wrapper")
+                except Exception as e:
+                    logging.warning(f"CSS selector failed: {e}")
 
-            if not heading_found:
-                logging.warning("Could not find 'Interactions between your drugs' heading")
-                # Save debugging info
-                await self._save_debug_info("no_heading_found")
+            if not interaction_wrapper:
+                logging.warning("Could not find interaction wrapper with any method")
+                await self._save_debug_info("no_wrapper_found")
                 return "NA"
 
-            # If we couldn't get the wrapper element directly, try CSS selectors
-            if not interaction_wrapper:
-                logging.debug("Trying CSS selectors for interaction content...")
-                potential_selectors = [
-                    "#content > div:nth-child(9)",
-                    "#content > div.interactions-content",
-                    "div.ddc-media-list",
-                    "#content > div[class*='interaction']"
-                ]
+            # STEP 3: Look for severity labels ONLY within the drug-drug interaction section
+            logging.info("STEP 3: Searching for severity label...")
 
-                for selector in potential_selectors:
-                    try:
-                        element = await self.page.query_selector(selector)
-                        if element:
-                            interaction_wrapper = element
-                            logging.debug(f"Found wrapper with selector: {selector}")
-                            break
-                    except Exception:
-                        continue
+            # Look for severity label ONLY in the interaction wrapper (not globally!)
+            severity_selector = "span.ddc-status-label"
 
-            # If still no wrapper, get content after the heading
-            if not interaction_wrapper:
-                logging.debug("Getting page content to search for interaction info...")
-                page_content = await self.page.content()
-            else:
-                page_content = await interaction_wrapper.inner_html()
-
-            logging.debug(f"Content length: {len(page_content)}")
-
-            # Step 2: Check for "No interaction" message
-            # Must specifically look for "No drug ↔ drug interactions were found"
-            no_interaction_phrases = [
-                "No drug ↔ drug interactions were found",
-                "No interactions were found",
-                "no drug interactions were found between the drugs in your list"
-            ]
-
-            for phrase in no_interaction_phrases:
-                if phrase.lower() in page_content.lower():
-                    logging.info("Found 'No interaction' message")
-                    return "No interaction"
-
-            # Step 3: Check for severity labels (Major, Moderate, Minor)
-            # Look for severity badges/labels with specific class
-            severity_found = None
-
-            # Look for the specific severity label span with class "ddc-status-label"
             try:
-                severity_selector = "span.ddc-status-label"
-                severity_element = None
-
-                logging.debug(f"Looking for severity with selector: {severity_selector}")
-                logging.debug(f"interaction_wrapper is: {type(interaction_wrapper)}")
-
-                # Try multiple approaches to find the severity label
-                # 1. Try in interaction_wrapper if available
-                if interaction_wrapper:
-                    severity_element = await interaction_wrapper.query_selector(severity_selector)
-                    logging.debug(f"Search in wrapper result: {severity_element is not None}")
-
-                # 2. If not found, try in main content
-                if not severity_element:
-                    severity_element = await self.page.query_selector("#content " + severity_selector)
-                    logging.debug(f"Search in #content result: {severity_element is not None}")
-
-                # 3. If still not found, try global search
-                if not severity_element:
-                    severity_element = await self.page.query_selector(severity_selector)
-                    logging.debug(f"Global search result: {severity_element is not None}")
+                # Search within interaction_wrapper for the severity label
+                severity_element = await interaction_wrapper.query_selector(severity_selector)
 
                 if severity_element:
                     element_class = await severity_element.get_attribute("class") or ""
                     element_text = await severity_element.inner_text()
-                    logging.debug(f"Found element with class: {element_class}, text: {element_text}")
+                    logging.info(f"Found severity element - class: {element_class}, text: '{element_text}'")
 
                     # Check class for severity category
                     if "status-category-major" in element_class:
-                        logging.info("Found Major severity label via class")
+                        logging.info("✓ Extracted severity: Major")
                         return "Major"
                     elif "status-category-moderate" in element_class:
-                        logging.info("Found Moderate severity label via class")
+                        logging.info("✓ Extracted severity: Moderate")
                         return "Moderate"
                     elif "status-category-minor" in element_class:
-                        logging.info("Found Minor severity label via class")
+                        logging.info("✓ Extracted severity: Minor")
                         return "Minor"
 
                     # Fallback: check text content
                     element_text_upper = element_text.strip().upper()
                     if element_text_upper in ["MAJOR", "MODERATE", "MINOR"]:
                         severity_found = element_text.strip().capitalize()
-                        logging.info(f"Found {severity_found} severity label via text")
+                        logging.info(f"✓ Extracted severity via text: {severity_found}")
                         return severity_found
+
+                    logging.warning(f"Found severity element but couldn't determine severity from class or text")
                 else:
-                    logging.debug("Could not find any element with ddc-status-label class")
+                    logging.warning("No span.ddc-status-label found in interaction wrapper")
+
             except Exception as e:
-                logging.debug(f"Error finding ddc-status-label: {e}")
+                logging.warning(f"Error finding severity label: {e}")
                 import traceback
                 logging.debug(traceback.format_exc())
 
-            if severity_found:
-                return severity_found
+            # STEP 4: If we have the wrapper but no severity label, check HTML content within wrapper only
+            if interaction_wrapper:
+                logging.debug("STEP 4: Checking HTML content within wrapper for severity labels...")
+                try:
+                    wrapper_content = await interaction_wrapper.inner_html()
+                    content_lower = wrapper_content.lower()
 
-            # Alternative: Search in the HTML content directly
-            logging.debug("Checking HTML content for severity labels...")
-            content_lower = page_content.lower()
+                    # Check for severity in specific order (Major first as it's most important)
+                    if 'status-category-major' in content_lower and 'ddc-status-label' in content_lower:
+                        logging.info("Found Major severity in wrapper HTML (Method: HTML class detection)")
+                        return "Major"
 
-            # Check for severity in specific order (Major first as it's most important)
-            # Look for the ddc-status-label class with status-category-{severity}
-            if 'status-category-major' in content_lower and 'ddc-status-label' in content_lower:
-                logging.info("Found Major severity in HTML")
-                return "Major"
+                    if 'status-category-moderate' in content_lower and 'ddc-status-label' in content_lower:
+                        logging.info("Found Moderate severity in wrapper HTML (Method: HTML class detection)")
+                        return "Moderate"
 
-            if 'status-category-moderate' in content_lower and 'ddc-status-label' in content_lower:
-                logging.info("Found Moderate severity in HTML")
-                return "Moderate"
+                    if 'status-category-minor' in content_lower and 'ddc-status-label' in content_lower:
+                        logging.info("Found Minor severity in wrapper HTML (Method: HTML class detection)")
+                        return "Minor"
+                except Exception as e:
+                    logging.debug(f"Error checking wrapper HTML: {e}")
 
-            if 'status-category-minor' in content_lower and 'ddc-status-label' in content_lower:
-                logging.info("Found Minor severity in HTML")
-                return "Minor"
+            # STEP 4.5: NEW FALLBACK - Try broader badge/span detection within interaction section
+            if interaction_wrapper:
+                logging.debug("STEP 4.5: Trying broader badge/span detection for severity...")
+                try:
+                    # Try multiple selector strategies for finding severity badges
+                    badge_selectors = [
+                        "span",  # All spans within wrapper
+                        "div > span",  # Direct child spans
+                        "[class*='severity']",  # Elements with 'severity' in class
+                        "[class*='badge']",  # Elements with 'badge' in class
+                        "[class*='label']",  # Elements with 'label' in class
+                        "[class*='interaction']",  # Elements with 'interaction' in class
+                        "[class*='moderate']",  # Elements with severity level in class
+                        "[class*='major']",
+                        "[class*='minor']"
+                    ]
 
-            # Step 4: If none found, return NA
-            logging.warning("Could not determine severity - no matching patterns found")
+                    for selector in badge_selectors:
+                        try:
+                            elements = await interaction_wrapper.query_selector_all(selector)
+                            logging.debug(f"  Checking {len(elements)} elements with selector: {selector}")
+
+                            for element in elements:
+                                try:
+                                    element_text = await element.inner_text()
+                                    element_text_clean = element_text.strip().upper()
+
+                                    # Check if text matches severity levels
+                                    if element_text_clean in ["MAJOR", "MODERATE", "MINOR"]:
+                                        # Get element class for additional context
+                                        element_class = await element.get_attribute("class") or ""
+                                        logging.info(f"Found {element_text_clean.capitalize()} severity badge (Method: Badge text detection)")
+                                        logging.debug(f"  Element selector: {selector}, class: {element_class}, text: {element_text_clean}")
+                                        return element_text_clean.capitalize()
+
+                                    # Also check if the text contains the severity word (e.g., "Severity: Moderate")
+                                    for severity in ["MAJOR", "MODERATE", "MINOR"]:
+                                        if severity in element_text_clean:
+                                            logging.info(f"Found {severity.capitalize()} severity in element text (Method: Badge text contains detection)")
+                                            logging.debug(f"  Element selector: {selector}, text: {element_text_clean}")
+                                            return severity.capitalize()
+
+                                except Exception as elem_error:
+                                    logging.debug(f"  Error processing element: {elem_error}")
+                                    continue
+
+                        except Exception as selector_error:
+                            logging.debug(f"  Error with selector {selector}: {selector_error}")
+                            continue
+
+                    logging.debug("Badge/span detection completed - no severity found")
+
+                except Exception as e:
+                    logging.debug(f"Error in badge detection fallback: {e}")
+
+            # STEP 4.6: Try searching for specific CSS selector pattern from user's hint
+            # #content > div:nth-child(9) > div > div > span
+            if interaction_wrapper:
+                logging.debug("STEP 4.6: Trying specific nested div > span pattern...")
+                try:
+                    # Try to find nested divs with spans that might contain severity
+                    nested_spans = await interaction_wrapper.query_selector_all("div > div > span")
+                    logging.debug(f"  Found {len(nested_spans)} nested div > div > span elements")
+
+                    for span in nested_spans:
+                        try:
+                            span_text = await span.inner_text()
+                            span_text_clean = span_text.strip().upper()
+                            span_class = await span.get_attribute("class") or ""
+
+                            # Check for severity text
+                            if span_text_clean in ["MAJOR", "MODERATE", "MINOR"]:
+                                logging.info(f"Found {span_text_clean.capitalize()} severity (Method: Nested span detection)")
+                                logging.debug(f"  Span class: {span_class}, text: {span_text_clean}")
+                                return span_text_clean.capitalize()
+
+                            # Check if class name hints at severity
+                            class_lower = span_class.lower()
+                            if any(severity_hint in class_lower for severity_hint in ['major', 'moderate', 'minor', 'severity']):
+                                for severity in ["MAJOR", "MODERATE", "MINOR"]:
+                                    if severity.lower() in class_lower or severity in span_text_clean:
+                                        logging.info(f"Found {severity.capitalize()} severity (Method: Span class analysis)")
+                                        logging.debug(f"  Span class: {span_class}, text: {span_text_clean}")
+                                        return severity.capitalize()
+
+                        except Exception as span_error:
+                            logging.debug(f"  Error processing nested span: {span_error}")
+                            continue
+
+                except Exception as e:
+                    logging.debug(f"Error in nested span detection: {e}")
+
+            # STEP 5: If none found, return NA
+            logging.warning("Could not determine severity - no matching patterns found in drug-drug interaction section")
             await self._save_debug_info("no_severity_found")
             return "NA"
 
