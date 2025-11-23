@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Log files
+*.log
+
+# Checkpoint and temporary files
+*_checkpoint.csv
+ddi_checkpoint.csv
+scraping_checkpoint.csv
+
+# Test files
+test_*.py
+test_*.xlsx
+
+# Temporary analysis scripts
+analyze_timeout.py
+analyze_excel.py
+detailed_analysis.py
+
+# Output data files (can be regenerated)
+drug_pairs.xlsx
+
+# Large binary files
+*.deb
+*.deb.*
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Excel temporary files
+~$*.xlsx
+
+# Browser data
+playwright/.auth/
