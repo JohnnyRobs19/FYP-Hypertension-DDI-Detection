@@ -140,7 +140,8 @@ class PlaywrightDDIScraper:
         result = {
             'Drug1': drug1,
             'Drug2': drug2,
-            'DDI_Severity': 'Error',
+            'DrugsCom_Severity': 'Error',
+            'DrugsCom_Text': 'Error extracting interaction information',
             'Status': 'Failed',
             'Error_Message': None,
             'Check_Timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -152,32 +153,32 @@ class PlaywrightDDIScraper:
             logging.debug(f"Visiting homepage first: {homepage_url}")
             try:
                 await self.page.goto(homepage_url, wait_until='load', timeout=30000)
-                await asyncio.sleep(2)  # Human-like delay
+                await self.page.wait_for_timeout(2000)  # Human-like delay
             except Exception as e:
                 logging.warning(f"Could not load homepage, trying direct navigation: {e}")
 
             # Navigate to the drug interaction checker
-            url = "https://www.drugs.com/interaction/list/"
+            url = "https://www.drugs.com/drug_interactions.html"
             logging.debug(f"Navigating to {url}")
             # Use 'load' instead of 'networkidle' to avoid waiting for all network activity
             await self.page.goto(url, wait_until='load', timeout=30000)
 
             # Wait a bit for page to fully load (human-like behavior)
-            await asyncio.sleep(2)
+            await self.page.wait_for_timeout(2000)
 
             # Add first drug
             logging.debug(f"Adding first drug: {drug1}")
             await self._add_drug(drug1)
 
             # Random delay between adding drugs (human-like)
-            await asyncio.sleep(random.uniform(1.5, 2.5))
+            await self.page.wait_for_timeout(random.randint(1500, 2500))
 
             # Add second drug
             logging.debug(f"Adding second drug: {drug2}")
             await self._add_drug(drug2)
 
             # Verify that both drugs were added to the list
-            await asyncio.sleep(random.uniform(0.5, 1.0))
+            await self.page.wait_for_timeout(random.randint(500, 1000))
             logging.debug("Verifying drugs were added to the list")
             try:
                 # Check if the interaction list has drugs
@@ -195,39 +196,24 @@ class PlaywrightDDIScraper:
                 logging.warning(f"Could not verify drug list: {e}")
 
             # Random delay before clicking check button (human-like)
-            await asyncio.sleep(random.uniform(1.0, 2.0))
+            delay = random.randint(1000, 2000)
+            logging.debug(f"Waiting {delay/1000:.1f} seconds before looking for Check Interactions button...")
+            await self.page.wait_for_timeout(delay)
 
             # Click the "Check Interactions" button
-            logging.debug("Clicking check interactions button")
+            logging.info("Searching for 'Check Interactions' button...")
 
-            # Try multiple selectors for the check button
-            check_button_selectors = [
-                "#interaction_list > div > a",
-                "#interaction_list a",
-                "a.ddc-btn.ddc-btn-default",
-                "a[href*='interactions-between']",
-                "//a[contains(text(), 'Check Interactions')]"
-            ]
+            # Use the specific selector for the Check Interactions button
+            check_button_selector = "#interaction_list > div > a"
 
-            button_clicked = False
-            for selector in check_button_selectors:
-                try:
-                    logging.debug(f"Trying selector: {selector}")
-                    # Check if it's an XPath selector
-                    if selector.startswith('//'):
-                        await self.page.wait_for_selector(f"xpath={selector}", state='visible', timeout=15000)
-                        await self.page.click(f"xpath={selector}")
-                    else:
-                        await self.page.wait_for_selector(selector, state='visible', timeout=15000)
-                        await self.page.click(selector)
-                    button_clicked = True
-                    logging.debug(f"Successfully clicked button with selector: {selector}")
-                    break
-                except Exception as e:
-                    logging.debug(f"Selector {selector} failed: {str(e)}")
-                    continue
+            try:
+                logging.debug(f"Trying selector: {check_button_selector}")
+                await self.page.wait_for_selector(check_button_selector, state='visible', timeout=15000)
+                await self.page.click(check_button_selector)
+                logging.debug(f"Successfully clicked button with selector: {check_button_selector}")
+            except Exception as e:
+                logging.error(f"Could not find or click button with selector {check_button_selector}: {str(e)}")
 
-            if not button_clicked:
                 # Save screenshot for debugging
                 screenshot_path = f"error_screenshot_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
                 await self.page.screenshot(path=screenshot_path)
@@ -240,10 +226,10 @@ class PlaywrightDDIScraper:
                     f.write(page_content)
                 logging.error(f"Page HTML saved to {html_path} for debugging")
 
-                raise Exception("Could not find or click the 'Check Interactions' button with any known selector")
+                raise Exception(f"Could not find or click the 'Check Interactions' button with selector: {check_button_selector}")
 
             # Wait for results page to load
-            await asyncio.sleep(2)
+            await self.page.wait_for_timeout(2000)  # 2 seconds
             await self.page.wait_for_load_state('load', timeout=30000)
 
             # Wait for dynamic content to render
@@ -251,13 +237,14 @@ class PlaywrightDDIScraper:
             # - "Interactions between your drugs" section (if drug-drug interactions exist)
             # - "Food Interactions" or "Disease Interactions" only (if no drug-drug interactions)
             logging.info("Waiting for interaction results to render...")
-            await asyncio.sleep(3)  # Allow time for dynamic content to appear
+            await self.page.wait_for_timeout(3000)  # 3 seconds for dynamic content
 
-            # Extract the DDI severity using Header Guard logic
-            # This will return "None" if no "Interactions between your drugs" header is found
-            severity = await self._extract_severity()
+            # Extract the DDI severity and text using Header Guard logic
+            # This will return ("None", "...") if no "Interactions between your drugs" header is found
+            severity, interaction_text = await self._extract_severity()
 
-            result['DDI_Severity'] = severity
+            result['DrugsCom_Severity'] = severity
+            result['DrugsCom_Text'] = interaction_text
 
             # Set status based on severity result
             if severity == 'Error':
@@ -276,18 +263,21 @@ class PlaywrightDDIScraper:
                 logging.info(f"Result: {drug1} + {drug2} = {severity} (no drug-drug interactions found)")
             else:
                 logging.info(f"Result: {drug1} + {drug2} = {severity}")
+                logging.debug(f"Interaction text: {interaction_text[:100]}...")
 
         except PlaywrightTimeoutError as e:
             error_msg = f"Timeout error: {str(e)}"
             logging.error(f"Timeout checking {drug1} + {drug2}: {error_msg}")
             result['Error_Message'] = error_msg
-            result['DDI_Severity'] = 'Timeout'
+            result['DrugsCom_Severity'] = 'Timeout'
+            result['DrugsCom_Text'] = 'Request timed out'
 
         except Exception as e:
             error_msg = f"Error: {str(e)}"
             logging.error(f"Error checking {drug1} + {drug2}: {error_msg}")
             result['Error_Message'] = error_msg
-            result['DDI_Severity'] = 'Error'
+            result['DrugsCom_Severity'] = 'Error'
+            result['DrugsCom_Text'] = f'Error: {str(e)}'
 
         return result
 
@@ -299,43 +289,55 @@ class PlaywrightDDIScraper:
             drug_name: Name of the drug to add
         """
         try:
-            # Wait for the search input to be visible
-            search_input_selector = "#livesearch-interaction"
-            await self.page.wait_for_selector(search_input_selector, timeout=5000)
+            # The input field ID changes after adding the first drug:
+            # - Initial state: #livesearch-interaction-basic
+            # - After first drug: #livesearch-interaction
+            # Try both selectors
+            search_input_selectors = [
+                "#livesearch-interaction-basic",
+                "#livesearch-interaction"
+            ]
 
-            # Clear any existing text with human-like delay
+            search_input_selector = None
+            for selector in search_input_selectors:
+                try:
+                    await self.page.wait_for_selector(selector, state='visible', timeout=3000)
+                    search_input_selector = selector
+                    logging.debug(f"Found search input with selector: {selector}")
+                    break
+                except Exception:
+                    continue
+
+            if not search_input_selector:
+                raise Exception("Could not find search input field with any known selector")
+
+            # Clear any existing text in the input field
             await self.page.fill(search_input_selector, "")
-            await asyncio.sleep(random.uniform(0.3, 0.6))
+            await self.page.wait_for_timeout(500)  # Brief pause to ensure field is ready
 
             # Type the drug name character by character (more human-like)
             await self.page.type(search_input_selector, drug_name, delay=random.randint(50, 150))
 
-            # Wait for autocomplete suggestions to appear (random delay)
-            await asyncio.sleep(random.uniform(1.5, 2.0))
+            # Wait briefly for the field to register the input
+            await self.page.wait_for_timeout(500)
 
-            # Try to select from autocomplete first (more reliable)
+            # Press Enter to add the drug
+            logging.debug(f"Pressing Enter to add drug: {drug_name}")
+            await self.page.keyboard.press('Enter')
+
+            # Wait for the drug to be added and input field to reset
+            await self.page.wait_for_timeout(1500)
+
+            # Clear the input field after adding the drug
+            # This ensures a clean state for the next drug
             try:
-                # Look for autocomplete suggestion matching the drug name
-                autocomplete_item = f"//div[@id='livesearch-interaction-ac']//b[contains(text(), '{drug_name[:5]}')]"
-                autocomplete_element = await self.page.wait_for_selector(autocomplete_item, timeout=2000)
-                if autocomplete_element:
-                    await autocomplete_element.click()
-                    await asyncio.sleep(random.uniform(0.5, 0.8))
-                    return  # Drug added via autocomplete
-            except Exception:
-                # Autocomplete not found, continue with button click
-                logging.debug(f"Autocomplete not found for {drug_name}, using button instead")
-                pass
-
-            # If autocomplete didn't work, use the add button
-            add_button_selector = "#drug-interactions-search > div > button"
-            await self.page.wait_for_selector(add_button_selector, timeout=5000)
-
-            # Use force click to bypass any overlays
-            await self.page.click(add_button_selector, force=True)
-
-            # Wait for the drug to be added (random delay)
-            await asyncio.sleep(random.uniform(0.5, 1.0))
+                # After pressing Enter, the input field should be #livesearch-interaction
+                clear_selector = "#livesearch-interaction"
+                await self.page.wait_for_selector(clear_selector, state='visible', timeout=2000)
+                await self.page.fill(clear_selector, "")
+                logging.debug("Cleared input field after adding drug")
+            except Exception as e:
+                logging.debug(f"Could not clear input field (may already be cleared): {e}")
 
         except Exception as e:
             logging.warning(f"Error adding drug {drug_name}: {str(e)}")
@@ -343,15 +345,16 @@ class PlaywrightDDIScraper:
 
     async def _extract_severity(self):
         """
-        Extract DDI severity from the results page using strict Header Guard logic:
+        Extract DDI severity and text from the results page using strict Header Guard logic:
         1. Search for the SPECIFIC heading: "Interactions between your drugs"
-        2. If found: Extract severity ONLY from the content immediately after that header
+        2. If found: Extract severity AND text ONLY from the content immediately after that header
         3. If NOT found: Return "None" (no drug-drug interactions)
 
         This strictly targets Drug-Drug Interactions and ignores Food/Disease interactions.
 
         Returns:
-            str: Severity level (Major, Moderate, Minor, None, or Error)
+            tuple: (severity, text) where severity is str (Major, Moderate, Minor, None, or Error)
+                   and text is str (interaction description or appropriate message)
         """
         try:
             logging.info("="*60)
@@ -405,12 +408,12 @@ class PlaywrightDDIScraper:
                     if not header:
                         logging.info("✗ HEADER NOT FOUND: No 'Interactions between your drugs' heading found")
                         logging.info("→ Assumption: NO drug-drug interactions present (may be Food/Disease only)")
-                        return "None"
+                        return ("None", "No drug-drug interactions found")
 
             except Exception as e:
                 logging.warning(f"Error searching for header: {e}")
                 logging.info("✗ HEADER NOT FOUND: Error during search")
-                return "None"
+                return ("None", "No drug-drug interactions found")
 
             # STEP 2: HEADER FOUND - Extract content from the section immediately after
             logging.info("STEP 2: Header found, extracting severity from drug-drug interaction section")
@@ -434,14 +437,15 @@ class PlaywrightDDIScraper:
                 else:
                     logging.warning("Could not find the div immediately after the header")
                     await self._save_debug_info("header_found_but_no_section")
-                    return "None"
+                    return ("None", "No drug-drug interactions found")
 
             except Exception as e:
                 logging.warning(f"Error finding interaction section: {e}")
                 await self._save_debug_info("section_extraction_error")
-                return "None"
+                return ("None", "No drug-drug interactions found")
 
-            # STEP 3: Check for "No interaction" message within this specific section
+            # STEP 3: Extract the full section text for DrugsCom_Text column
+            section_text = ""
             try:
                 section_text = await interaction_section.inner_text()
                 logging.debug(f"Section text preview: {section_text[:150]}...")
@@ -449,10 +453,11 @@ class PlaywrightDDIScraper:
                 # Check for "No drug ⬌ drug interactions were found" message
                 if "No drug" in section_text and "drug interactions were found" in section_text:
                     logging.info("✓ Found 'No drug-drug interactions were found' message in section")
-                    return "None"
+                    return ("None", "No drug-drug interactions found")
 
             except Exception as e:
                 logging.debug(f"Error reading section text: {e}")
+                section_text = ""
 
             # STEP 4: Extract severity label from this section ONLY
             logging.debug("Searching for severity label within drug-drug interaction section...")
@@ -480,25 +485,25 @@ class PlaywrightDDIScraper:
                             # Method 1: Check class for severity category
                             if "status-category-major" in element_class:
                                 logging.info("✓ SEVERITY EXTRACTED: Major (from class)")
-                                return "Major"
+                                return ("Major", section_text.strip())
                             elif "status-category-moderate" in element_class:
                                 logging.info("✓ SEVERITY EXTRACTED: Moderate (from class)")
-                                return "Moderate"
+                                return ("Moderate", section_text.strip())
                             elif "status-category-minor" in element_class:
                                 logging.info("✓ SEVERITY EXTRACTED: Minor (from class)")
-                                return "Minor"
+                                return ("Minor", section_text.strip())
 
                             # Method 2: Check text content
                             if element_text_clean in ["MAJOR", "MODERATE", "MINOR"]:
                                 severity_found = element_text_clean.capitalize()
                                 logging.info(f"✓ SEVERITY EXTRACTED: {severity_found} (from text)")
-                                return severity_found
+                                return (severity_found, section_text.strip())
 
                             # Method 3: Check if text contains severity keyword
                             for severity_keyword in ["MAJOR", "MODERATE", "MINOR"]:
                                 if severity_keyword in element_text_clean:
                                     logging.info(f"✓ SEVERITY EXTRACTED: {severity_keyword.capitalize()} (text contains keyword)")
-                                    return severity_keyword.capitalize()
+                                    return (severity_keyword.capitalize(), section_text.strip())
 
                         except Exception as elem_error:
                             logging.debug(f"  Error processing element: {elem_error}")
@@ -517,13 +522,13 @@ class PlaywrightDDIScraper:
                 # Check for severity classes in HTML
                 if 'status-category-major' in content_lower:
                     logging.info("✓ SEVERITY EXTRACTED: Major (from HTML class)")
-                    return "Major"
+                    return ("Major", section_text.strip())
                 elif 'status-category-moderate' in content_lower:
                     logging.info("✓ SEVERITY EXTRACTED: Moderate (from HTML class)")
-                    return "Moderate"
+                    return ("Moderate", section_text.strip())
                 elif 'status-category-minor' in content_lower:
                     logging.info("✓ SEVERITY EXTRACTED: Minor (from HTML class)")
-                    return "Minor"
+                    return ("Minor", section_text.strip())
 
             except Exception as e:
                 logging.debug(f"Error checking HTML content: {e}")
@@ -532,14 +537,14 @@ class PlaywrightDDIScraper:
             logging.warning("✗ Could not extract severity from drug-drug interaction section")
             logging.info("→ Header was found but no severity label detected")
             await self._save_debug_info("header_found_no_severity")
-            return "None"
+            return ("None", section_text.strip() if section_text else "No drug-drug interactions found")
 
         except Exception as e:
             logging.error(f"Error in _extract_severity: {str(e)}")
             import traceback
             logging.error(traceback.format_exc())
             await self._save_debug_info("extraction_error")
-            return "Error"
+            return ("Error", "Error extracting interaction information")
 
     async def _save_debug_info(self, reason="debug"):
         """Save screenshot and HTML for debugging purposes"""
@@ -570,34 +575,64 @@ class PlaywrightDDIScraper:
 
 async def process_drug_pairs(input_file, output_file=None, checkpoint_file="ddi_checkpoint.csv"):
     """
-    Process drug pairs from Excel file and check interactions
+    Process drug pairs from CSV/Excel file and check interactions
 
     Args:
-        input_file: Path to Excel file with Drug1 and Drug2 columns
+        input_file: Path to CSV or Excel file with drug pair columns
         output_file: Path to save results (defaults to input_file)
         checkpoint_file: Path to checkpoint file for saving progress
     """
-    # Read the Excel file
+    # Read the input file (CSV or Excel)
     logging.info(f"Reading drug pairs from: {input_file}")
 
     try:
-        df = pd.read_excel(input_file)
+        # Detect file type and read accordingly
+        if input_file.endswith('.csv'):
+            df = pd.read_csv(input_file)
+        elif input_file.endswith(('.xlsx', '.xls')):
+            df = pd.read_excel(input_file)
+        else:
+            logging.error("Unsupported file format. Please use .csv, .xlsx, or .xls")
+            return
     except Exception as e:
-        logging.error(f"Error reading Excel file: {e}")
+        logging.error(f"Error reading file: {e}")
         return
 
-    # Validate columns
-    if 'Drug1' not in df.columns or 'Drug2' not in df.columns:
-        logging.error("Excel file must contain 'Drug1' and 'Drug2' columns")
+    # Validate columns - support both naming conventions
+    # CSV template uses: Drug_A_Name, Drug_B_Name, DrugsCom_Severity, DrugsCom_Text
+    # Legacy Excel uses: Drug1, Drug2, DDI_Severity
+
+    if 'Drug_A_Name' in df.columns and 'Drug_B_Name' in df.columns:
+        # CSV template format
+        drug1_col = 'Drug_A_Name'
+        drug2_col = 'Drug_B_Name'
+        severity_col = 'DrugsCom_Severity'
+        text_col = 'DrugsCom_Text'
+        logging.info("Using CSV template format (Drug_A_Name, Drug_B_Name, DrugsCom_Severity, DrugsCom_Text)")
+    elif 'Drug1' in df.columns and 'Drug2' in df.columns:
+        # Legacy Excel format
+        drug1_col = 'Drug1'
+        drug2_col = 'Drug2'
+        severity_col = 'DrugsCom_Severity'
+        text_col = 'DrugsCom_Text'
+        logging.info("Using legacy Excel format (Drug1, Drug2)")
+    else:
+        logging.error("File must contain either 'Drug_A_Name' and 'Drug_B_Name' OR 'Drug1' and 'Drug2' columns")
         logging.info(f"Found columns: {df.columns.tolist()}")
         return
 
-    # Add DDI_Severity column if it doesn't exist, or ensure it's object dtype
-    if 'DDI_Severity' not in df.columns:
-        df['DDI_Severity'] = pd.Series(dtype='object')  # Explicitly set to object dtype to avoid dtype warnings
+    # Add DrugsCom_Severity and DrugsCom_Text columns if they don't exist
+    if severity_col not in df.columns:
+        df[severity_col] = pd.Series(dtype='object')
+        logging.info(f"Added {severity_col} column")
     else:
-        # Ensure the column is object dtype even if it exists
-        df['DDI_Severity'] = df['DDI_Severity'].astype('object')
+        df[severity_col] = df[severity_col].astype('object')
+
+    if text_col not in df.columns:
+        df[text_col] = pd.Series(dtype='object')
+        logging.info(f"Added {text_col} column")
+    else:
+        df[text_col] = df[text_col].astype('object')
 
     # Set output file
     if output_file is None:
@@ -617,7 +652,10 @@ async def process_drug_pairs(input_file, output_file=None, checkpoint_file="ddi_
                 # Update df with checkpoint data
                 for idx, row in checkpoint_df.iterrows():
                     if idx < len(df):
-                        df.at[idx, 'DDI_Severity'] = row['DDI_Severity']
+                        if 'DrugsCom_Severity' in checkpoint_df.columns:
+                            df.at[idx, severity_col] = row['DrugsCom_Severity']
+                        if 'DrugsCom_Text' in checkpoint_df.columns:
+                            df.at[idx, text_col] = row['DrugsCom_Text']
         except Exception as e:
             logging.warning(f"Could not load checkpoint: {e}")
 
@@ -632,11 +670,12 @@ async def process_drug_pairs(input_file, output_file=None, checkpoint_file="ddi_
         # Process each drug pair
         for idx in range(start_index, total_pairs):
             row = df.iloc[idx]
-            drug1 = str(row['Drug1']).strip()
-            drug2 = str(row['Drug2']).strip()
+            drug1 = str(row[drug1_col]).strip()
+            drug2 = str(row[drug2_col]).strip()
 
-            # Skip if already processed
-            if pd.notna(df.at[idx, 'DDI_Severity']) and df.at[idx, 'DDI_Severity'] not in ['Error', 'Timeout']:
+            # Skip if already processed (check if severity is not TBD, Error, or Timeout)
+            current_severity = df.at[idx, severity_col]
+            if pd.notna(current_severity) and current_severity not in ['Error', 'Timeout', 'TBD', '']:
                 logging.info(f"[{idx+1}/{total_pairs}] Skipping {drug1} + {drug2} (already processed)")
                 continue
 
@@ -647,31 +686,44 @@ async def process_drug_pairs(input_file, output_file=None, checkpoint_file="ddi_
             # Check interaction
             result = await scraper.check_interaction(drug1, drug2)
 
-            # Update dataframe
-            df.at[idx, 'DDI_Severity'] = result['DDI_Severity']
+            # Update dataframe with both severity and text
+            df.at[idx, severity_col] = result['DrugsCom_Severity']
+            df.at[idx, text_col] = result['DrugsCom_Text']
 
-            # Save progress after each drug pair
-            df.to_excel(output_file, index=False)
-            logging.info(f"Progress saved to {output_file}")
+            # Save progress every 10 rows (or on the last row)
+            if (idx + 1) % 10 == 0 or idx == total_pairs - 1:
+                if input_file.endswith('.csv'):
+                    df.to_csv(output_file, index=False)
+                else:
+                    df.to_excel(output_file, index=False)
+                logging.info(f"Progress saved to {output_file} (row {idx + 1}/{total_pairs})")
 
-            # Save checkpoint
-            checkpoint_data = df[['Drug1', 'Drug2', 'DDI_Severity']].copy()
-            checkpoint_data['Status'] = checkpoint_data['DDI_Severity'].apply(
+            # Save checkpoint after each row (lightweight CSV operation)
+            checkpoint_data = df[[drug1_col, drug2_col, severity_col, text_col]].copy()
+            checkpoint_data.columns = ['Drug1', 'Drug2', 'DrugsCom_Severity', 'DrugsCom_Text']  # Normalize for checkpoint
+            checkpoint_data['Status'] = checkpoint_data['DrugsCom_Severity'].apply(
                 lambda x: 'Success' if x not in ['Error', 'Timeout', None] else 'Failed'
             )
             checkpoint_data['Check_Timestamp'] = result['Check_Timestamp']
             checkpoint_data.to_csv(checkpoint_file, index=False)
 
-            # Rate limiting - wait between requests with randomization
+            # Rate limiting - wait between requests to appear more human
             if idx < total_pairs - 1:  # Don't wait after the last pair
-                # Add random variation to delay (±1 second) to appear more human
-                random_delay = scraper.delay_between_requests + random.uniform(-1.0, 1.0)
-                random_delay = max(random_delay, 3.0)  # Ensure minimum 3 seconds
-                logging.info(f"Waiting {random_delay:.1f} seconds before next request...")
-                await asyncio.sleep(random_delay)
+                # Use page.wait_for_timeout for rate limiting (1000ms = 1 second minimum)
+                random_delay_ms = random.randint(1000, 2000)  # Random 1-2 seconds
+                logging.info(f"Waiting {random_delay_ms/1000:.1f} seconds before next request...")
+                await scraper.page.wait_for_timeout(random_delay_ms)
+
+                # Additional delay based on configured delay_between_requests
+                if scraper.delay_between_requests > 2.0:
+                    additional_delay = int((scraper.delay_between_requests - 2.0) * 1000)
+                    await scraper.page.wait_for_timeout(additional_delay)
 
         # Final save
-        df.to_excel(output_file, index=False)
+        if input_file.endswith('.csv'):
+            df.to_csv(output_file, index=False)
+        else:
+            df.to_excel(output_file, index=False)
 
         # Print summary
         logging.info(f"\n{'='*60}")
@@ -680,7 +732,7 @@ async def process_drug_pairs(input_file, output_file=None, checkpoint_file="ddi_
         logging.info(f"Total drug pairs processed: {total_pairs}")
 
         # Count severities
-        severity_counts = df['DDI_Severity'].value_counts()
+        severity_counts = df[severity_col].value_counts()
         logging.info("\nSeverity Distribution:")
         for severity, count in severity_counts.items():
             logging.info(f"  {severity}: {count}")
@@ -690,7 +742,10 @@ async def process_drug_pairs(input_file, output_file=None, checkpoint_file="ddi_
 
     except KeyboardInterrupt:
         logging.warning("\nScraping interrupted by user")
-        df.to_excel(output_file, index=False)
+        if input_file.endswith('.csv'):
+            df.to_csv(output_file, index=False)
+        else:
+            df.to_excel(output_file, index=False)
         logging.info(f"Progress saved to {output_file}")
 
     except Exception as e:
@@ -707,8 +762,8 @@ async def main():
     import argparse
 
     parser = argparse.ArgumentParser(description='Check drug-drug interactions using Playwright')
-    parser.add_argument('input_file', help='Excel file with Drug1 and Drug2 columns')
-    parser.add_argument('--output', '-o', help='Output Excel file (defaults to input file)')
+    parser.add_argument('input_file', help='CSV or Excel file with drug pair columns (Drug_A_Name/Drug_B_Name or Drug1/Drug2)')
+    parser.add_argument('--output', '-o', help='Output file (defaults to input file)')
     parser.add_argument('--checkpoint', '-c', default='ddi_checkpoint.csv',
                        help='Checkpoint file for progress tracking')
     parser.add_argument('--delay', '-d', type=float, default=3.5,
