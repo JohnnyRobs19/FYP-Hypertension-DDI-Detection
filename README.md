@@ -358,7 +358,7 @@ See `requirements.txt` for complete list. Key packages:
 ## References
 
 - Malaysian Clinical Practice Guidelines for Hypertension
-- DrugBank Database: https://www.drugbank.com/
+- DrugBank Database: https://dev.drugbank.com/demo/ddi_checker
 - Drugs.com Drug Interaction Checker: https://www.drugs.com/drug_interactions.html
 - MIMS Malaysia 2018
 
