@@ -1,14 +1,14 @@
 Drug_A_Name,Drug_B_Name,Drug_A_Class,Drug_B_Class,DrugsCom_Severity,DrugsCom_Text,DrugBank_Severity,DrugBank_Text,Final_Severity,Risk_Score
-Captopril,Enalapril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Captopril,Enalapril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The excretion of Captopril can be decreased when combined with Enalapril.",Moderate,0.5
-Captopril,Lisinopril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Captopril,Lisinopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Lisinopril is combined with Captopril.",Moderate,0.5
-Captopril,Perindopril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Captopril,Perindopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Perindopril is combined with Captopril.",Moderate,0.5
-Captopril,Ramipril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Captopril,Ramipril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Ramipril is combined with Captopril.",Moderate,0.5
 Captopril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
@@ -62,25 +62,25 @@ Applies to: captopril, olmesartan
 Using captopril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Olmesartan.",Major,0.25
-Captopril,Acebutolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Captopril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Acebutolol may increase the hypotensive activities of Captopril.",Minor,0.75
-Captopril,Atenolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Captopril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Atenolol may increase the hypotensive activities of Captopril.",Minor,0.75
-Captopril,Betaxolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Captopril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Betaxolol may increase the hypotensive activities of Captopril.",Minor,0.75
-Captopril,Bisoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Captopril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Bisoprolol may increase the hypotensive activities of Captopril.",Minor,0.75
-Captopril,Metoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Captopril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Metoprolol may increase the hypotensive activities of Captopril.",Minor,0.75
-Captopril,Nebivolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Captopril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Captopril may increase the hypotensive activities of Nebivolol.",Minor,0.75
-Captopril,Propranolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Captopril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Propranolol may increase the hypotensive activities of Captopril.",Minor,0.75
 Captopril,Amlodipine,ACEI,CCB,Minor,"Minor
@@ -158,13 +158,13 @@ Applies to: captopril, amiloride
 Using captopril together with aMILoride may increase the levels of potassium in your blood (hyperkalemia), especially if you are dehydrated or have kidney disease, diabetes, heart failure, or if you are an older adult. Hyperkalemia can cause symptoms such as weakness, confusion, numbness or tingling, and uneven heartbeats. If your doctor prescribes these medications together, you may need a dose adjustment or special tests to safely take both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Amiloride is combined with Captopril.",Major,0.25
-Enalapril,Lisinopril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Enalapril,Lisinopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Enalapril is combined with Lisinopril.",Moderate,0.5
-Enalapril,Perindopril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Enalapril,Perindopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Enalapril is combined with Perindopril.",Moderate,0.5
-Enalapril,Ramipril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Enalapril,Ramipril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Ramipril is combined with Enalapril.",Moderate,0.5
 Enalapril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
@@ -218,25 +218,25 @@ Applies to: enalapril, olmesartan
 Using enalapril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Olmesartan.",Major,0.25
-Enalapril,Acebutolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Enalapril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Enalapril may increase the hypotensive activities of Acebutolol.",Minor,0.75
-Enalapril,Atenolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Enalapril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Atenolol may increase the hypotensive activities of Enalapril.",Minor,0.75
-Enalapril,Betaxolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Enalapril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Betaxolol may increase the hypotensive activities of Enalapril.",Minor,0.75
-Enalapril,Bisoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Enalapril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Enalapril may increase the hypotensive activities of Bisoprolol.",Minor,0.75
-Enalapril,Metoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Enalapril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Metoprolol may increase the hypotensive activities of Enalapril.",Minor,0.75
-Enalapril,Nebivolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Enalapril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Enalapril may increase the hypotensive activities of Nebivolol.",Minor,0.75
-Enalapril,Propranolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Enalapril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Propranolol may increase the hypotensive activities of Enalapril.",Minor,0.75
 Enalapril,Amlodipine,ACEI,CCB,Minor,"Minor
@@ -314,10 +314,10 @@ Applies to: enalapril, amiloride
 Using enalapril together with aMILoride may increase the levels of potassium in your blood (hyperkalemia), especially if you are dehydrated or have kidney disease, diabetes, heart failure, or if you are an older adult. Hyperkalemia can cause symptoms such as weakness, confusion, numbness or tingling, and uneven heartbeats. If your doctor prescribes these medications together, you may need a dose adjustment or special tests to safely take both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Amiloride is combined with Enalapril.",Major,0.25
-Lisinopril,Perindopril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Lisinopril,Perindopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Lisinopril is combined with Perindopril.",Moderate,0.5
-Lisinopril,Ramipril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Lisinopril,Ramipril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Ramipril is combined with Lisinopril.",Moderate,0.5
 Lisinopril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
@@ -371,25 +371,25 @@ Applies to: lisinopril, olmesartan
 Using lisinopril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Olmesartan.",Major,0.25
-Lisinopril,Acebutolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Lisinopril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Lisinopril may increase the hypotensive activities of Acebutolol.",Minor,0.75
-Lisinopril,Atenolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Lisinopril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Atenolol may increase the hypotensive activities of Lisinopril.",Minor,0.75
-Lisinopril,Betaxolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Lisinopril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Betaxolol may increase the hypotensive activities of Lisinopril.",Minor,0.75
-Lisinopril,Bisoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Lisinopril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Bisoprolol may increase the hypotensive activities of Lisinopril.",Minor,0.75
-Lisinopril,Metoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Lisinopril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Metoprolol may increase the hypotensive activities of Lisinopril.",Minor,0.75
-Lisinopril,Nebivolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Lisinopril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Lisinopril may increase the hypotensive activities of Nebivolol.",Minor,0.75
-Lisinopril,Propranolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Lisinopril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Propranolol may increase the hypotensive activities of Lisinopril.",Minor,0.75
 Lisinopril,Amlodipine,ACEI,CCB,Minor,"Minor
@@ -467,7 +467,7 @@ Applies to: amiloride, lisinopril
 Using lisinopril together with aMILoride may increase the levels of potassium in your blood (hyperkalemia), especially if you are dehydrated or have kidney disease, diabetes, heart failure, or if you are an older adult. Hyperkalemia can cause symptoms such as weakness, confusion, numbness or tingling, and uneven heartbeats. If your doctor prescribes these medications together, you may need a dose adjustment or special tests to safely take both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Amiloride is combined with Lisinopril.",Major,0.25
-Perindopril,Ramipril,ACEI,ACEI,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Perindopril,Ramipril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of angioedema can be increased when Ramipril is combined with Perindopril.",Moderate,0.5
 Perindopril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
@@ -521,25 +521,25 @@ Applies to: perindopril, olmesartan
 Using perindopril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Olmesartan.",Major,0.25
-Perindopril,Acebutolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Perindopril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Perindopril may increase the hypotensive activities of Acebutolol.",Minor,0.75
-Perindopril,Atenolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Perindopril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Atenolol may increase the hypotensive activities of Perindopril.",Minor,0.75
-Perindopril,Betaxolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Perindopril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Betaxolol may increase the hypotensive activities of Perindopril.",Minor,0.75
-Perindopril,Bisoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,,"Warning: 
+Perindopril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Perindopril,Metoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Perindopril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Metoprolol may increase the hypotensive activities of Perindopril.",Minor,0.75
-Perindopril,Nebivolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Perindopril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Perindopril may increase the hypotensive activities of Nebivolol.",Minor,0.75
-Perindopril,Propranolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Perindopril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Propranolol may increase the hypotensive activities of Perindopril.",Minor,0.75
 Perindopril,Amlodipine,ACEI,CCB,Minor,"Minor
@@ -666,25 +666,25 @@ Applies to: ramipril, olmesartan
 Using ramipril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Olmesartan.",Major,0.25
-Ramipril,Acebutolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Ramipril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Ramipril may increase the hypotensive activities of Acebutolol.",Minor,0.75
-Ramipril,Atenolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Ramipril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Ramipril may increase the hypotensive activities of Atenolol.",Minor,0.75
-Ramipril,Betaxolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Ramipril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Ramipril may increase the hypotensive activities of Betaxolol.",Minor,0.75
-Ramipril,Bisoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Ramipril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Ramipril may increase the hypotensive activities of Bisoprolol.",Minor,0.75
-Ramipril,Metoprolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Ramipril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Ramipril may increase the hypotensive activities of Metoprolol.",Minor,0.75
-Ramipril,Nebivolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Ramipril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Ramipril may increase the hypotensive activities of Nebivolol.",Minor,0.75
-Ramipril,Propranolol,ACEI,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Ramipril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Ramipril may increase the hypotensive activities of Propranolol.",Minor,0.75
 Ramipril,Amlodipine,ACEI,CCB,Minor,"Minor
@@ -830,67 +830,67 @@ Imidapril,Indapamide,ACEI,Diuretic,,Error: Could not find or click the 'Check In
 The therapeutic efficacy of Indapamide can be increased when used in combination with Imidapril.",Moderate,0.5
 Imidapril,Amiloride,ACEI,Diuretic,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 The risk or severity of hyperkalemia can be increased when Amiloride is combined with Imidapril.",Moderate,0.5
-Candesartan,Irbesartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Candesartan,Irbesartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Irbesartan is combined with Candesartan.",Moderate,0.5
-Candesartan,Losartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Candesartan,Losartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Losartan is combined with Candesartan.",Moderate,0.5
-Candesartan,Telmisartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Candesartan,Telmisartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Telmisartan is combined with Candesartan.",Moderate,0.5
-Candesartan,Valsartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Candesartan,Valsartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Valsartan is combined with Candesartan.",Moderate,0.5
-Candesartan,Olmesartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Candesartan,Olmesartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Olmesartan is combined with Candesartan.",Moderate,0.5
-Candesartan,Acebutolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Acebutolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Acebutolol may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Atenolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Atenolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Atenolol may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Betaxolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Betaxolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Betaxolol may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Bisoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Bisoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Bisoprolol may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Metoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Metoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Metoprolol may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Nebivolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Nebivolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Nebivolol may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Propranolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Propranolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Propranolol may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Amlodipine,ARB,CCB,,No drug-drug interactions found,,"Warning: 
+Candesartan,Amlodipine,ARB,CCB,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Candesartan,Felodipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Candesartan,Felodipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The metabolism of Candesartan can be decreased when combined with Felodipine.",Moderate,0.5
-Candesartan,Isradipine,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Isradipine,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Isradipine may increase the hypotensive activities of Candesartan.",Minor,0.75
 Candesartan,Lercanidipine,ARB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
 Lercanidipine may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Nifedipine,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Nifedipine,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Nifedipine is combined with Candesartan.",Minor,0.75
-Candesartan,Diltiazem,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Candesartan,Diltiazem,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The metabolism of Diltiazem can be decreased when combined with Candesartan.",Moderate,0.5
-Candesartan,Verapamil,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Candesartan,Verapamil,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Verapamil may increase the hypotensive activities of Candesartan.",Minor,0.75
-Candesartan,Hydrochlorothiazide,ARB,Diuretic,,No drug-drug interactions found,,"Warning: 
+Candesartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Candesartan,Indapamide,ARB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Candesartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Candesartan.",Moderate,0.5
 Candesartan,Amiloride,ARB,Diuretic,Major,"Major
@@ -901,46 +901,46 @@ Applies to: amiloride, candesartan
 Using aMILoride together with candesartan may increase potassium levels in the blood. High levels of potassium can develop into a condition known as hyperkalemia, which in severe cases can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while using these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications, especially if you are using them for prolonged periods. In addition, talk to your doctor to see if you should limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Candesartan is combined with Amiloride.",Major,0.25
-Irbesartan,Losartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Irbesartan,Losartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Losartan is combined with Irbesartan.",Moderate,0.5
-Irbesartan,Telmisartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Irbesartan,Telmisartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Telmisartan is combined with Irbesartan.",Moderate,0.5
-Irbesartan,Valsartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Irbesartan,Valsartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Valsartan is combined with Irbesartan.",Moderate,0.5
-Irbesartan,Olmesartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Irbesartan,Olmesartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Olmesartan is combined with Irbesartan.",Moderate,0.5
-Irbesartan,Acebutolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Acebutolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Irbesartan may increase the hypotensive activities of Acebutolol.",Minor,0.75
-Irbesartan,Atenolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Atenolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Atenolol may increase the hypotensive activities of Irbesartan.",Minor,0.75
-Irbesartan,Betaxolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Betaxolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Betaxolol may increase the hypotensive activities of Irbesartan.",Minor,0.75
-Irbesartan,Bisoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Bisoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Bisoprolol may increase the hypotensive activities of Irbesartan.",Minor,0.75
-Irbesartan,Metoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Metoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Metoprolol may increase the hypotensive activities of Irbesartan.",Minor,0.75
-Irbesartan,Nebivolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Nebivolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Irbesartan may increase the hypotensive activities of Nebivolol.",Minor,0.75
-Irbesartan,Propranolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Propranolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Propranolol may increase the hypotensive activities of Irbesartan.",Minor,0.75
-Irbesartan,Amlodipine,ARB,CCB,,No drug-drug interactions found,,"Warning: 
+Irbesartan,Amlodipine,ARB,CCB,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Irbesartan,Felodipine,ARB,CCB,,No drug-drug interactions found,Major,"DESCRIPTION
+Irbesartan,Felodipine,ARB,CCB,None,No drug-drug interactions found,Major,"DESCRIPTION
 
 The metabolism of Irbesartan can be decreased when combined with Felodipine.",Major,0.25
-Irbesartan,Isradipine,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Isradipine,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Isradipine may increase the hypotensive activities of Irbesartan.",Minor,0.75
 Irbesartan,Lercanidipine,ARB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
@@ -954,16 +954,16 @@ Applies to: nifedipine, irbesartan
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
 The serum concentration of the active metabolites of Irbesartan can be increased when Irbesartan is used in combination with Nifedipine.",Minor,0.75
-Irbesartan,Diltiazem,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Irbesartan,Diltiazem,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The metabolism of Irbesartan can be decreased when combined with Diltiazem.",Moderate,0.5
-Irbesartan,Verapamil,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Irbesartan,Verapamil,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Verapamil is combined with Irbesartan.",Minor,0.75
-Irbesartan,Hydrochlorothiazide,ARB,Diuretic,,No drug-drug interactions found,,"Warning: 
+Irbesartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Irbesartan,Indapamide,ARB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Irbesartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Irbesartan.",Moderate,0.5
 Irbesartan,Amiloride,ARB,Diuretic,Major,"Major
@@ -974,61 +974,61 @@ Applies to: amiloride, irbesartan
 Using aMILoride together with irbesartan may increase potassium levels in the blood. High levels of potassium can develop into a condition known as hyperkalemia, which in severe cases can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while using these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications, especially if you are using them for prolonged periods. In addition, talk to your doctor to see if you should limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Irbesartan is combined with Amiloride.",Major,0.25
-Losartan,Telmisartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Telmisartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Losartan is combined with Telmisartan.",Moderate,0.5
-Losartan,Valsartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Valsartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Valsartan is combined with Losartan.",Moderate,0.5
-Losartan,Olmesartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Olmesartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Olmesartan is combined with Losartan.",Moderate,0.5
-Losartan,Acebutolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Acebutolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Losartan may increase the arrhythmogenic activities of Acebutolol.",Moderate,0.5
-Losartan,Atenolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Atenolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Atenolol may increase the arrhythmogenic activities of Losartan.",Moderate,0.5
-Losartan,Betaxolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Betaxolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Betaxolol may increase the arrhythmogenic activities of Losartan.",Moderate,0.5
-Losartan,Bisoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Bisoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Losartan can be increased when used in combination with Bisoprolol.",Moderate,0.5
-Losartan,Metoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Metoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Metoprolol may increase the arrhythmogenic activities of Losartan.",Moderate,0.5
-Losartan,Nebivolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Nebivolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Losartan may increase the arrhythmogenic activities of Nebivolol.",Moderate,0.5
-Losartan,Propranolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Propranolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Propranolol may increase the arrhythmogenic activities of Losartan.",Moderate,0.5
-Losartan,Amlodipine,ARB,CCB,,No drug-drug interactions found,,"Warning: 
+Losartan,Amlodipine,ARB,CCB,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Losartan,Felodipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Felodipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Losartan may increase the arrhythmogenic activities of Felodipine.",Moderate,0.5
-Losartan,Isradipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Isradipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Isradipine may increase the arrhythmogenic activities of Losartan.",Moderate,0.5
 Losartan,Lercanidipine,ARB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
 Lercanidipine may increase the arrhythmogenic activities of Losartan.",Moderate,0.5
-Losartan,Nifedipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Nifedipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Losartan may increase the arrhythmogenic activities of Nifedipine.",Moderate,0.5
-Losartan,Diltiazem,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Diltiazem,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Diltiazem may increase the arrhythmogenic activities of Losartan.",Moderate,0.5
-Losartan,Verapamil,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Verapamil,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Verapamil may increase the arrhythmogenic activities of Losartan.",Moderate,0.5
-Losartan,Hydrochlorothiazide,ARB,Diuretic,,No drug-drug interactions found,,"Warning: 
+Losartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Losartan,Indapamide,ARB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Losartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Losartan.",Moderate,0.5
 Losartan,Amiloride,ARB,Diuretic,Major,"Major
@@ -1039,58 +1039,58 @@ Applies to: amiloride, losartan
 Using aMILoride together with losartan may increase potassium levels in the blood. High levels of potassium can develop into a condition known as hyperkalemia, which in severe cases can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while using these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications, especially if you are using them for prolonged periods. In addition, talk to your doctor to see if you should limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Losartan is combined with Amiloride.",Major,0.25
-Telmisartan,Valsartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Telmisartan,Valsartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Valsartan is combined with Telmisartan.",Moderate,0.5
-Telmisartan,Olmesartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Telmisartan,Olmesartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Olmesartan is combined with Telmisartan.",Moderate,0.5
-Telmisartan,Acebutolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Telmisartan,Acebutolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Telmisartan may increase the hypotensive activities of Acebutolol.",Minor,0.75
-Telmisartan,Atenolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Telmisartan,Atenolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Atenolol may decrease the excretion rate of Telmisartan which could result in a higher serum level.",Moderate,0.5
-Telmisartan,Betaxolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Telmisartan,Betaxolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Betaxolol may increase the hypotensive activities of Telmisartan.",Minor,0.75
-Telmisartan,Bisoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Telmisartan,Bisoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Bisoprolol may increase the hypotensive activities of Telmisartan.",Minor,0.75
-Telmisartan,Metoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Telmisartan,Metoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Metoprolol may increase the hypotensive activities of Telmisartan.",Minor,0.75
-Telmisartan,Nebivolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Telmisartan,Nebivolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The metabolism of Nebivolol can be decreased when combined with Telmisartan.",Moderate,0.5
-Telmisartan,Propranolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Telmisartan,Propranolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The serum concentration of Propranolol can be increased when it is combined with Telmisartan.",Minor,0.75
-Telmisartan,Amlodipine,ARB,CCB,,No drug-drug interactions found,,"Warning: 
+Telmisartan,Amlodipine,ARB,CCB,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Telmisartan,Felodipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Telmisartan,Felodipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Telmisartan may decrease the excretion rate of Felodipine which could result in a higher serum level.",Moderate,0.5
-Telmisartan,Isradipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Telmisartan,Isradipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Isradipine may decrease the excretion rate of Telmisartan which could result in a higher serum level.",Moderate,0.5
 Telmisartan,Lercanidipine,ARB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
 Lercanidipine may increase the hypotensive activities of Telmisartan.",Minor,0.75
-Telmisartan,Nifedipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Telmisartan,Nifedipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Telmisartan may decrease the excretion rate of Nifedipine which could result in a higher serum level.",Moderate,0.5
-Telmisartan,Diltiazem,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Telmisartan,Diltiazem,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Diltiazem may increase the hypotensive activities of Telmisartan.",Minor,0.75
-Telmisartan,Verapamil,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Telmisartan,Verapamil,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Verapamil is combined with Telmisartan.",Minor,0.75
-Telmisartan,Hydrochlorothiazide,ARB,Diuretic,,No drug-drug interactions found,,"Warning: 
+Telmisartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Telmisartan,Indapamide,ARB,Diuretic,,No drug-drug interactions found,,"Warning: 
+Telmisartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
 Telmisartan,Amiloride,ARB,Diuretic,Major,"Major
@@ -1101,55 +1101,55 @@ Applies to: amiloride, telmisartan
 Using aMILoride together with telmisartan may increase potassium levels in the blood. High levels of potassium can develop into a condition known as hyperkalemia, which in severe cases can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while using these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications, especially if you are using them for prolonged periods. In addition, talk to your doctor to see if you should limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Telmisartan is combined with Amiloride.",Major,0.25
-Valsartan,Olmesartan,ARB,ARB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Valsartan,Olmesartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Valsartan is combined with Olmesartan.",Moderate,0.5
-Valsartan,Acebutolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Acebutolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Valsartan may increase the hypotensive activities of Acebutolol.",Minor,0.75
-Valsartan,Atenolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Atenolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Valsartan may increase the hypotensive activities of Atenolol.",Minor,0.75
-Valsartan,Betaxolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Betaxolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Valsartan may increase the hypotensive activities of Betaxolol.",Minor,0.75
-Valsartan,Bisoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Bisoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Valsartan may increase the hypotensive activities of Bisoprolol.",Minor,0.75
-Valsartan,Metoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Metoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Valsartan may increase the hypotensive activities of Metoprolol.",Minor,0.75
-Valsartan,Nebivolol,ARB,Beta-Blocker,,No drug-drug interactions found,,"Warning: 
+Valsartan,Nebivolol,ARB,Beta-Blocker,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Valsartan,Propranolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Propranolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Valsartan may increase the hypotensive activities of Propranolol.",Minor,0.75
-Valsartan,Amlodipine,ARB,CCB,,No drug-drug interactions found,,"Warning: 
+Valsartan,Amlodipine,ARB,CCB,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Valsartan,Felodipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Valsartan,Felodipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The metabolism of Valsartan can be decreased when combined with Felodipine.",Moderate,0.5
-Valsartan,Isradipine,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Isradipine,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Valsartan may increase the hypotensive activities of Isradipine.",Minor,0.75
 Valsartan,Lercanidipine,ARB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
 Valsartan may increase the hypotensive activities of Lercanidipine.",Minor,0.75
-Valsartan,Nifedipine,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Nifedipine,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Valsartan is combined with Nifedipine.",Minor,0.75
-Valsartan,Diltiazem,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Valsartan,Diltiazem,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The metabolism of Diltiazem can be decreased when combined with Valsartan.",Moderate,0.5
-Valsartan,Verapamil,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Valsartan,Verapamil,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Valsartan is combined with Verapamil.",Minor,0.75
-Valsartan,Hydrochlorothiazide,ARB,Diuretic,,No drug-drug interactions found,,"Warning: 
+Valsartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Valsartan,Indapamide,ARB,Diuretic,,No drug-drug interactions found,,"Warning: 
+Valsartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
 Valsartan,Amiloride,ARB,Diuretic,Major,"Major
@@ -1160,52 +1160,52 @@ Applies to: amiloride, valsartan
 Using aMILoride together with valsartan may increase potassium levels in the blood. High levels of potassium can develop into a condition known as hyperkalemia, which in severe cases can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while using these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications, especially if you are using them for prolonged periods. In addition, talk to your doctor to see if you should limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Valsartan is combined with Amiloride.",Major,0.25
-Olmesartan,Acebutolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Olmesartan,Acebutolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Olmesartan may increase the hypotensive activities of Acebutolol.",Minor,0.75
-Olmesartan,Atenolol,ARB,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Olmesartan,Atenolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Olmesartan may decrease the excretion rate of Atenolol which could result in a higher serum level.",Moderate,0.5
-Olmesartan,Betaxolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Olmesartan,Betaxolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Betaxolol may increase the hypotensive activities of Olmesartan.",Minor,0.75
-Olmesartan,Bisoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Olmesartan,Bisoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Olmesartan may increase the hypotensive activities of Bisoprolol.",Minor,0.75
-Olmesartan,Metoprolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Olmesartan,Metoprolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Metoprolol may increase the hypotensive activities of Olmesartan.",Minor,0.75
-Olmesartan,Nebivolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Olmesartan,Nebivolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Olmesartan may increase the hypotensive activities of Nebivolol.",Minor,0.75
-Olmesartan,Propranolol,ARB,Beta-Blocker,,No drug-drug interactions found,Minor,"DESCRIPTION
+Olmesartan,Propranolol,ARB,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Olmesartan may increase the hypotensive activities of Propranolol.",Minor,0.75
-Olmesartan,Amlodipine,ARB,CCB,,No drug-drug interactions found,,"Warning: 
+Olmesartan,Amlodipine,ARB,CCB,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Olmesartan,Felodipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Olmesartan,Felodipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Olmesartan may decrease the excretion rate of Felodipine which could result in a higher serum level.",Moderate,0.5
-Olmesartan,Isradipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Olmesartan,Isradipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Olmesartan may decrease the excretion rate of Isradipine which could result in a higher serum level.",Moderate,0.5
 Olmesartan,Lercanidipine,ARB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
 Olmesartan may increase the hypotensive activities of Lercanidipine.",Minor,0.75
-Olmesartan,Nifedipine,ARB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Olmesartan,Nifedipine,ARB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Olmesartan may decrease the excretion rate of Nifedipine which could result in a higher serum level.",Moderate,0.5
-Olmesartan,Diltiazem,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Olmesartan,Diltiazem,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 Olmesartan may increase the hypotensive activities of Diltiazem.",Minor,0.75
-Olmesartan,Verapamil,ARB,CCB,,No drug-drug interactions found,Minor,"DESCRIPTION
+Olmesartan,Verapamil,ARB,CCB,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Olmesartan is combined with Verapamil.",Minor,0.75
-Olmesartan,Hydrochlorothiazide,ARB,Diuretic,,No drug-drug interactions found,,"Warning: 
+Olmesartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Olmesartan,Indapamide,ARB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Olmesartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Olmesartan.",Moderate,0.5
 Olmesartan,Amiloride,ARB,Diuretic,Major,"Major
@@ -1216,10 +1216,10 @@ Applies to: amiloride, olmesartan
 Using aMILoride together with olmesartan may increase potassium levels in the blood. High levels of potassium can develop into a condition known as hyperkalemia, which in severe cases can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while using these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications, especially if you are using them for prolonged periods. In addition, talk to your doctor to see if you should limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The risk or severity of hyperkalemia can be increased when Olmesartan is combined with Amiloride.",Major,0.25
-Acebutolol,Atenolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Acebutolol,Atenolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Atenolol may increase the arrhythmogenic activities of Acebutolol.",Moderate,0.5
-Acebutolol,Betaxolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Acebutolol,Betaxolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Betaxolol may increase the arrhythmogenic activities of Acebutolol.",Moderate,0.5
 Acebutolol,Bisoprolol,Beta-Blocker,Beta-Blocker,Moderate,"Moderate
@@ -1230,13 +1230,13 @@ Applies to: acebutolol, bisoprolol
 Using acebutolol together with bisoprolol may have additive effects causing significant bradycardia (low heart rate) and hypotension (low blood pressure). Talk to your doctor if you have any questions or concerns. Your doctor may be able to prescribe alternatives that do not interact. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Major,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Bisoprolol is combined with Acebutolol.",Major,0.25
-Acebutolol,Metoprolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Acebutolol,Metoprolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Metoprolol may increase the arrhythmogenic activities of Acebutolol.",Moderate,0.5
-Acebutolol,Nebivolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Acebutolol,Nebivolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Acebutolol may increase the arrhythmogenic activities of Nebivolol.",Moderate,0.5
-Acebutolol,Propranolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Acebutolol,Propranolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Propranolol may increase the arrhythmogenic activities of Acebutolol.",Moderate,0.5
 Acebutolol,Amlodipine,Beta-Blocker,CCB,Moderate,"Moderate
@@ -1306,10 +1306,10 @@ Applies to: acebutolol, indapamide
 Using acebutolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Acebutolol.",Moderate,0.5
-Acebutolol,Amiloride,Beta-Blocker,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Acebutolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Acebutolol.",Minor,0.75
-Atenolol,Betaxolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Atenolol,Betaxolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Betaxolol may increase the arrhythmogenic activities of Atenolol.",Moderate,0.5
 Atenolol,Bisoprolol,Beta-Blocker,Beta-Blocker,Moderate,"Moderate
@@ -1320,13 +1320,13 @@ Applies to: atenolol, bisoprolol
 Using atenolol together with bisoprolol may have additive effects causing significant bradycardia (low heart rate) and hypotension (low blood pressure). Talk to your doctor if you have any questions or concerns. Your doctor may be able to prescribe alternatives that do not interact. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Major,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Bisoprolol is combined with Atenolol.",Major,0.25
-Atenolol,Metoprolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Atenolol,Metoprolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Metoprolol may increase the arrhythmogenic activities of Atenolol.",Moderate,0.5
-Atenolol,Nebivolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Atenolol,Nebivolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Atenolol may increase the arrhythmogenic activities of Nebivolol.",Moderate,0.5
-Atenolol,Propranolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Atenolol,Propranolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Atenolol may increase the arrhythmogenic activities of Propranolol.",Moderate,0.5
 Atenolol,Amlodipine,Beta-Blocker,CCB,Moderate,"Moderate
@@ -1396,7 +1396,7 @@ Applies to: atenolol, indapamide
 Using atenolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5
-Atenolol,Amiloride,Beta-Blocker,Diuretic,,No drug-drug interactions found,,"Warning: 
+Atenolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
 Betaxolol,Bisoprolol,Beta-Blocker,Beta-Blocker,Moderate,"Moderate
@@ -1407,13 +1407,13 @@ Applies to: betaxolol, bisoprolol
 Using betaxolol together with bisoprolol may have additive effects causing significant bradycardia (low heart rate) and hypotension (low blood pressure). Talk to your doctor if you have any questions or concerns. Your doctor may be able to prescribe alternatives that do not interact. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Major,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Bisoprolol is combined with Betaxolol.",Major,0.25
-Betaxolol,Metoprolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Betaxolol,Metoprolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Betaxolol may increase the arrhythmogenic activities of Metoprolol.",Moderate,0.5
-Betaxolol,Nebivolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Betaxolol,Nebivolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Betaxolol may increase the arrhythmogenic activities of Nebivolol.",Moderate,0.5
-Betaxolol,Propranolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Betaxolol,Propranolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Betaxolol may increase the arrhythmogenic activities of Propranolol.",Moderate,0.5
 Betaxolol,Amlodipine,Beta-Blocker,CCB,Moderate,"Moderate
@@ -1483,7 +1483,7 @@ Applies to: betaxolol, indapamide
 Using betaxolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Betaxolol.",Moderate,0.5
-Betaxolol,Amiloride,Beta-Blocker,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Betaxolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Betaxolol is combined with Amiloride.",Minor,0.75
 Bisoprolol,Metoprolol,Beta-Blocker,Beta-Blocker,Moderate,"Moderate
@@ -1577,13 +1577,13 @@ Applies to: indapamide, bisoprolol
 Using indapamide and bisoprolol together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Bisoprolol.",Moderate,0.5
-Bisoprolol,Amiloride,Beta-Blocker,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Bisoprolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Bisoprolol.",Minor,0.75
-Metoprolol,Nebivolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Metoprolol,Nebivolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Metoprolol may increase the arrhythmogenic activities of Nebivolol.",Moderate,0.5
-Metoprolol,Propranolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Metoprolol,Propranolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Metoprolol may increase the arrhythmogenic activities of Propranolol.",Moderate,0.5
 Metoprolol,Amlodipine,Beta-Blocker,CCB,Moderate,"Moderate
@@ -1653,10 +1653,10 @@ Applies to: metoprolol, indapamide
 Using metoprolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Metoprolol.",Moderate,0.5
-Metoprolol,Amiloride,Beta-Blocker,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Metoprolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Metoprolol is combined with Amiloride.",Minor,0.75
-Nebivolol,Propranolol,Beta-Blocker,Beta-Blocker,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Nebivolol,Propranolol,Beta-Blocker,Beta-Blocker,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Propranolol may increase the arrhythmogenic activities of Nebivolol.",Moderate,0.5
 Nebivolol,Amlodipine,Beta-Blocker,CCB,Moderate,"Moderate
@@ -1726,7 +1726,7 @@ Applies to: indapamide, nebivolol
 Using indapamide and nebivolol together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Nebivolol.",Moderate,0.5
-Nebivolol,Amiloride,Beta-Blocker,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Nebivolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Nebivolol.",Minor,0.75
 Propranolol,Amlodipine,Beta-Blocker,CCB,Moderate,"Moderate
@@ -1796,19 +1796,19 @@ Applies to: propranolol, indapamide
 Using propranolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Propranolol.",Moderate,0.5
-Propranolol,Amiloride,Beta-Blocker,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Propranolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Propranolol is combined with Amiloride.",Minor,0.75
-Amlodipine,Felodipine,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Amlodipine,Felodipine,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Amlodipine may increase the arrhythmogenic activities of Felodipine.",Moderate,0.5
-Amlodipine,Isradipine,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Amlodipine,Isradipine,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Isradipine may increase the arrhythmogenic activities of Amlodipine.",Moderate,0.5
 Amlodipine,Lercanidipine,CCB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
 Amlodipine may increase the arrhythmogenic activities of Lercanidipine.",Moderate,0.5
-Amlodipine,Nifedipine,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Amlodipine,Nifedipine,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Amlodipine may increase the arrhythmogenic activities of Nifedipine.",Moderate,0.5
 Amlodipine,Diltiazem,CCB,CCB,Moderate,"Moderate
@@ -1843,16 +1843,16 @@ Applies to: indapamide, amlodipine
 Information for this minor interaction is available on the professional version.",,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75
-Amlodipine,Amiloride,CCB,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Amlodipine,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amlodipine is combined with Amiloride.",Minor,0.75
-Felodipine,Isradipine,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Felodipine,Isradipine,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Isradipine may increase the arrhythmogenic activities of Felodipine.",Moderate,0.5
 Felodipine,Lercanidipine,CCB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
 Lercanidipine may increase the arrhythmogenic activities of Felodipine.",Moderate,0.5
-Felodipine,Nifedipine,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Felodipine,Nifedipine,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Felodipine may increase the arrhythmogenic activities of Nifedipine.",Moderate,0.5
 Felodipine,Diltiazem,CCB,CCB,Moderate,"Moderate
@@ -1863,22 +1863,22 @@ Applies to: diltiazem, felodipine
 DilTIAZem may increase the blood levels and effects of felodipine. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. Contact your doctor if your condition changes or you experience increased side effects. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 Diltiazem may increase the arrhythmogenic activities of Felodipine.",Moderate,0.5
-Felodipine,Verapamil,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Felodipine,Verapamil,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Verapamil may increase the arrhythmogenic activities of Felodipine.",Moderate,0.5
 Felodipine,Hydrochlorothiazide,CCB,Diuretic,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Felodipine can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5
-Felodipine,Indapamide,CCB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Felodipine,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Felodipine.",Moderate,0.5
-Felodipine,Amiloride,CCB,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Felodipine,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Felodipine.",Minor,0.75
 Isradipine,Lercanidipine,CCB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
 Isradipine may increase the arrhythmogenic activities of Lercanidipine.",Moderate,0.5
-Isradipine,Nifedipine,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Isradipine,Nifedipine,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Isradipine may increase the arrhythmogenic activities of Nifedipine.",Moderate,0.5
 Isradipine,Diltiazem,CCB,CCB,Moderate,"Moderate
@@ -1889,16 +1889,16 @@ Applies to: diltiazem, isradipine
 DilTIAZem may increase the blood levels and effects of isradipine. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. Contact your doctor if your condition changes or you experience increased side effects. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 Isradipine may increase the arrhythmogenic activities of Diltiazem.",Moderate,0.5
-Isradipine,Verapamil,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Isradipine,Verapamil,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Isradipine may increase the arrhythmogenic activities of Verapamil.",Moderate,0.5
-Isradipine,Hydrochlorothiazide,CCB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Isradipine,Hydrochlorothiazide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Isradipine can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5
-Isradipine,Indapamide,CCB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Isradipine,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Isradipine.",Moderate,0.5
-Isradipine,Amiloride,CCB,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Isradipine,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Isradipine is combined with Amiloride.",Minor,0.75
 Lercanidipine,Nifedipine,CCB,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
@@ -1927,16 +1927,16 @@ Applies to: diltiazem, nifedipine
 Before taking dilTIAZem, tell your doctor if you also use NIFEdipine. You may need dose adjustments or special tests in order to safely take both medications together . The levels of dilTIAZem or NIFEdipine may be increased. You should notify your doctor if you have symptoms of low blood pressure such as headaches, faint, or slow heartbeats. It is important that you tell your healthcare provider about all other medications that you are using including vitamins and herbs. Do not stop using your medications without first talking to your doctor first.",Moderate,"DESCRIPTION
 
 The serum concentration of Nifedipine can be increased when it is combined with Diltiazem.",Moderate,0.5
-Nifedipine,Verapamil,CCB,CCB,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Nifedipine,Verapamil,CCB,CCB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 Verapamil may increase the arrhythmogenic activities of Nifedipine.",Moderate,0.5
 Nifedipine,Hydrochlorothiazide,CCB,Diuretic,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
 The risk or severity of QTc prolongation can be increased when Hydrochlorothiazide is combined with Nifedipine.",Minor,0.75
-Nifedipine,Indapamide,CCB,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Nifedipine,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of QTc prolongation can be increased when Indapamide is combined with Nifedipine.",Minor,0.75
-Nifedipine,Amiloride,CCB,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Nifedipine,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Nifedipine.",Minor,0.75
 Diltiazem,Verapamil,CCB,CCB,Moderate,"Moderate
@@ -1947,30 +1947,30 @@ Applies to: diltiazem, verapamil
 DilTIAZem may increase the blood levels and effects of verapamil. You may need a dose adjustment or more frequent monitoring by your doctor to safely use both medications. Contact your doctor if your condition changes or you experience increased side effects. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
 Diltiazem may increase the arrhythmogenic activities of Verapamil.",Moderate,0.5
-Diltiazem,Hydrochlorothiazide,CCB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Diltiazem,Hydrochlorothiazide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Diltiazem can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5
-Diltiazem,Indapamide,CCB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Diltiazem,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Diltiazem.",Moderate,0.5
-Diltiazem,Amiloride,CCB,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Diltiazem,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Diltiazem is combined with Amiloride.",Minor,0.75
-Verapamil,Hydrochlorothiazide,CCB,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Verapamil,Hydrochlorothiazide,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Verapamil is combined with Hydrochlorothiazide.",Minor,0.75
-Verapamil,Indapamide,CCB,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Verapamil,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The metabolism of Indapamide can be decreased when combined with Verapamil.",Moderate,0.5
-Verapamil,Amiloride,CCB,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Verapamil,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Verapamil.",Minor,0.75
-Hydrochlorothiazide,Indapamide,Diuretic,Diuretic,,No drug-drug interactions found,Moderate,"DESCRIPTION
+Hydrochlorothiazide,Indapamide,Diuretic,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5
-Hydrochlorothiazide,Amiloride,Diuretic,Diuretic,,No drug-drug interactions found,,"Warning: 
+Hydrochlorothiazide,Amiloride,Diuretic,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0
-Indapamide,Amiloride,Diuretic,Diuretic,,No drug-drug interactions found,Minor,"DESCRIPTION
+Indapamide,Amiloride,Diuretic,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Indapamide.",Minor,0.75
