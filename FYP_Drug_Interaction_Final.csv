@@ -1,19 +1,19 @@
-Drug_A_Name,Drug_B_Name,Drug_A_Class,Drug_B_Class,DrugsCom_Severity,DrugsCom_Text,DrugBank_Severity,DrugBank_Text,Final_Severity,Risk_Score,CPG_Outcome_Bonus,CPG_Efficacy_Bonus,CPG_Tolerability_Penalty,CPG_Adjusted_Risk_Score
+Drug_A_Name,Drug_B_Name,Drug_A_Class,Drug_B_Class,DrugsCom_Severity,DrugsCom_Text,DrugBank_Severity,DrugBank_Text,Final_Severity,Risk_Score,CPG_Efficacy_Bonus,CPG_Outcome_Bonus,CPG_Tolerability_Penalty,CPG_Adjusted_Risk_Score
 Captopril,Enalapril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The excretion of Captopril can be decreased when combined with Enalapril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The excretion of Captopril can be decreased when combined with Enalapril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Captopril,Lisinopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Lisinopril is combined with Captopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Lisinopril is combined with Captopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Captopril,Perindopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Perindopril is combined with Captopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Perindopril is combined with Captopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Captopril,Ramipril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Ramipril is combined with Captopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Ramipril is combined with Captopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Captopril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Captopril is combined with Imidapril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Captopril is combined with Imidapril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Captopril,Candesartan,ACEI,ARB,Major,"Major
 captopril  candesartan
 
@@ -21,7 +21,7 @@ Applies to: captopril, candesartan
 
 Using captopril together with candesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Candesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Candesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Captopril,Irbesartan,ACEI,ARB,Major,"Major
 captopril  irbesartan
 
@@ -29,7 +29,7 @@ Applies to: captopril, irbesartan
 
 Using captopril together with irbesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Irbesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Irbesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Captopril,Losartan,ACEI,ARB,Major,"Major
 captopril  losartan
 
@@ -37,7 +37,7 @@ Applies to: captopril, losartan
 
 Using captopril together with losartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Losartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Losartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Captopril,Telmisartan,ACEI,ARB,Major,"Major
 captopril  telmisartan
 
@@ -45,7 +45,7 @@ Applies to: captopril, telmisartan
 
 Using captopril together with telmisartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Telmisartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Telmisartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Captopril,Valsartan,ACEI,ARB,Major,"Major
 captopril  valsartan
 
@@ -53,7 +53,7 @@ Applies to: captopril, valsartan
 
 Using captopril together with valsartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Valsartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Valsartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Captopril,Olmesartan,ACEI,ARB,Major,"Major
 captopril  olmesartan
 
@@ -61,28 +61,28 @@ Applies to: captopril, olmesartan
 
 Using captopril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Olmesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Captopril is combined with Olmesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Captopril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Acebutolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Acebutolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Atenolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Atenolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Betaxolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Betaxolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Bisoprolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Bisoprolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Metoprolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Metoprolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Captopril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Captopril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Propranolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Propranolol may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Amlodipine,ACEI,CCB,Minor,"Minor
 captopril  amLODIPine
 
@@ -90,7 +90,7 @@ Applies to: captopril, amlodipine
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Amlodipine may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Amlodipine may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Felodipine,ACEI,CCB,Minor,"Minor
 captopril  felodipine
 
@@ -98,7 +98,7 @@ Applies to: captopril, felodipine
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Felodipine may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Felodipine may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Isradipine,ACEI,CCB,Minor,"Minor
 captopril  isradipine
 
@@ -106,10 +106,10 @@ Applies to: captopril, isradipine
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Isradipine may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Isradipine may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Lercanidipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of myopathy, rhabdomyolysis, and myoglobinuria can be increased when Lercanidipine is combined with Captopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of myopathy, rhabdomyolysis, and myoglobinuria can be increased when Lercanidipine is combined with Captopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Captopril,Nifedipine,ACEI,CCB,Minor,"Minor
 captopril  NIFEdipine
 
@@ -117,7 +117,7 @@ Applies to: captopril, nifedipine
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Nifedipine is combined with Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Nifedipine is combined with Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Diltiazem,ACEI,CCB,Minor,"Minor
 captopril  dilTIAZem
 
@@ -125,7 +125,7 @@ Applies to: captopril, diltiazem
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Diltiazem may increase the hypotensive activities of Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Diltiazem may increase the hypotensive activities of Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Verapamil,ACEI,CCB,Minor,"Minor
 captopril  verapamil
 
@@ -133,7 +133,7 @@ Applies to: captopril, verapamil
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Verapamil is combined with Captopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Verapamil is combined with Captopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Captopril,Hydrochlorothiazide,ACEI,Diuretic,Moderate,"Moderate
 captopril  hydroCHLOROthiazide
 
@@ -141,7 +141,7 @@ Applies to: captopril, hydrochlorothiazide
 
 Although captopril and hydroCHLOROthiazide are frequently combined together, their effects may be additive on lowering your blood pressure. You may need a dose adjustment or special tests to safely take both medications. Contact your doctor if you have a reduced heart rate, dizziness, fainting, or headaches. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.0,0.03,-0.01,0.52
+There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Captopril,Indapamide,ACEI,Diuretic,Moderate,"Moderate
 captopril  indapamide
 
@@ -157,19 +157,19 @@ Applies to: captopril, amiloride
 
 Using captopril together with aMILoride may increase the levels of potassium in your blood (hyperkalemia), especially if you are dehydrated or have kidney disease, diabetes, heart failure, or if you are an older adult. Hyperkalemia can cause symptoms such as weakness, confusion, numbness or tingling, and uneven heartbeats. If your doctor prescribes these medications together, you may need a dose adjustment or special tests to safely take both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of hyperkalemia can be increased when Amiloride is combined with Captopril.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of hyperkalemia can be increased when Amiloride is combined with Captopril.",Major,0.25,0.05,0.0,-0.01,0.29
 Enalapril,Lisinopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Enalapril is combined with Lisinopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Enalapril is combined with Lisinopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Enalapril,Perindopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Enalapril is combined with Perindopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Enalapril is combined with Perindopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Enalapril,Ramipril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Ramipril is combined with Enalapril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Ramipril is combined with Enalapril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Enalapril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Enalapril is combined with Imidapril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Enalapril is combined with Imidapril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Enalapril,Candesartan,ACEI,ARB,Major,"Major
 enalapril  candesartan
 
@@ -177,7 +177,7 @@ Applies to: enalapril, candesartan
 
 Using enalapril together with candesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Candesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Candesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Enalapril,Irbesartan,ACEI,ARB,Major,"Major
 enalapril  irbesartan
 
@@ -185,7 +185,7 @@ Applies to: enalapril, irbesartan
 
 Using enalapril together with irbesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Irbesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Irbesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Enalapril,Losartan,ACEI,ARB,Major,"Major
 enalapril  losartan
 
@@ -193,7 +193,7 @@ Applies to: enalapril, losartan
 
 Using enalapril together with losartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Losartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Losartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Enalapril,Telmisartan,ACEI,ARB,Major,"Major
 enalapril  telmisartan
 
@@ -201,7 +201,7 @@ Applies to: enalapril, telmisartan
 
 Using enalapril together with telmisartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Telmisartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Telmisartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Enalapril,Valsartan,ACEI,ARB,Major,"Major
 enalapril  valsartan
 
@@ -209,7 +209,7 @@ Applies to: enalapril, valsartan
 
 Using enalapril together with valsartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Valsartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Valsartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Enalapril,Olmesartan,ACEI,ARB,Major,"Major
 enalapril  olmesartan
 
@@ -217,28 +217,28 @@ Applies to: enalapril, olmesartan
 
 Using enalapril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Olmesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Enalapril is combined with Olmesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Enalapril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Enalapril may increase the hypotensive activities of Acebutolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Enalapril may increase the hypotensive activities of Acebutolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Atenolol may increase the hypotensive activities of Enalapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Atenolol may increase the hypotensive activities of Enalapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Betaxolol may increase the hypotensive activities of Enalapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Betaxolol may increase the hypotensive activities of Enalapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Enalapril may increase the hypotensive activities of Bisoprolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Enalapril may increase the hypotensive activities of Bisoprolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Metoprolol may increase the hypotensive activities of Enalapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Metoprolol may increase the hypotensive activities of Enalapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Enalapril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Enalapril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Propranolol may increase the hypotensive activities of Enalapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Propranolol may increase the hypotensive activities of Enalapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Amlodipine,ACEI,CCB,Minor,"Minor
 enalapril  amLODIPine
 
@@ -246,7 +246,7 @@ Applies to: enalapril, amlodipine
 
 Information for this minor interaction is available on the professional version.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.0,0.03,-0.01,0.77
+There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Felodipine,ACEI,CCB,Minor,"Minor
 enalapril  felodipine
 
@@ -254,7 +254,7 @@ Applies to: enalapril, felodipine
 
 Information for this minor interaction is available on the professional version.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.0,0.03,-0.01,0.77
+There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Isradipine,ACEI,CCB,Minor,"Minor
 enalapril  isradipine
 
@@ -262,10 +262,10 @@ Applies to: enalapril, isradipine
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Isradipine may increase the hypotensive activities of Enalapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Isradipine may increase the hypotensive activities of Enalapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Lercanidipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.03,-0.01,1.02
+There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.05,0.0,-0.01,1.04
 Enalapril,Nifedipine,ACEI,CCB,Minor,"Minor
 enalapril  NIFEdipine
 
@@ -273,7 +273,7 @@ Applies to: enalapril, nifedipine
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Enalapril is combined with Nifedipine.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Enalapril is combined with Nifedipine.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Diltiazem,ACEI,CCB,Minor,"Minor
 enalapril  dilTIAZem
 
@@ -281,7 +281,7 @@ Applies to: enalapril, diltiazem
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Diltiazem may increase the hypotensive activities of Enalapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Diltiazem may increase the hypotensive activities of Enalapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Verapamil,ACEI,CCB,Minor,"Minor
 enalapril  verapamil
 
@@ -289,7 +289,7 @@ Applies to: enalapril, verapamil
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Enalapril is combined with Verapamil.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Enalapril is combined with Verapamil.",Minor,0.75,0.05,0.0,-0.01,0.79
 Enalapril,Hydrochlorothiazide,ACEI,Diuretic,Moderate,"Moderate
 enalapril  hydroCHLOROthiazide
 
@@ -297,7 +297,7 @@ Applies to: enalapril, hydrochlorothiazide
 
 Although enalapril and hydroCHLOROthiazide are frequently combined together, their effects may be additive on lowering your blood pressure. You may need a dose adjustment or special tests to safely take both medications. Contact your doctor if you have a reduced heart rate, dizziness, fainting, or headaches. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.0,0.03,-0.01,0.52
+There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Enalapril,Indapamide,ACEI,Diuretic,Moderate,"Moderate
 enalapril  indapamide
 
@@ -313,16 +313,16 @@ Applies to: enalapril, amiloride
 
 Using enalapril together with aMILoride may increase the levels of potassium in your blood (hyperkalemia), especially if you are dehydrated or have kidney disease, diabetes, heart failure, or if you are an older adult. Hyperkalemia can cause symptoms such as weakness, confusion, numbness or tingling, and uneven heartbeats. If your doctor prescribes these medications together, you may need a dose adjustment or special tests to safely take both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of hyperkalemia can be increased when Amiloride is combined with Enalapril.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of hyperkalemia can be increased when Amiloride is combined with Enalapril.",Major,0.25,0.05,0.0,-0.01,0.29
 Lisinopril,Perindopril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Lisinopril is combined with Perindopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Lisinopril is combined with Perindopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Lisinopril,Ramipril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Ramipril is combined with Lisinopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Ramipril is combined with Lisinopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Lisinopril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Lisinopril is combined with Imidapril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Lisinopril is combined with Imidapril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Lisinopril,Candesartan,ACEI,ARB,Major,"Major
 lisinopril  candesartan
 
@@ -330,7 +330,7 @@ Applies to: lisinopril, candesartan
 
 Using lisinopril together with candesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Candesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Candesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Lisinopril,Irbesartan,ACEI,ARB,Major,"Major
 lisinopril  irbesartan
 
@@ -338,7 +338,7 @@ Applies to: lisinopril, irbesartan
 
 Using lisinopril together with irbesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Irbesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Irbesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Lisinopril,Losartan,ACEI,ARB,Major,"Major
 lisinopril  losartan
 
@@ -346,7 +346,7 @@ Applies to: lisinopril, losartan
 
 Using lisinopril together with losartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Losartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Losartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Lisinopril,Telmisartan,ACEI,ARB,Major,"Major
 lisinopril  telmisartan
 
@@ -354,7 +354,7 @@ Applies to: lisinopril, telmisartan
 
 Using lisinopril together with telmisartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Telmisartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Telmisartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Lisinopril,Valsartan,ACEI,ARB,Major,"Major
 lisinopril  valsartan
 
@@ -362,7 +362,7 @@ Applies to: lisinopril, valsartan
 
 Using lisinopril together with valsartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Valsartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Valsartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Lisinopril,Olmesartan,ACEI,ARB,Major,"Major
 lisinopril  olmesartan
 
@@ -370,28 +370,28 @@ Applies to: lisinopril, olmesartan
 
 Using lisinopril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Olmesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Lisinopril is combined with Olmesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Lisinopril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Lisinopril may increase the hypotensive activities of Acebutolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Lisinopril may increase the hypotensive activities of Acebutolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Atenolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Atenolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Betaxolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Betaxolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Bisoprolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Bisoprolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Metoprolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Metoprolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Lisinopril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Lisinopril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Propranolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Propranolol may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Amlodipine,ACEI,CCB,Minor,"Minor
 amLODIPine  lisinopril
 
@@ -399,7 +399,7 @@ Applies to: amlodipine, lisinopril
 
 Information for this minor interaction is available on the professional version.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.0,0.03,-0.01,0.77
+There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Felodipine,ACEI,CCB,Minor,"Minor
 felodipine  lisinopril
 
@@ -407,7 +407,7 @@ Applies to: felodipine, lisinopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Lisinopril may increase the hypotensive activities of Felodipine.",Minor,0.75,0.0,0.03,-0.01,0.77
+Lisinopril may increase the hypotensive activities of Felodipine.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Isradipine,ACEI,CCB,Minor,"Minor
 isradipine  lisinopril
 
@@ -415,10 +415,10 @@ Applies to: isradipine, lisinopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Isradipine may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Isradipine may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Lercanidipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Lercanidipine may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Lercanidipine may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Nifedipine,ACEI,CCB,Minor,"Minor
 NIFEdipine  lisinopril
 
@@ -426,7 +426,7 @@ Applies to: nifedipine, lisinopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Lisinopril is combined with Nifedipine.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Lisinopril is combined with Nifedipine.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Diltiazem,ACEI,CCB,Minor,"
 Minor
 dilTIAZem  lisinopril
@@ -434,7 +434,7 @@ Applies to: diltiazem, lisinopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Diltiazem may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Diltiazem may increase the hypotensive activities of Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Verapamil,ACEI,CCB,Minor,"Minor
 verapamil  lisinopril
 
@@ -442,7 +442,7 @@ Applies to: verapamil, lisinopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Verapamil is combined with Lisinopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Verapamil is combined with Lisinopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Lisinopril,Hydrochlorothiazide,ACEI,Diuretic,Moderate,"Moderate
 hydroCHLOROthiazide  lisinopril
 
@@ -450,7 +450,7 @@ Applies to: hydrochlorothiazide, lisinopril
 
 Although hydroCHLOROthiazide and lisinopril are frequently combined together, their effects may be additive on lowering your blood pressure. You may need a dose adjustment or special tests to safely take both medications. Contact your doctor if you have a reduced heart rate, dizziness, fainting, or headaches. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.0,0.03,-0.01,0.52
+There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Lisinopril,Indapamide,ACEI,Diuretic,Moderate,"Moderate
 indapamide  lisinopril
 
@@ -466,13 +466,13 @@ Applies to: amiloride, lisinopril
 
 Using lisinopril together with aMILoride may increase the levels of potassium in your blood (hyperkalemia), especially if you are dehydrated or have kidney disease, diabetes, heart failure, or if you are an older adult. Hyperkalemia can cause symptoms such as weakness, confusion, numbness or tingling, and uneven heartbeats. If your doctor prescribes these medications together, you may need a dose adjustment or special tests to safely take both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of hyperkalemia can be increased when Amiloride is combined with Lisinopril.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of hyperkalemia can be increased when Amiloride is combined with Lisinopril.",Major,0.25,0.05,0.0,-0.01,0.29
 Perindopril,Ramipril,ACEI,ACEI,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Ramipril is combined with Perindopril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Ramipril is combined with Perindopril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Perindopril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Perindopril is combined with Imidapril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Perindopril is combined with Imidapril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Perindopril,Candesartan,ACEI,ARB,Major,"Major
 candesartan  perindopril
 
@@ -480,7 +480,7 @@ Applies to: candesartan, perindopril
 
 Using perindopril together with candesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Candesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Candesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Perindopril,Irbesartan,ACEI,ARB,Major,"Major
 irbesartan  perindopril
 
@@ -488,7 +488,7 @@ Applies to: irbesartan, perindopril
 
 Using perindopril together with irbesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Irbesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Irbesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Perindopril,Losartan,ACEI,ARB,Major,"Major
 losartan  perindopril
 
@@ -496,7 +496,7 @@ Applies to: losartan, perindopril
 
 Using perindopril together with losartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Losartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Losartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Perindopril,Telmisartan,ACEI,ARB,Major,"Major
 telmisartan  perindopril
 
@@ -504,7 +504,7 @@ Applies to: telmisartan, perindopril
 
 Using perindopril together with telmisartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Telmisartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Telmisartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Perindopril,Valsartan,ACEI,ARB,Major,"Major
 valsartan  perindopril
 
@@ -512,7 +512,7 @@ Applies to: valsartan, perindopril
 
 Using perindopril together with valsartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Valsartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Valsartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Perindopril,Olmesartan,ACEI,ARB,Major,"Major
 perindopril  olmesartan
 
@@ -520,28 +520,28 @@ Applies to: perindopril, olmesartan
 
 Using perindopril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Olmesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Perindopril is combined with Olmesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Perindopril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Perindopril may increase the hypotensive activities of Acebutolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Perindopril may increase the hypotensive activities of Acebutolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Atenolol may increase the hypotensive activities of Perindopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Atenolol may increase the hypotensive activities of Perindopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Betaxolol may increase the hypotensive activities of Perindopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Betaxolol may increase the hypotensive activities of Perindopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.03,-0.01,1.02
+There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.05,0.0,-0.01,1.04
 Perindopril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Metoprolol may increase the hypotensive activities of Perindopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Metoprolol may increase the hypotensive activities of Perindopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Perindopril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Perindopril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Propranolol may increase the hypotensive activities of Perindopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Propranolol may increase the hypotensive activities of Perindopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Amlodipine,ACEI,CCB,Minor,"Minor
 amLODIPine  perindopril
 
@@ -549,7 +549,7 @@ Applies to: amlodipine, perindopril
 
 Information for this minor interaction is available on the professional version.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.0,0.03,-0.01,0.77
+There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Felodipine,ACEI,CCB,Minor,"Minor
 felodipine  perindopril
 
@@ -557,7 +557,7 @@ Applies to: felodipine, perindopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Perindopril may increase the hypotensive activities of Felodipine.",Minor,0.75,0.0,0.03,-0.01,0.77
+Perindopril may increase the hypotensive activities of Felodipine.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Isradipine,ACEI,CCB,Minor,"Minor
 isradipine  perindopril
 
@@ -565,10 +565,10 @@ Applies to: isradipine, perindopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Isradipine may increase the hypotensive activities of Perindopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Isradipine may increase the hypotensive activities of Perindopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Lercanidipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Lercanidipine may increase the hypotensive activities of Perindopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Lercanidipine may increase the hypotensive activities of Perindopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Nifedipine,ACEI,CCB,Minor,"Minor
 NIFEdipine  perindopril
 
@@ -576,14 +576,14 @@ Applies to: nifedipine, perindopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Perindopril is combined with Nifedipine.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Perindopril is combined with Nifedipine.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Diltiazem,ACEI,CCB,Minor,"Minor
 dilTIAZem  perindopril
 Applies to: diltiazem, perindopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Diltiazem may increase the hypotensive activities of Perindopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Diltiazem may increase the hypotensive activities of Perindopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Verapamil,ACEI,CCB,Minor,"Minor
 verapamil  perindopril
 
@@ -591,7 +591,7 @@ Applies to: verapamil, perindopril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Verapamil is combined with Perindopril.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Verapamil is combined with Perindopril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Perindopril,Hydrochlorothiazide,ACEI,Diuretic,Moderate,"
 Moderate
 hydroCHLOROthiazide  perindopril
@@ -599,7 +599,7 @@ Applies to: hydrochlorothiazide, perindopril
 
 Although hydroCHLOROthiazide and perindopril are frequently combined together, their effects may be additive on lowering your blood pressure. You may need a dose adjustment or special tests to safely take both medications. Contact your doctor if you have a reduced heart rate, dizziness, fainting, or headaches. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Perindopril can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The therapeutic efficacy of Perindopril can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Perindopril,Indapamide,ACEI,Diuretic,Moderate,"Moderate
 indapamide  perindopril
 
@@ -615,10 +615,10 @@ Applies to: amiloride, perindopril
 
 Using perindopril together with aMILoride may increase the levels of potassium in your blood (hyperkalemia), especially if you are dehydrated or have kidney disease, diabetes, heart failure, or if you are an older adult. Hyperkalemia can cause symptoms such as weakness, confusion, numbness or tingling, and uneven heartbeats. If your doctor prescribes these medications together, you may need a dose adjustment or special tests to safely take both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of hyperkalemia can be increased when Amiloride is combined with Perindopril.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of hyperkalemia can be increased when Amiloride is combined with Perindopril.",Major,0.25,0.05,0.0,-0.01,0.29
 Ramipril,Imidapril,ACEI,ACEI,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of angioedema can be increased when Ramipril is combined with Imidapril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of angioedema can be increased when Ramipril is combined with Imidapril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Ramipril,Candesartan,ACEI,ARB,Major,"Major
 ramipril  candesartan
 
@@ -626,7 +626,7 @@ Applies to: ramipril, candesartan
 
 Using ramipril together with candesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Candesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Candesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Ramipril,Irbesartan,ACEI,ARB,Major,"Major
 ramipril  irbesartan
 
@@ -634,7 +634,7 @@ Applies to: ramipril, irbesartan
 
 Using ramipril together with irbesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Irbesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Irbesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Ramipril,Losartan,ACEI,ARB,Major,"Major
 ramipril  losartan
 
@@ -642,7 +642,7 @@ Applies to: ramipril, losartan
 
 Using ramipril together with losartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Losartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Losartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Ramipril,Telmisartan,ACEI,ARB,Major,"Major
 ramipril  telmisartan
 
@@ -650,14 +650,14 @@ Applies to: ramipril, telmisartan
 
 Using ramipril together with telmisartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Major,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Telmisartan is combined with Ramipril.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of adverse effects can be increased when Telmisartan is combined with Ramipril.",Major,0.25,0.05,0.0,-0.01,0.29
 Ramipril,Valsartan,ACEI,ARB,Major,"Major
 ramipril  valsartan
 Applies to: ramipril, valsartan
 
 Using ramipril together with valsartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Valsartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Valsartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Ramipril,Olmesartan,ACEI,ARB,Major,"Major
 ramipril  olmesartan
 
@@ -665,28 +665,28 @@ Applies to: ramipril, olmesartan
 
 Using ramipril together with olmesartan may increase the risk of side effects such as low blood pressure, kidney function impairment, and a condition called hyperkalemia (high blood potassium). In severe cases, hyperkalemia can lead to kidney failure, muscle paralysis, irregular heart rhythm, and cardiac arrest. You may be more likely to develop hyperkalemia while taking these medications if you are elderly, dehydrated, or have kidney disease, diabetes, or advanced heart failure. Regular or long-term use of nonsteroidal anti-inflammatory drugs such as ibuprofen or naproxen may also increase your risk. It is important that you maintain adequate fluid intake during treatment with these medications. Talk to your doctor if you have any questions or concerns. Your doctor may already be aware of the risks, but has determined that this is the best course of treatment for you and has taken appropriate precautions and is monitoring you closely for any potential complications. In addition, ask your doctor if it is necessary for you to limit consumption of potassium-rich foods such as tomatoes, raisins, figs, potatoes, lima beans, bananas, plantains, papayas, pears, cantaloupes, mangoes, and potassium-containing salt substitutes. You should seek medical attention if you experience nausea, vomiting, weakness, confusion, tingling of the hands and feet, feelings of heaviness in the legs, a weak pulse, or a slow or irregular heartbeat, as these may be symptoms of hyperkalemia. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Olmesartan.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Ramipril is combined with Olmesartan.",Major,0.25,0.05,0.0,-0.01,0.29
 Ramipril,Acebutolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Acebutolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Acebutolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Atenolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Atenolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Atenolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Betaxolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Betaxolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Betaxolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Bisoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Bisoprolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Bisoprolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Metoprolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Metoprolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Metoprolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Nebivolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Nebivolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Propranolol,ACEI,Beta-Blocker,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Propranolol.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Propranolol.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Amlodipine,ACEI,CCB,Minor,"Minor
 amLODIPine  ramipril
 
@@ -694,7 +694,7 @@ Applies to: amlodipine, ramipril
 
 Information for this minor interaction is available on the professional version.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.0,0.03,-0.01,0.77
+There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Felodipine,ACEI,CCB,Minor,"Minor
 felodipine  ramipril
 
@@ -702,7 +702,7 @@ Applies to: felodipine, ramipril
 
 Information for this minor interaction is available on the professional version.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.0,0.03,-0.01,0.77
+There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Isradipine,ACEI,CCB,Minor,"Minor
 isradipine  ramipril
 
@@ -710,10 +710,10 @@ Applies to: isradipine, ramipril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Isradipine.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Isradipine.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Lercanidipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Lercanidipine.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Lercanidipine.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Nifedipine,ACEI,CCB,Minor,"Minor
 NIFEdipine  ramipril
 
@@ -721,7 +721,7 @@ Applies to: nifedipine, ramipril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Ramipril is combined with Nifedipine.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Ramipril is combined with Nifedipine.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Diltiazem,ACEI,CCB,Minor,"Minor
 dilTIAZem  ramipril
 
@@ -729,7 +729,7 @@ Applies to: diltiazem, ramipril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-Ramipril may increase the hypotensive activities of Diltiazem.",Minor,0.75,0.0,0.03,-0.01,0.77
+Ramipril may increase the hypotensive activities of Diltiazem.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Verapamil,ACEI,CCB,Minor,"Minor
 verapamil  ramipril
 
@@ -737,7 +737,7 @@ Applies to: verapamil, ramipril
 
 Information for this minor interaction is available on the professional version.",Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Ramipril is combined with Verapamil.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Ramipril is combined with Verapamil.",Minor,0.75,0.05,0.0,-0.01,0.79
 Ramipril,Hydrochlorothiazide,ACEI,Diuretic,Moderate,"Moderate
 hydroCHLOROthiazide  ramipril
 
@@ -745,7 +745,7 @@ Applies to: hydrochlorothiazide, ramipril
 
 Although hydroCHLOROthiazide and ramipril are frequently combined together, their effects may be additive on lowering your blood pressure. You may need a dose adjustment or special tests to safely take both medications. Contact your doctor if you have a reduced heart rate, dizziness, fainting, or headaches. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.0,0.03,-0.01,0.52
+There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Ramipril,Indapamide,ACEI,Diuretic,Moderate,"Moderate
 indapamide  ramipril
 
@@ -761,75 +761,75 @@ Applies to: amiloride, ramipril
 
 Using ramipril together with aMILoride may increase the levels of potassium in your blood (hyperkalemia), especially if you are dehydrated or have kidney disease, diabetes, heart failure, or if you are an older adult. Hyperkalemia can cause symptoms such as weakness, confusion, numbness or tingling, and uneven heartbeats. If your doctor prescribes these medications together, you may need a dose adjustment or special tests to safely take both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The risk or severity of hyperkalemia can be increased when Amiloride is combined with Ramipril.",Major,0.25,0.0,0.03,-0.01,0.27
+The risk or severity of hyperkalemia can be increased when Amiloride is combined with Ramipril.",Major,0.25,0.05,0.0,-0.01,0.29
 Imidapril,Candesartan,ACEI,ARB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Candesartan.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Candesartan.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Imidapril,Irbesartan,ACEI,ARB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Irbesartan.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Irbesartan.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Imidapril,Losartan,ACEI,ARB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Losartan.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Losartan.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Imidapril,Telmisartan,ACEI,ARB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Telmisartan.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Telmisartan.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Imidapril,Valsartan,ACEI,ARB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Valsartan.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Valsartan.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Imidapril,Olmesartan,ACEI,ARB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Olmesartan.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Imidapril is combined with Olmesartan.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Imidapril,Acebutolol,ACEI,Beta-Blocker,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Acebutolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Acebutolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Atenolol,ACEI,Beta-Blocker,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Atenolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Atenolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Betaxolol,ACEI,Beta-Blocker,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Betaxolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Betaxolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Bisoprolol,ACEI,Beta-Blocker,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Bisoprolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Bisoprolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Metoprolol,ACEI,Beta-Blocker,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Metoprolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Metoprolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Nebivolol,ACEI,Beta-Blocker,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Nebivolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Nebivolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Propranolol,ACEI,Beta-Blocker,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Propranolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Propranolol may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Amlodipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Amlodipine may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Amlodipine may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Felodipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Felodipine may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Felodipine may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Isradipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Isradipine may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Isradipine may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Lercanidipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Lercanidipine may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Lercanidipine may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Nifedipine,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Nifedipine is combined with Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Nifedipine is combined with Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Diltiazem,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-Diltiazem may increase the hypotensive activities of Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+Diltiazem may increase the hypotensive activities of Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Verapamil,ACEI,CCB,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Verapamil is combined with Imidapril.",Minor,0.75,0.0,0.03,-0.01,0.77
+The risk or severity of adverse effects can be increased when Verapamil is combined with Imidapril.",Minor,0.75,0.05,0.0,-0.01,0.79
 Imidapril,Hydrochlorothiazide,ACEI,Diuretic,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Imidapril can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The therapeutic efficacy of Imidapril can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Imidapril,Indapamide,ACEI,Diuretic,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
 The therapeutic efficacy of Indapamide can be increased when used in combination with Imidapril.",Moderate,0.5,0.05,0.03,-0.01,0.5700000000000001
 Imidapril,Amiloride,ACEI,Diuretic,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
-The risk or severity of hyperkalemia can be increased when Amiloride is combined with Imidapril.",Moderate,0.5,0.0,0.03,-0.01,0.52
+The risk or severity of hyperkalemia can be increased when Amiloride is combined with Imidapril.",Moderate,0.5,0.05,0.0,-0.01,0.54
 Candesartan,Irbesartan,ARB,ARB,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
 The risk or severity of renal failure, hypotension, and hyperkalemia can be increased when Irbesartan is combined with Candesartan.",Moderate,0.5,0.0,0.0,0.0,0.5
@@ -892,7 +892,7 @@ Candesartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions foun
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
 Candesartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Candesartan.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Candesartan.",Moderate,0.5,0.0,0.03,0.0,0.53
 Candesartan,Amiloride,ARB,Diuretic,Major,"Major
 aMILoride  candesartan
 
@@ -965,7 +965,7 @@ Irbesartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
 Irbesartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Irbesartan.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Irbesartan.",Moderate,0.5,0.0,0.03,0.0,0.53
 Irbesartan,Amiloride,ARB,Diuretic,Major,"Major
 aMILoride  irbesartan
 
@@ -1030,7 +1030,7 @@ Losartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found,,
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
 Losartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Losartan.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Losartan.",Moderate,0.5,0.0,0.03,0.0,0.53
 Losartan,Amiloride,ARB,Diuretic,Major,"Major
 aMILoride  losartan
 
@@ -1092,7 +1092,7 @@ Telmisartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions foun
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
 Telmisartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.05,0.0,0.0,1.05
+There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.03,0.0,1.03
 Telmisartan,Amiloride,ARB,Diuretic,Major,"Major
 aMILoride  telmisartan
 
@@ -1151,7 +1151,7 @@ Valsartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found,
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
 Valsartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.05,0.0,0.0,1.05
+There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.03,0.0,1.03
 Valsartan,Amiloride,ARB,Diuretic,Major,"Major
 aMILoride  valsartan
 
@@ -1207,7 +1207,7 @@ Olmesartan,Hydrochlorothiazide,ARB,Diuretic,None,No drug-drug interactions found
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
 Olmesartan,Indapamide,ARB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Olmesartan.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Olmesartan.",Moderate,0.5,0.0,0.03,0.0,0.53
 Olmesartan,Amiloride,ARB,Diuretic,Major,"Major
 aMILoride  olmesartan
 
@@ -1305,7 +1305,7 @@ Applies to: acebutolol, indapamide
 
 Using acebutolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Acebutolol.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Acebutolol.",Moderate,0.5,0.0,0.03,0.0,0.53
 Acebutolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Acebutolol.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1395,7 +1395,7 @@ Applies to: atenolol, indapamide
 
 Using atenolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.05,0.0,0.0,0.55
+There were no interactions found. It does not necessarily mean that no interactions exist.",Moderate,0.5,0.0,0.03,0.0,0.53
 Atenolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
@@ -1482,7 +1482,7 @@ Applies to: betaxolol, indapamide
 
 Using betaxolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Betaxolol.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Betaxolol.",Moderate,0.5,0.0,0.03,0.0,0.53
 Betaxolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Betaxolol is combined with Amiloride.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1576,7 +1576,7 @@ Applies to: indapamide, bisoprolol
 
 Using indapamide and bisoprolol together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Bisoprolol.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Bisoprolol.",Moderate,0.5,0.0,0.03,0.0,0.53
 Bisoprolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Bisoprolol.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1652,7 +1652,7 @@ Applies to: metoprolol, indapamide
 
 Using metoprolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Metoprolol.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Metoprolol.",Moderate,0.5,0.0,0.03,0.0,0.53
 Metoprolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Metoprolol is combined with Amiloride.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1725,7 +1725,7 @@ Applies to: indapamide, nebivolol
 
 Using indapamide and nebivolol together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Nebivolol.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Nebivolol.",Moderate,0.5,0.0,0.03,0.0,0.53
 Nebivolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Nebivolol.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1795,7 +1795,7 @@ Applies to: propranolol, indapamide
 
 Using propranolol and indapamide together may lower your blood pressure and slow your heart rate. This can cause dizziness, or feeling like you might pass out, weakness, fainting, fast or irregular heartbeats, or loss of blood glucose control. If you take both medications together, tell your doctor if you have any of these symptoms. You may need a dose adjustment or need your blood pressure checked more often to safely use both medications. It is important to tell your doctor about all other medications you use, including vitamins and herbs. Do not stop using any medications without first talking to your doctor.",Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Propranolol.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Propranolol.",Moderate,0.5,0.0,0.03,0.0,0.53
 Propranolol,Amiloride,Beta-Blocker,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Propranolol is combined with Amiloride.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1842,7 +1842,7 @@ Applies to: indapamide, amlodipine
 
 Information for this minor interaction is available on the professional version.",,"Warning: 
 
-There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.05,0.0,0.0,0.8
+There were no interactions found. It does not necessarily mean that no interactions exist.",Minor,0.75,0.0,0.03,0.0,0.78
 Amlodipine,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amlodipine is combined with Amiloride.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1871,7 +1871,7 @@ Felodipine,Hydrochlorothiazide,CCB,Diuretic,,Error: Could not find or click the 
 The therapeutic efficacy of Felodipine can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.0,0.0,0.0,0.5
 Felodipine,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Felodipine.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Felodipine.",Moderate,0.5,0.0,0.03,0.0,0.53
 Felodipine,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Felodipine.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1897,7 +1897,7 @@ Isradipine,Hydrochlorothiazide,CCB,Diuretic,None,No drug-drug interactions found
 The therapeutic efficacy of Isradipine can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.0,0.0,0.0,0.5
 Isradipine,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Isradipine.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Isradipine.",Moderate,0.5,0.0,0.03,0.0,0.53
 Isradipine,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Isradipine is combined with Amiloride.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1915,7 +1915,7 @@ Lercanidipine,Hydrochlorothiazide,CCB,Diuretic,,Error: Could not find or click t
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
 Lercanidipine,Indapamide,CCB,Diuretic,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Lercanidipine.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Lercanidipine.",Moderate,0.5,0.0,0.03,0.0,0.53
 Lercanidipine,Amiloride,CCB,Diuretic,,Error: Could not find or click the 'Check Interactions' button with selector: #interaction_list > div > a,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Lercanidipine is combined with Amiloride.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1935,7 +1935,7 @@ Nifedipine,Hydrochlorothiazide,CCB,Diuretic,,Error: Could not find or click the 
 The risk or severity of QTc prolongation can be increased when Hydrochlorothiazide is combined with Nifedipine.",Minor,0.75,0.0,0.0,0.0,0.75
 Nifedipine,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-The risk or severity of QTc prolongation can be increased when Indapamide is combined with Nifedipine.",Minor,0.75,0.05,0.0,0.0,0.8
+The risk or severity of QTc prolongation can be increased when Indapamide is combined with Nifedipine.",Minor,0.75,0.0,0.03,0.0,0.78
 Nifedipine,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Nifedipine.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1952,7 +1952,7 @@ Diltiazem,Hydrochlorothiazide,CCB,Diuretic,None,No drug-drug interactions found,
 The therapeutic efficacy of Diltiazem can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.0,0.0,0.0,0.5
 Diltiazem,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Diltiazem.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Diltiazem.",Moderate,0.5,0.0,0.03,0.0,0.53
 Diltiazem,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Diltiazem is combined with Amiloride.",Minor,0.75,0.0,0.0,0.0,0.75
@@ -1961,16 +1961,16 @@ Verapamil,Hydrochlorothiazide,CCB,Diuretic,None,No drug-drug interactions found,
 The risk or severity of adverse effects can be increased when Verapamil is combined with Hydrochlorothiazide.",Minor,0.75,0.0,0.0,0.0,0.75
 Verapamil,Indapamide,CCB,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The metabolism of Indapamide can be decreased when combined with Verapamil.",Moderate,0.5,0.05,0.0,0.0,0.55
+The metabolism of Indapamide can be decreased when combined with Verapamil.",Moderate,0.5,0.0,0.03,0.0,0.53
 Verapamil,Amiloride,CCB,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
 The risk or severity of adverse effects can be increased when Amiloride is combined with Verapamil.",Minor,0.75,0.0,0.0,0.0,0.75
 Hydrochlorothiazide,Indapamide,Diuretic,Diuretic,None,No drug-drug interactions found,Moderate,"DESCRIPTION
 
-The therapeutic efficacy of Indapamide can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.05,0.0,0.0,0.55
+The therapeutic efficacy of Indapamide can be increased when used in combination with Hydrochlorothiazide.",Moderate,0.5,0.0,0.03,0.0,0.53
 Hydrochlorothiazide,Amiloride,Diuretic,Diuretic,None,No drug-drug interactions found,,"Warning: 
 
 There were no interactions found. It does not necessarily mean that no interactions exist.",,1.0,0.0,0.0,0.0,1.0
 Indapamide,Amiloride,Diuretic,Diuretic,None,No drug-drug interactions found,Minor,"DESCRIPTION
 
-The risk or severity of adverse effects can be increased when Amiloride is combined with Indapamide.",Minor,0.75,0.05,0.0,0.0,0.8
+The risk or severity of adverse effects can be increased when Amiloride is combined with Indapamide.",Minor,0.75,0.0,0.03,0.0,0.78
