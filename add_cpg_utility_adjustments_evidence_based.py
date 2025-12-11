@@ -24,29 +24,33 @@ import sys
 from pathlib import Path
 
 # ==============================================================================
-# EVIDENCE-BASED UTILITY ADJUSTMENTS
+# EVIDENCE-BASED UTILITY ADJUSTMENTS (CORRECTED HIERARCHY)
 # ==============================================================================
 
-# TIER 1: OUTCOME SUPERIORITY (Highest Priority - Primary CV Outcomes)
-# Evidence: Roush et al. (2015) - Indapamide ~50% more potent than HCTZ
-# Clinical Goal: Cardiovascular event prevention
-OUTCOME_BONUS_INDAPAMIDE = 0.05
-
-# TIER 2: MORTALITY/EFFICACY (High Priority - Survival Benefit)
+# TIER 1: MORTALITY/EFFICACY (HIGHEST PRIORITY - Survival Benefit)
 # Evidence: Alcocer et al. (2023) - ACEIs significantly reduce all-cause mortality,
 #           MI, and CV death; ARBs show non-inferiority but no significant mortality reduction
 # Clinical Goal: Reduce mortality in high-risk patients
-EFFICACY_BONUS_ACEI = 0.03
+# Rationale: All-cause mortality is the ultimate "hard endpoint" in clinical medicine
+EFFICACY_BONUS_ACEI = 0.05
+
+# TIER 2: OUTCOME SUPERIORITY (High Priority - Primary CV Outcomes)
+# Evidence: Roush et al. (2015) - Indapamide ~50% more potent than HCTZ
+# Clinical Goal: Cardiovascular event prevention (stroke, MI, heart failure)
+# Rationale: Preventing morbidity is critical but secondary to preventing mortality
+OUTCOME_BONUS_INDAPAMIDE = 0.03
 
 # TIER 3: TOLERABILITY/ADHERENCE (Lower Priority - Long-term Compliance)
 # Evidence: Hu et al. (2023) - ACEI cough risk 3.2x higher than ARB
 #           Malaysian CPG - ARBs have lower incidence of cough than ACEIs
 # Clinical Goal: Improve long-term adherence
+# Rationale: Adherence issues are important but not immediately life-threatening
 TOLERABILITY_PENALTY_ACEI = -0.01
 
 # NET EFFECT FOR ACEI CLASS:
-# ACEI Total Utility = Efficacy Bonus (+0.03) + Tolerability Penalty (-0.01) = +0.02
-# Interpretation: Mortality benefit outweighs adherence risk for complicated hypertensive patients
+# ACEI Total Utility = Efficacy Bonus (+0.05) + Tolerability Penalty (-0.01) = +0.04
+# Interpretation: Substantial mortality benefit outweighs adherence risk for complicated hypertensive patients
+#                 ACEIs are the "gold standard" for high-risk patients (survival priority)
 
 # ==============================================================================
 # UTILITY FUNCTIONS
@@ -66,10 +70,10 @@ def calculate_cpg_adjustments(df):
     """
     Calculate evidence-based CPG utility adjustments for each drug pair.
 
-    Three-Tier Scoring Hierarchy:
-    1. Outcome Superiority (Diuretics) - Primary CV outcomes
-    2. Mortality/Efficacy (ACEI) - Survival benefit
-    3. Tolerability (ACEI) - Adherence risk
+    Three-Tier Scoring Hierarchy (CORRECTED):
+    1. Mortality/Efficacy (ACEI) - HIGHEST: Survival benefit (all-cause mortality)
+    2. Outcome Superiority (Diuretics) - HIGH: Primary CV outcomes (events)
+    3. Tolerability (ACEI) - LOWER: Adherence risk (cough)
 
     Args:
         df: DataFrame with drug interaction data
@@ -82,31 +86,33 @@ def calculate_cpg_adjustments(df):
     print("="*80)
 
     # -------------------------------------------------------------------------
-    # TIER 1: OUTCOME SUPERIORITY (Diuretics)
+    # TIER 1: MORTALITY/EFFICACY (ACEI vs ARB) - HIGHEST PRIORITY
     # -------------------------------------------------------------------------
-    print("\nTIER 1: Outcome Superiority (Cardiovascular Event Prevention)")
-    print("-" * 80)
-    print(f"Adjustment: +{OUTCOME_BONUS_INDAPAMIDE} for pairs containing Indapamide")
-    print("Evidence: Roush et al. (2015) - Indapamide superior to HCTZ")
-    print("          ~50% more potent with no added metabolic risk")
-
-    df['CPG_Outcome_Bonus'] = df.apply(
-        lambda row: OUTCOME_BONUS_INDAPAMIDE if check_drug_in_pair(row, 'Indapamide') else 0.0,
-        axis=1
-    )
-
-    # -------------------------------------------------------------------------
-    # TIER 2: MORTALITY/EFFICACY (ACEI vs ARB)
-    # -------------------------------------------------------------------------
-    print("\nTIER 2: Mortality/Efficacy Benefit (Survival Outcomes)")
+    print("\nTIER 1: Mortality/Efficacy Benefit (HIGHEST PRIORITY - Survival)")
     print("-" * 80)
     print(f"Adjustment: +{EFFICACY_BONUS_ACEI} for pairs containing ACEI")
     print("Evidence: Alcocer et al. (2023) - ACEIs reduce all-cause mortality,")
     print("          MI, and CV death; ARBs show non-inferiority but no")
     print("          significant mortality reduction vs placebo")
+    print("Rationale: All-cause mortality is the ultimate 'hard endpoint'")
 
     df['CPG_Efficacy_Bonus'] = df.apply(
         lambda row: EFFICACY_BONUS_ACEI if check_class_in_pair(row, 'ACEI') else 0.0,
+        axis=1
+    )
+
+    # -------------------------------------------------------------------------
+    # TIER 2: OUTCOME SUPERIORITY (Diuretics) - HIGH PRIORITY
+    # -------------------------------------------------------------------------
+    print("\nTIER 2: Outcome Superiority (HIGH PRIORITY - CV Event Prevention)")
+    print("-" * 80)
+    print(f"Adjustment: +{OUTCOME_BONUS_INDAPAMIDE} for pairs containing Indapamide")
+    print("Evidence: Roush et al. (2015) - Indapamide superior to HCTZ")
+    print("          ~50% more potent with no added metabolic risk")
+    print("Rationale: Preventing morbidity is critical but secondary to survival")
+
+    df['CPG_Outcome_Bonus'] = df.apply(
+        lambda row: OUTCOME_BONUS_INDAPAMIDE if check_drug_in_pair(row, 'Indapamide') else 0.0,
         axis=1
     )
 
@@ -129,13 +135,14 @@ def calculate_cpg_adjustments(df):
     # -------------------------------------------------------------------------
     print("\nCalculating Total Adjusted Risk Score...")
     print("-" * 80)
-    print("Formula: Adjusted_Score = Base_Risk_Score + Outcome_Bonus + ")
-    print("                          Efficacy_Bonus + Tolerability_Penalty")
+    print("Formula: Adjusted_Score = Base_Risk_Score + Efficacy_Bonus + ")
+    print("                          Outcome_Bonus + Tolerability_Penalty")
     print()
     print("For ACEI pairs:")
-    print(f"  Net ACEI Adjustment = {EFFICACY_BONUS_ACEI} (efficacy) + {TOLERABILITY_PENALTY_ACEI} (tolerability)")
+    print(f"  Net ACEI Adjustment = {EFFICACY_BONUS_ACEI} (mortality benefit) + {TOLERABILITY_PENALTY_ACEI} (cough risk)")
     print(f"                      = +{EFFICACY_BONUS_ACEI + TOLERABILITY_PENALTY_ACEI}")
-    print("  Interpretation: Mortality benefit outweighs adherence risk")
+    print("  Interpretation: SUBSTANTIAL mortality benefit outweighs adherence risk")
+    print("                  ACEIs are the 'gold standard' for high-risk patients")
 
     df['CPG_Adjusted_Risk_Score'] = (
         df['Risk_Score'] +
@@ -188,24 +195,28 @@ def main():
 
     # Generate summary statistics
     print("\n" + "="*80)
-    print("ADJUSTMENT SUMMARY")
+    print("ADJUSTMENT SUMMARY (CORRECTED HIERARCHY)")
     print("="*80)
 
-    print(f"\nTIER 1: Outcome Superiority (Indapamide)")
-    print(f"  Bonus: +{OUTCOME_BONUS_INDAPAMIDE}")
-    print(f"  Pairs affected: {(df['CPG_Outcome_Bonus'] > 0).sum()}")
-
-    print(f"\nTIER 2: Mortality/Efficacy (ACEI)")
+    print(f"\nTIER 1: Mortality/Efficacy (ACEI) - HIGHEST PRIORITY")
     print(f"  Bonus: +{EFFICACY_BONUS_ACEI}")
     print(f"  Pairs affected: {(df['CPG_Efficacy_Bonus'] > 0).sum()}")
+    print(f"  Evidence: All-cause mortality reduction (Alcocer 2023)")
 
-    print(f"\nTIER 3: Tolerability/Adherence (ACEI)")
+    print(f"\nTIER 2: Outcome Superiority (Indapamide) - HIGH PRIORITY")
+    print(f"  Bonus: +{OUTCOME_BONUS_INDAPAMIDE}")
+    print(f"  Pairs affected: {(df['CPG_Outcome_Bonus'] > 0).sum()}")
+    print(f"  Evidence: CV event prevention (Roush 2015)")
+
+    print(f"\nTIER 3: Tolerability/Adherence (ACEI) - LOWER PRIORITY")
     print(f"  Penalty: {TOLERABILITY_PENALTY_ACEI}")
     print(f"  Pairs affected: {(df['CPG_Tolerability_Penalty'] < 0).sum()}")
+    print(f"  Evidence: Cough risk (Hu 2023)")
 
     print(f"\nNET EFFECT FOR ACEI CLASS:")
     print(f"  Total Adjustment: {EFFICACY_BONUS_ACEI} + {TOLERABILITY_PENALTY_ACEI} = {EFFICACY_BONUS_ACEI + TOLERABILITY_PENALTY_ACEI:+.2f}")
-    print(f"  Interpretation: Mortality benefit outweighs adherence risk")
+    print(f"  Interpretation: SUBSTANTIAL mortality benefit outweighs adherence risk")
+    print(f"                  ACEIs are the 'gold standard' for high-risk patients")
 
     print("\nRISK SCORE STATISTICS")
     print(f"  Original Risk Score range: [{df['Risk_Score'].min():.2f}, {df['Risk_Score'].max():.2f}]")
