@@ -26,12 +26,16 @@ def create_markdown_cell(text):
 
 def create_code_cell(code):
     """Create a code cell"""
+    # Ensure code is properly formatted as a list
+    if isinstance(code, str):
+        code = [code]
+
     return {
         "cell_type": "code",
         "execution_count": None,
         "metadata": {},
         "outputs": [],
-        "source": [code]
+        "source": code
     }
 
 def add_part2_to_notebook(notebook_path, model_name):
