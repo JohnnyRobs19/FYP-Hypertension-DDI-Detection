@@ -1,62 +1,62 @@
 """
-Part 2: Safer Medication Pathway Recommendation
-Cells to add to Decision_Tree_DDI_Analysis_and_Training.ipynb
+Part 2: Knowledge-Driven Safer Medication Pathway Recommendation (XAI Framework)
+Cells to add to Decision_Tree_DDI_Analysis_and_Training.ipynb,
+Random_Forest_DDI_Analysis_and_Training.ipynb, and XGBoost_DDI_Analysis_and_Training.ipynb
 
-Copy these cells into your Jupyter notebook after the Part 1 sections.
+Section 3.5.4: Knowledge-Driven Explainability (XAI) Framework
 """
 
 # ==============================================================================
-# CELL: Load CPG-Adjusted Dataset
+# CELL: Load XAI-Enhanced Dataset
 # ==============================================================================
-CELL_LOAD_CPG = """
-# Load dataset with CPG adjustments
-df_cpg = pd.read_csv('FYP_Drug_Interaction_Final.csv')
+CELL_LOAD_XAI = """
+# Load dataset with XAI Framework (Knowledge-Driven Explainability)
+df_xai = pd.read_csv('FYP_Drug_Interaction_Final.csv')
 
 print("="*80)
-print("CPG-ADJUSTED DATASET LOADED")
+print("KNOWLEDGE-DRIVEN XAI FRAMEWORK DATASET LOADED")
+print("Section 3.5.4: Knowledge-Driven Explainability (XAI) Framework")
 print("="*80)
-print(f"\\nTotal drug pairs: {len(df_cpg)}")
-print(f"\\nCPG columns available:")
-cpg_cols = [col for col in df_cpg.columns if 'CPG' in col]
-for col in cpg_cols:
+print(f"\\nTotal drug pairs: {len(df_xai)}")
+print(f"\\nXAI columns available:")
+xai_cols = [col for col in df_xai.columns if 'XAI' in col]
+for col in xai_cols:
     print(f"  - {col}")
 
-# Show CPG adjustment statistics (Section 3.5.4 wording)
+# Show XAI rule coverage statistics
 print(f"\\n{'='*80}")
-print("CPG ADJUSTMENT STATISTICS (Section 3.5.4)")
-print("Hierarchy: Mortality > Morbidity > Adherence")
+print("XAI RULE COVERAGE STATISTICS")
 print("="*80)
 
-print(f"\\nTIER 1: Mortality Benefit (ACEI) - HIGHEST PRIORITY")
-print(f"  Bonus: +0.05")
-print(f"  Pairs affected: {(df_cpg['CPG_Efficacy_Bonus'] > 0).sum()}")
-print(f"  Evidence: Alcocer et al. (2023)")
-print(f"  Justification: Preventing mortality is the ultimate goal of pharmacotherapy")
+rule_a_count = (df_xai['XAI_Rule_A_Mortality'] != "").sum()
+rule_b_count = (df_xai['XAI_Rule_B_Tolerability'] != "").sum()
+rule_c_count = (df_xai['XAI_Rule_C_CCB_RAAS_Combo'] != "").sum()
+rule_d_count = (df_xai['XAI_Rule_D_Diuretic'] != "").sum()
+rule_e_count = (df_xai['XAI_Rule_E_BetaBlocker'] != "").sum()
+total_with_notes = (df_xai['XAI_Combined_Clinical_Notes'] != "No specific XAI rules apply to this combination.").sum()
 
-print(f"\\nTIER 2: Outcome Superiority (Indapamide) - HIGH PRIORITY")
-print(f"  Bonus: +0.03")
-print(f"  Pairs affected: {(df_cpg['CPG_Outcome_Bonus'] > 0).sum()}")
-print(f"  Evidence: Roush et al. (2015)")
-print(f"  Justification: Preventing morbidity is critical but secondary to survival")
-print(f"  Note: Chlorthalidone would receive same bonus if added to dataset")
+print(f"\\nRule A (ACEI vs ARB Mortality):     {rule_a_count} pairs ({rule_a_count/len(df_xai)*100:.1f}%)")
+print(f"  Evidence: Alcoer et al. (2023)")
+print(f"  Focus: ACEIs reduce all-cause mortality; ARBs do not")
 
-print(f"\\nTIER 3: Tolerability & Adherence (ACEI) - LOWER PRIORITY")
-print(f"  Penalty: -0.01")
-print(f"  Pairs affected: {(df_cpg['CPG_Tolerability_Penalty'] < 0).sum()}")
-print(f"  Evidence: Hu et al. (2023), Ministry of Health Malaysia (2018), Dicpinigaitis (2006)")
-print(f"  Justification: Reflects quality of life rather than immediate safety")
+print(f"\\nRule B (ACEI Tolerability):         {rule_b_count} pairs ({rule_b_count/len(df_xai)*100:.1f}%)")
+print(f"  Evidence: Hu et al. (2023), ACCP Guidelines (2006)")
+print(f"  Focus: ACEIs have 3.2x higher cough risk vs ARBs")
 
-print(f"\\nNET EFFECT FOR ACEIs:")
-if (df_cpg['CPG_Efficacy_Bonus'] > 0).sum() > 0:
-    acei_sample = df_cpg[df_cpg['CPG_Efficacy_Bonus'] > 0].iloc[0]
-    net_acei = acei_sample['CPG_Efficacy_Bonus'] + acei_sample['CPG_Tolerability_Penalty']
-    print(f"  Formula: +0.05 (mortality) + (-0.01) (cough) = {net_acei:+.2f}")
-    print(f"  Interpretation:")
-    print(f"    The substantial mortality benefit (+0.05) significantly outweighs the")
-    print(f"    adherence risk (-0.01), resulting in a net positive utility (+0.04) that")
-    print(f"    correctly identifies ACEIs as the 'gold standard' for high-risk patient survival.")
+print(f"\\nRule C (CCB+RAAS Combination):      {rule_c_count} pairs ({rule_c_count/len(df_xai)*100:.1f}%)")
+print(f"  Evidence: Makani et al. (2011), De la Sierra (2009)")
+print(f"  Focus: CCB+RAAS reduces peripheral edema by 38%")
 
-print(f"\\nAdjusted Risk Score range: [{df_cpg['CPG_Adjusted_Risk_Score'].min():.2f}, {df_cpg['CPG_Adjusted_Risk_Score'].max():.2f}]")
+print(f"\\nRule D (Diuretic Efficacy):         {rule_d_count} pairs ({rule_d_count/len(df_xai)*100:.1f}%)")
+print(f"  Evidence: Roush et al. (2015), Mishra (2016), Burnier et al. (2019)")
+print(f"  Focus: Indapamide superior to HCTZ for mortality/stroke")
+
+print(f"\\nRule E (Beta-Blocker Phenotype):    {rule_e_count} pairs ({rule_e_count/len(df_xai)*100:.1f}%)")
+print(f"  Evidence: Mahfoud et al. (2024), Mancia et al. (2022)")
+print(f"  Focus: Beta-blockers target high heart rate phenotype")
+
+print(f"\\nTotal pairs with clinical context:  {total_with_notes} pairs ({total_with_notes/len(df_xai)*100:.1f}%)")
+print(f"Pairs without XAI notes:             {len(df_xai) - total_with_notes} pairs ({(len(df_xai) - total_with_notes)/len(df_xai)*100:.1f}%)")
 """
 
 # ==============================================================================
@@ -84,6 +84,7 @@ for severity, score in sorted(SEVERITY_TO_RISK.items(), key=lambda x: x[1]):
 # ==============================================================================
 # CELL: Generate Predictions for All Pairs
 # ==============================================================================
+# Note: This cell is generic and works with dt_model, rf_model, or xgb_model
 CELL_PREDICTIONS = """
 # Generate predictions for all drug pairs using trained model
 print("="*80)
@@ -91,13 +92,13 @@ print("GENERATING PREDICTIONS FOR ALL DRUG PAIRS")
 print("="*80)
 
 # Filter to pairs with Final_Severity (same as training data)
-df_cpg_valid = df_cpg[df_cpg['Final_Severity'].notna()].copy()
+df_xai_valid = df_xai[df_xai['Final_Severity'].notna()].copy()
 
-print(f"\\nPredicting for {len(df_cpg_valid)} drug pairs...")
+print(f"\\nPredicting for {len(df_xai_valid)} drug pairs...")
 
 # Prepare features (same as training)
-features_cpg = ['Drug_A_Name', 'Drug_B_Name', 'Drug_A_Class', 'Drug_B_Class']
-X_all = pd.get_dummies(df_cpg_valid[features_cpg], drop_first=False)
+features_xai = ['Drug_A_Name', 'Drug_B_Name', 'Drug_A_Class', 'Drug_B_Class']
+X_all = pd.get_dummies(df_xai_valid[features_xai], drop_first=False)
 
 # Ensure same feature columns as training
 missing_cols = set(X.columns) - set(X_all.columns)
@@ -105,84 +106,101 @@ for col in missing_cols:
     X_all[col] = 0
 X_all = X_all[X.columns]  # Ensure same order
 
-# Generate predictions
-y_pred_all = dt_model.predict(X_all)
+# Generate predictions (works with dt_model, rf_model, or xgb_model)
+# Determine which model to use based on what's available
+if 'dt_model' in globals() or 'dt_model' in locals():
+    model_to_use = dt_model
+    model_name = "Decision Tree"
+elif 'rf_model' in globals() or 'rf_model' in locals():
+    model_to_use = rf_model
+    model_name = "Random Forest"
+elif 'xgb_model' in globals() or 'xgb_model' in locals():
+    model_to_use = xgb_model
+    model_name = "XGBoost"
+else:
+    raise ValueError("No trained model found! Expected dt_model, rf_model, or xgb_model")
+
+print(f"Using {model_name} model for predictions...")
+
+y_pred_all = model_to_use.predict(X_all)
 predicted_severities = [target_classes[i] for i in y_pred_all]
 
 # Add predictions to dataframe
-df_cpg_valid['Predicted_Severity'] = predicted_severities
+df_xai_valid['Predicted_Severity'] = predicted_severities
 
 # Convert predictions to risk scores
-df_cpg_valid['Predicted_Risk_Score'] = df_cpg_valid['Predicted_Severity'].map(SEVERITY_TO_RISK)
+df_xai_valid['Predicted_Risk_Score'] = df_xai_valid['Predicted_Severity'].map(SEVERITY_TO_RISK)
 
 print("✓ Predictions complete!")
 
 # Show prediction distribution
-pred_dist = df_cpg_valid['Predicted_Severity'].value_counts().sort_index()
+pred_dist = df_xai_valid['Predicted_Severity'].value_counts().sort_index()
 print(f"\\nPredicted severity distribution:")
 for sev, count in pred_dist.items():
-    print(f"  {sev:12s}: {count:3d} pairs ({count/len(df_cpg_valid)*100:5.1f}%)")
+    print(f"  {sev:12s}: {count:3d} pairs ({count/len(df_xai_valid)*100:5.1f}%)")
 """
 
 # ==============================================================================
-# CELL: Apply CPG Adjustments to Create Final Scores
+# CELL: Display XAI Clinical Context for Predictions
 # ==============================================================================
-CELL_APPLY_CPG = """
-# Calculate final pathway scores (Predicted Risk + CPG Adjustments)
+CELL_XAI_CONTEXT = """
+# Display XAI clinical context alongside predictions
 print("="*80)
-print("APPLYING CPG ADJUSTMENTS TO PREDICTIONS")
+print("INTEGRATING XAI CLINICAL CONTEXT WITH PREDICTIONS")
+print("Section 3.5.4: Knowledge-Driven Explainability Framework")
 print("="*80)
 
-# Final Pathway Score = Predicted Risk Score + CPG Adjustments (Section 3.5.4)
-df_cpg_valid['Pathway_Score'] = (
-    df_cpg_valid['Predicted_Risk_Score'] +
-    df_cpg_valid['CPG_Efficacy_Bonus'] +
-    df_cpg_valid['CPG_Outcome_Bonus'] +
-    df_cpg_valid['CPG_Tolerability_Penalty']
+print(f"\\nApproach:")
+print("  1. ML Model predicts DDI severity (Major/Moderate/Minor)")
+print("  2. XAI Framework provides evidence-based clinical context")
+print("  3. Combined output guides safer prescribing decisions")
+
+# Count predictions by XAI rule applicability
+print(f"\\n{'='*80}")
+print("PREDICTIONS WITH XAI CONTEXT")
+print("="*80)
+
+# Show examples of predictions enhanced with XAI
+print(f"\\nExample 1: ACEI + CCB Combination (Rule A, B, C apply)")
+acei_ccb_example = df_xai_valid[
+    ((df_xai_valid['Drug_A_Class'] == 'ACEI') & (df_xai_valid['Drug_B_Class'] == 'CCB')) |
+    ((df_xai_valid['Drug_A_Class'] == 'CCB') & (df_xai_valid['Drug_B_Class'] == 'ACEI'))
+].head(1)
+
+if not acei_ccb_example.empty:
+    row = acei_ccb_example.iloc[0]
+    print(f"  Pair: {row['Drug_A_Name']} + {row['Drug_B_Name']}")
+    print(f"  Predicted Severity: {row['Predicted_Severity']} (Risk Score: {row['Predicted_Risk_Score']:.2f})")
+    print(f"\\n  XAI Clinical Context:")
+    if row['XAI_Rule_C_CCB_RAAS_Combo']:
+        print(f"    • {row['XAI_Rule_C_CCB_RAAS_Combo'][:150]}...")
+
+print(f"\\nExample 2: Diuretic Selection (Rule D applies)")
+indapamide_example = df_xai_valid[
+    (df_xai_valid['Drug_A_Name'] == 'Indapamide') | (df_xai_valid['Drug_B_Name'] == 'Indapamide')
+].head(1)
+
+if not indapamide_example.empty:
+    row = indapamide_example.iloc[0]
+    print(f"  Pair: {row['Drug_A_Name']} + {row['Drug_B_Name']}")
+    print(f"  Predicted Severity: {row['Predicted_Severity']} (Risk Score: {row['Predicted_Risk_Score']:.2f})")
+    print(f"\\n  XAI Clinical Context:")
+    if row['XAI_Rule_D_Diuretic']:
+        print(f"    • {row['XAI_Rule_D_Diuretic'][:150]}...")
+
+# Statistics on XAI coverage across predictions
+print(f"\\n{'='*80}")
+print("XAI COVERAGE FOR PREDICTED PAIRS")
+print("="*80)
+
+severity_by_xai = df_xai_valid.groupby('Predicted_Severity').apply(
+    lambda x: (x['XAI_Combined_Clinical_Notes'] != "No specific XAI rules apply to this combination.").sum()
 )
 
-print("\\nFormula (Section 3.5.4):")
-print("  Pathway_Score = Predicted_Risk_Score + ")
-print("                  Mortality_Bonus (Tier 1) + ")
-print("                  Outcome_Bonus (Tier 2) + ")
-print("                  Tolerability_Penalty (Tier 3)")
-
-print(f"\\nPathway Score range: [{df_cpg_valid['Pathway_Score'].min():.2f}, {df_cpg_valid['Pathway_Score'].max():.2f}]")
-print("  (Higher score = Safer combination)")
-
-# Show example comparisons
-print(f"\\n{'='*80}")
-print("EXAMPLE: How CPG Adjustments Change Rankings (Section 3.5.4)")
-print("="*80)
-
-# Example: ACEI + CCB vs ARB + CCB
-acei_ccb_mask = ((df_cpg_valid['Drug_A_Class'] == 'ACEI') & (df_cpg_valid['Drug_B_Class'] == 'CCB')) | ((df_cpg_valid['Drug_A_Class'] == 'CCB') & (df_cpg_valid['Drug_B_Class'] == 'ACEI'))
-arb_ccb_mask = ((df_cpg_valid['Drug_A_Class'] == 'ARB') & (df_cpg_valid['Drug_B_Class'] == 'CCB')) | ((df_cpg_valid['Drug_A_Class'] == 'CCB') & (df_cpg_valid['Drug_B_Class'] == 'ARB'))
-
-if acei_ccb_mask.sum() > 0 and arb_ccb_mask.sum() > 0:
-    acei_ccb_ex = df_cpg_valid[acei_ccb_mask].iloc[0]
-    arb_ccb_ex = df_cpg_valid[arb_ccb_mask].iloc[0]
-
-    print("\\nComparison: ACEI+CCB vs ARB+CCB")
-    print(f"\\n{acei_ccb_ex['Drug_A_Name']} + {acei_ccb_ex['Drug_B_Name']} (ACEI + CCB):")
-    print(f"  Predicted Risk Score: {acei_ccb_ex['Predicted_Risk_Score']:.2f}")
-    cpg_adjustment = acei_ccb_ex['CPG_Efficacy_Bonus'] + acei_ccb_ex['CPG_Tolerability_Penalty']
-    print(f"  + Tier 1 (Mortality):   +{acei_ccb_ex['CPG_Efficacy_Bonus']:.2f}")
-    print(f"  + Tier 3 (Tolerability): {acei_ccb_ex['CPG_Tolerability_Penalty']:.2f}")
-    print(f"  = Net CPG Adjustment:   {cpg_adjustment:+.2f}")
-    print(f"  = Pathway Score:        {acei_ccb_ex['Pathway_Score']:.2f}")
-
-    print(f"\\n{arb_ccb_ex['Drug_A_Name']} + {arb_ccb_ex['Drug_B_Name']} (ARB + CCB):")
-    print(f"  Predicted Risk Score: {arb_ccb_ex['Predicted_Risk_Score']:.2f}")
-    cpg_adjustment = arb_ccb_ex['CPG_Outcome_Bonus'] + arb_ccb_ex['CPG_Efficacy_Bonus'] + arb_ccb_ex['CPG_Tolerability_Penalty']
-    print(f"  + CPG Adjustments:    {cpg_adjustment:+.2f} (ARB has no mortality benefit)")
-    print(f"  = Pathway Score:      {arb_ccb_ex['Pathway_Score']:.2f}")
-
-    diff = acei_ccb_ex['Pathway_Score'] - arb_ccb_ex['Pathway_Score']
-    if diff > 0:
-        print(f"\\nResult: ACEI combo preferred by {diff:+.2f} points")
-        print(f"Rationale: Substantial mortality benefit (+0.05) outweighs adherence risk (-0.01)")
-        print(f"          ACEIs are the 'gold standard' for high-risk patient survival")
+print(f"\\nPairs with XAI clinical notes by predicted severity:")
+for sev, count in severity_by_xai.items():
+    total_sev = (df_xai_valid['Predicted_Severity'] == sev).sum()
+    print(f"  {sev:12s}: {count}/{total_sev} pairs ({count/total_sev*100:.1f}% with XAI context)")
 """
 
 # ==============================================================================
@@ -192,22 +210,23 @@ CELL_SCENARIO_1 = """
 # Clinical Scenario 1: Patient needs ACEI/ARB + CCB combination therapy
 print("="*80)
 print("CLINICAL SCENARIO 1: ACEI/ARB + CCB COMBINATION THERAPY")
+print("Knowledge-Driven Recommendation (XAI Rules A, B, C)")
 print("="*80)
 print("\\nClinical Context:")
 print("  Patient requires combination therapy:")
-print("  - Either ACEI or ARB (for BP control)")
+print("  - Either ACEI or ARB (for RAAS blockade)")
 print("  - Plus CCB (for additional BP lowering)")
-print("\\nQuestion: Which combination is safest?")
+print("\\nQuestion: Which combination is safest AND most effective?")
 
 # Filter to ACEI+CCB and ARB+CCB combinations
-acei_ccb = df_cpg_valid[
-    ((df_cpg_valid['Drug_A_Class'] == 'ACEI') & (df_cpg_valid['Drug_B_Class'] == 'CCB')) |
-    ((df_cpg_valid['Drug_A_Class'] == 'CCB') & (df_cpg_valid['Drug_B_Class'] == 'ACEI'))
+acei_ccb = df_xai_valid[
+    ((df_xai_valid['Drug_A_Class'] == 'ACEI') & (df_xai_valid['Drug_B_Class'] == 'CCB')) |
+    ((df_xai_valid['Drug_A_Class'] == 'CCB') & (df_xai_valid['Drug_B_Class'] == 'ACEI'))
 ].copy()
 
-arb_ccb = df_cpg_valid[
-    ((df_cpg_valid['Drug_A_Class'] == 'ARB') & (df_cpg_valid['Drug_B_Class'] == 'CCB')) |
-    ((df_cpg_valid['Drug_A_Class'] == 'CCB') & (df_cpg_valid['Drug_B_Class'] == 'ARB'))
+arb_ccb = df_xai_valid[
+    ((df_xai_valid['Drug_A_Class'] == 'ARB') & (df_xai_valid['Drug_B_Class'] == 'CCB')) |
+    ((df_xai_valid['Drug_A_Class'] == 'CCB') & (df_xai_valid['Drug_B_Class'] == 'ARB'))
 ].copy()
 
 # Standardize drug pair names for display
@@ -218,36 +237,55 @@ def format_pair(row):
 acei_ccb['Pair'] = acei_ccb.apply(format_pair, axis=1)
 arb_ccb['Pair'] = arb_ccb.apply(format_pair, axis=1)
 
-# Rank by Pathway Score
-acei_ccb_ranked = acei_ccb.sort_values('Pathway_Score', ascending=False).head(5)
-arb_ccb_ranked = arb_ccb.sort_values('Pathway_Score', ascending=False).head(5)
+# Rank by Predicted Risk Score (lower risk = higher score)
+acei_ccb_ranked = acei_ccb.sort_values('Predicted_Risk_Score', ascending=False).head(5)
+arb_ccb_ranked = arb_ccb.sort_values('Predicted_Risk_Score', ascending=False).head(5)
 
 print(f"\\n{'='*80}")
-print("TOP 5 ACEI + CCB COMBINATIONS (Ranked by Safety)")
+print("TOP 5 ACEI + CCB COMBINATIONS (Ranked by ML Prediction)")
 print("="*80)
-print(f"{'Rank':<6} {'Combination':<35} {'Predicted':<12} {'Pathway Score':<15}")
-print("-" * 68)
+print(f"{'Rank':<6} {'Combination':<35} {'Predicted':<12} {'Risk Score':<12}")
+print("-" * 65)
 for rank, (idx, row) in enumerate(acei_ccb_ranked.iterrows(), 1):
-    print(f"{rank:<6} {row['Pair']:<35} {row['Predicted_Severity']:<12} {row['Pathway_Score']:<15.2f}")
+    print(f"{rank:<6} {row['Pair']:<35} {row['Predicted_Severity']:<12} {row['Predicted_Risk_Score']:<12.2f}")
 
 print(f"\\n{'='*80}")
-print("TOP 5 ARB + CCB COMBINATIONS (Ranked by Safety)")
+print("TOP 5 ARB + CCB COMBINATIONS (Ranked by ML Prediction)")
 print("="*80)
-print(f"{'Rank':<6} {'Combination':<35} {'Predicted':<12} {'Pathway Score':<15}")
-print("-" * 68)
+print(f"{'Rank':<6} {'Combination':<35} {'Predicted':<12} {'Risk Score':<12}")
+print("-" * 65)
 for rank, (idx, row) in enumerate(arb_ccb_ranked.iterrows(), 1):
-    print(f"{rank:<6} {row['Pair']:<35} {row['Predicted_Severity']:<12} {row['Pathway_Score']:<15.2f}")
+    print(f"{rank:<6} {row['Pair']:<35} {row['Predicted_Severity']:<12} {row['Predicted_Risk_Score']:<12.2f}")
+
+# Display XAI clinical context
+print(f"\\n{'='*80}")
+print("XAI CLINICAL CONTEXT - WHY ACEI+CCB IS PREFERRED")
+print("="*80)
+
+# Show Rule C (CCB+RAAS combo benefit)
+if not acei_ccb_ranked.empty:
+    sample_acei = acei_ccb_ranked.iloc[0]
+    print(f"\\n[Rule C - Combination Therapy]")
+    print(f"{sample_acei['XAI_Rule_C_CCB_RAAS_Combo']}")
+
+    print(f"\\n[Rule A - Mortality Benefit]")
+    print(f"{sample_acei['XAI_Rule_A_Mortality'][:250]}...")
+
+    print(f"\\n[Rule B - Tolerability]")
+    print(f"{sample_acei['XAI_Rule_B_Tolerability'][:250]}...")
 
 print(f"\\n{'='*80}")
 print("CLINICAL RECOMMENDATION:")
 print("="*80)
-print(f"  ACEI + CCB combinations score ~0.04 points higher due to:")
-print(f"    ✓ ACEI mortality benefit (+0.05) - HIGHEST PRIORITY")
-print(f"    ⚠ ACEI cough risk (-0.01) - LOWER PRIORITY")
-print(f"    = Net +0.04 advantage (SUBSTANTIAL)")
-print(f"\\n  For high-risk patients: ACEI + CCB STRONGLY preferred for survival benefit")
-print(f"  For patients with cough history: ARB + CCB may be better tolerated")
-print(f"  Rationale: All-cause mortality > Adherence issues")
+print(f"  ✓ BOTH combinations are effective for BP control")
+print(f"  ✓ BOTH reduce CCB-induced edema by ~38% (Rule C)")
+print(f"\\n  ACEI + CCB PREFERRED for high-risk patients because:")
+print(f"    • ACEIs significantly reduce all-cause mortality (Rule A)")
+print(f"    • Mortality benefit > tolerability concerns")
+print(f"\\n  ARB + CCB alternative when:")
+print(f"    • Patient has history of ACEI-induced cough")
+print(f"    • Tolerability is primary concern")
+print(f"\\n  Evidence: Alcocer 2023, Makani 2011, De la Sierra 2009")
 """
 
 # ==============================================================================
@@ -257,67 +295,141 @@ CELL_SCENARIO_2 = """
 # Clinical Scenario 2: Choosing a diuretic (Indapamide vs HCTZ)
 print("="*80)
 print("CLINICAL SCENARIO 2: DIURETIC SELECTION FOR COMBINATION THERAPY")
+print("Knowledge-Driven Recommendation (XAI Rule D)")
 print("="*80)
 print("\\nClinical Context:")
-print("  Patient needs ACEI + Diuretic combination")
+print("  Patient needs RAAS blocker + Diuretic combination")
 print("\\nQuestion: Indapamide or Hydrochlorothiazide (HCTZ)?")
 
-# Filter to ACEI + Diuretic combinations
-acei_diuretic = df_cpg_valid[
-    ((df_cpg_valid['Drug_A_Class'] == 'ACEI') & (df_cpg_valid['Drug_B_Class'] == 'Diuretic')) |
-    ((df_cpg_valid['Drug_A_Class'] == 'Diuretic') & (df_cpg_valid['Drug_B_Class'] == 'ACEI'))
+# Filter to RAAS + Diuretic combinations
+raas_diuretic = df_xai_valid[
+    (((df_xai_valid['Drug_A_Class'] == 'ACEI') | (df_xai_valid['Drug_A_Class'] == 'ARB')) &
+     (df_xai_valid['Drug_B_Class'] == 'Diuretic')) |
+    (((df_xai_valid['Drug_B_Class'] == 'ACEI') | (df_xai_valid['Drug_B_Class'] == 'ARB')) &
+     (df_xai_valid['Drug_A_Class'] == 'Diuretic'))
 ].copy()
 
-acei_diuretic['Pair'] = acei_diuretic.apply(format_pair, axis=1)
+raas_diuretic['Pair'] = raas_diuretic.apply(format_pair, axis=1)
 
 # Separate Indapamide and HCTZ pairs
-indapamide_pairs = acei_diuretic[acei_diuretic['Pair'].str.contains('Indapamide')]
-hctz_pairs = acei_diuretic[acei_diuretic['Pair'].str.contains('Hydrochlorothiazide')]
+indapamide_pairs = raas_diuretic[raas_diuretic['Pair'].str.contains('Indapamide')]
+hctz_pairs = raas_diuretic[raas_diuretic['Pair'].str.contains('Hydrochlorothiazide')]
 
 print(f"\\n{'='*80}")
-print("ACEI + INDAPAMIDE COMBINATIONS")
+print("RAAS BLOCKER + INDAPAMIDE COMBINATIONS")
 print("="*80)
 if len(indapamide_pairs) > 0:
-    indapamide_ranked = indapamide_pairs.sort_values('Pathway_Score', ascending=False)
-    print(f"{'Combination':<35} {'Predicted':<12} {'CPG Bonus':<12} {'Pathway Score':<15}")
-    print("-" * 74)
+    indapamide_ranked = indapamide_pairs.sort_values('Predicted_Risk_Score', ascending=False)
+    print(f"{'Combination':<40} {'Predicted':<12} {'Risk Score':<12}")
+    print("-" * 64)
     for idx, row in indapamide_ranked.iterrows():
-        print(f"{row['Pair']:<35} {row['Predicted_Severity']:<12} +{row['CPG_Outcome_Bonus']:.2f} (Indap)  {row['Pathway_Score']:<15.2f}")
+        print(f"{row['Pair']:<40} {row['Predicted_Severity']:<12} {row['Predicted_Risk_Score']:<12.2f}")
 
 print(f"\\n{'='*80}")
-print("ACEI + HCTZ COMBINATIONS")
+print("RAAS BLOCKER + HCTZ COMBINATIONS")
 print("="*80)
 if len(hctz_pairs) > 0:
-    hctz_ranked = hctz_pairs.sort_values('Pathway_Score', ascending=False)
-    print(f"{'Combination':<35} {'Predicted':<12} {'CPG Bonus':<12} {'Pathway Score':<15}")
-    print("-" * 74)
+    hctz_ranked = hctz_pairs.sort_values('Predicted_Risk_Score', ascending=False)
+    print(f"{'Combination':<40} {'Predicted':<12} {'Risk Score':<12}")
+    print("-" * 64)
     for idx, row in hctz_ranked.iterrows():
-        print(f"{row['Pair']:<35} {row['Predicted_Severity']:<12} {'+0.00 (None)':<12} {row['Pathway_Score']:<15.2f}")
+        print(f"{row['Pair']:<40} {row['Predicted_Severity']:<12} {row['Predicted_Risk_Score']:<12.2f}")
+
+# Display XAI clinical context
+print(f"\\n{'='*80}")
+print("XAI CLINICAL CONTEXT - WHY INDAPAMIDE IS PREFERRED")
+print("="*80)
+
+if len(indapamide_pairs) > 0:
+    sample_indap = indapamide_ranked.iloc[0]
+    print(f"\\n[Rule D - Diuretic Efficacy]")
+    print(f"{sample_indap['XAI_Rule_D_Diuretic']}")
 
 if len(indapamide_pairs) > 0 and len(hctz_pairs) > 0:
-    avg_indap = indapamide_ranked['Pathway_Score'].mean()
-    avg_hctz = hctz_ranked['Pathway_Score'].mean()
+    avg_indap = indapamide_ranked['Predicted_Risk_Score'].mean()
+    avg_hctz = hctz_ranked['Predicted_Risk_Score'].mean()
     diff = avg_indap - avg_hctz
 
     print(f"\\n{'='*80}")
     print("CLINICAL RECOMMENDATION:")
     print("="*80)
-    print(f"  Average Indapamide score: {avg_indap:.2f}")
-    print(f"  Average HCTZ score:        {avg_hctz:.2f}")
-    print(f"  Difference:               +{diff:.2f}")
-    print(f"\\n  Indapamide preferred due to:")
-    print(f"    ✓ Superior CV outcomes (Roush 2015)")
-    print(f"    ✓ ~50% more potent than HCTZ")
-    print(f"    ✓ No added metabolic risk")
+    print(f"  Average Indapamide risk score: {avg_indap:.2f}")
+    print(f"  Average HCTZ risk score:        {avg_hctz:.2f}")
+    print(f"  Difference:                     {diff:+.2f}")
+    print(f"\\n  INDAPAMIDE STRONGLY PREFERRED due to:")
+    print(f"    ✓ Significantly reduces all-cause mortality, stroke, heart failure")
+    print(f"    ✓ HCTZ fails to demonstrate these cardiovascular benefits")
+    print(f"    ✓ ~50% more potent with superior 24-hour BP control")
+    print(f"\\n  Evidence: Roush et al. 2015, Mishra 2016, Burnier et al. 2019")
 """
 
 # ==============================================================================
-# CELL: Visualize Pathway Rankings by Drug Class Combination
+# CELL: Clinical Scenario 3 - Beta-Blocker Phenotype Targeting
+# ==============================================================================
+CELL_SCENARIO_3 = """
+# Clinical Scenario 3: Beta-Blocker for High Heart Rate Phenotype
+print("="*80)
+print("CLINICAL SCENARIO 3: BETA-BLOCKER PHENOTYPE TARGETING")
+print("Knowledge-Driven Recommendation (XAI Rule E)")
+print("="*80)
+print("\\nClinical Context:")
+print("  Patient has hypertension with HIGH RESTING HEART RATE (>80 bpm)")
+print("\\nQuestion: Which drug class combination includes Beta-Blocker?")
+
+# Filter to Beta-Blocker combinations
+bb_combos = df_xai_valid[
+    (df_xai_valid['Drug_A_Class'] == 'Beta-Blocker') |
+    (df_xai_valid['Drug_B_Class'] == 'Beta-Blocker')
+].copy()
+
+bb_combos['Pair'] = bb_combos.apply(format_pair, axis=1)
+
+# Get Beta-Blocker + RAAS combinations (most common)
+bb_raas = bb_combos[
+    ((bb_combos['Drug_A_Class'].isin(['ACEI', 'ARB'])) |
+     (bb_combos['Drug_B_Class'].isin(['ACEI', 'ARB'])))
+].copy()
+
+print(f"\\n{'='*80}")
+print("TOP BETA-BLOCKER + RAAS BLOCKER COMBINATIONS")
+print("="*80)
+if len(bb_raas) > 0:
+    bb_raas_ranked = bb_raas.sort_values('Predicted_Risk_Score', ascending=False).head(10)
+    print(f"{'Combination':<40} {'Predicted':<12} {'Risk Score':<12}")
+    print("-" * 64)
+    for idx, row in bb_raas_ranked.iterrows():
+        print(f"{row['Pair']:<40} {row['Predicted_Severity']:<12} {row['Predicted_Risk_Score']:<12.2f}")
+
+# Display XAI clinical context
+print(f"\\n{'='*80}")
+print("XAI CLINICAL CONTEXT - BETA-BLOCKER PHENOTYPE TARGETING")
+print("="*80)
+
+if len(bb_raas) > 0:
+    sample_bb = bb_raas_ranked.iloc[0]
+    print(f"\\n[Rule E - Beta-Blocker Phenotype]")
+    print(f"{sample_bb['XAI_Rule_E_BetaBlocker']}")
+
+print(f"\\n{'='*80}")
+print("CLINICAL RECOMMENDATION:")
+print("="*80)
+print(f"  Beta-Blockers are APPROPRIATE for:")
+print(f"    ✓ Patients with fast resting heart rate (>80 bpm)")
+print(f"    ✓ Sympathetic overactivity (stress-driven hypertension)")
+print(f"    ✓ Comorbidities: anxiety, migraines, arrhythmias")
+print(f"\\n  NOT first-line for:")
+print(f"    • Patients with normal/low heart rate")
+print(f"    • Metabolic syndrome or diabetes risk")
+print(f"\\n  Evidence: ESH 2023 Guidelines, Mahfoud et al. 2024, Mancia et al. 2022")
+"""
+
+# ==============================================================================
+# CELL: Visualize Predictions with XAI Context
 # ==============================================================================
 CELL_VISUALIZATION = """
-# Visualize pathway rankings by drug class combination
+# Visualize predictions with XAI clinical context coverage
 print("="*80)
-print("VISUALIZING PATHWAY RANKINGS BY DRUG CLASS COMBINATION")
+print("VISUALIZING PREDICTIONS WITH XAI CLINICAL CONTEXT")
 print("="*80)
 
 # Create class combination labels
@@ -325,65 +437,66 @@ def get_class_combo(row):
     classes = sorted([row['Drug_A_Class'], row['Drug_B_Class']])
     return f"{classes[0]} + {classes[1]}"
 
-df_cpg_valid['Class_Combo'] = df_cpg_valid.apply(get_class_combo, axis=1)
+df_xai_valid['Class_Combo'] = df_xai_valid.apply(get_class_combo, axis=1)
 
-# Calculate average pathway score by class combination
-combo_scores = df_cpg_valid.groupby('Class_Combo').agg({
-    'Pathway_Score': ['mean', 'std', 'count']
+# Calculate average risk score by class combination
+combo_scores = df_xai_valid.groupby('Class_Combo').agg({
+    'Predicted_Risk_Score': ['mean', 'std', 'count']
 }).reset_index()
-combo_scores.columns = ['Class_Combo', 'Mean_Score', 'Std_Score', 'Count']
-combo_scores = combo_scores.sort_values('Mean_Score', ascending=False)
+combo_scores.columns = ['Class_Combo', 'Mean_Risk_Score', 'Std_Risk_Score', 'Count']
+combo_scores = combo_scores.sort_values('Mean_Risk_Score', ascending=False)
+
+# Calculate XAI coverage by class combination
+xai_coverage = df_xai_valid.groupby('Class_Combo').apply(
+    lambda x: (x['XAI_Combined_Clinical_Notes'] != "No specific XAI rules apply to this combination.").sum() / len(x) * 100
+).reset_index()
+xai_coverage.columns = ['Class_Combo', 'XAI_Coverage_Pct']
+
+# Merge
+combo_scores = combo_scores.merge(xai_coverage, on='Class_Combo')
 
 # Plot
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
-# Bar plot of mean scores
-colors_map = {
-    'ACEI + Diuretic': '#2ecc71' if 'Indapamide' in str(df_cpg_valid[df_cpg_valid['Class_Combo'] == 'ACEI + Diuretic']['Drug_A_Name'].values) else '#3498db',
-    'ACEI + CCB': '#e74c3c',
-    'ARB + CCB': '#f39c12',
-}
+# Bar plot of mean risk scores
+colors = ['#2ecc71' if cov > 90 else '#3498db' if cov > 50 else '#95a5a6'
+          for cov in combo_scores['XAI_Coverage_Pct']]
 
-bars = ax1.barh(combo_scores['Class_Combo'], combo_scores['Mean_Score'],
-                color='skyblue', edgecolor='black', linewidth=1.5)
+bars = ax1.barh(combo_scores['Class_Combo'], combo_scores['Mean_Risk_Score'],
+                color=colors, edgecolor='black', linewidth=1.5)
 
 for bar, (idx, row) in zip(bars, combo_scores.iterrows()):
-    ax1.text(row['Mean_Score'] + 0.01, bar.get_y() + bar.get_height()/2,
-             f"{row['Mean_Score']:.3f}\\n(n={int(row['Count'])})",
-             va='center', fontweight='bold', fontsize=9)
+    ax1.text(row['Mean_Risk_Score'] + 0.01, bar.get_y() + bar.get_height()/2,
+             f"{row['Mean_Risk_Score']:.3f}\\n(n={int(row['Count'])})\\n{row['XAI_Coverage_Pct']:.0f}% XAI",
+             va='center', fontweight='bold', fontsize=8)
 
-ax1.set_xlabel('Average Pathway Score (Higher = Safer)', fontsize=12, fontweight='bold')
-ax1.set_title('Average Safety Score by Drug Class Combination', fontsize=14, fontweight='bold')
+ax1.set_xlabel('Average Risk Score (Higher = Safer)', fontsize=12, fontweight='bold')
+ax1.set_title('Average Risk Score by Drug Class Combination\\n(Color = XAI Coverage)', fontsize=14, fontweight='bold')
 ax1.grid(axis='x', alpha=0.3)
 ax1.set_xlim(0, 1.1)
 
-# Box plot showing distributions
-class_combos_of_interest = ['ACEI + CCB', 'ARB + CCB', 'ACEI + Diuretic', 'ARB + Diuretic']
-filtered_data = df_cpg_valid[df_cpg_valid['Class_Combo'].isin(class_combos_of_interest)]
+# XAI coverage bar plot
+ax2.barh(combo_scores['Class_Combo'], combo_scores['XAI_Coverage_Pct'],
+         color=colors, edgecolor='black', linewidth=1.5)
 
-if len(filtered_data) > 0:
-    bp = ax2.boxplot(
-        [filtered_data[filtered_data['Class_Combo'] == cc]['Pathway_Score'].values
-         for cc in class_combos_of_interest if len(filtered_data[filtered_data['Class_Combo'] == cc]) > 0],
-        labels=[cc for cc in class_combos_of_interest if len(filtered_data[filtered_data['Class_Combo'] == cc]) > 0],
-        patch_artist=True,
-        widths=0.6
-    )
+for idx, row in combo_scores.iterrows():
+    ax2.text(row['XAI_Coverage_Pct'] + 2, idx,
+             f"{row['XAI_Coverage_Pct']:.0f}%",
+             va='center', fontweight='bold', fontsize=9)
 
-    for patch in bp['boxes']:
-        patch.set_facecolor('lightblue')
-        patch.set_edgecolor('black')
-        patch.set_linewidth(1.5)
-
-    ax2.set_ylabel('Pathway Score', fontsize=12, fontweight='bold')
-    ax2.set_title('Distribution of Pathway Scores', fontsize=14, fontweight='bold')
-    ax2.grid(axis='y', alpha=0.3)
-    ax2.tick_params(axis='x', rotation=45)
+ax2.set_xlabel('XAI Clinical Context Coverage (%)', fontsize=12, fontweight='bold')
+ax2.set_title('Percentage of Pairs with XAI Clinical Notes', fontsize=14, fontweight='bold')
+ax2.grid(axis='x', alpha=0.3)
+ax2.set_xlim(0, 110)
 
 plt.tight_layout()
 plt.show()
 
 print("\\n✓ Visualization complete!")
+print(f"\\nColor Legend:")
+print(f"  Green: >90% XAI coverage (excellent clinical context)")
+print(f"  Blue: 50-90% XAI coverage (good clinical context)")
+print(f"  Gray: <50% XAI coverage (limited clinical context)")
 """
 
 # ==============================================================================
@@ -391,50 +504,81 @@ print("\\n✓ Visualization complete!")
 # ==============================================================================
 CELL_SUMMARY = """
 print("="*80)
-print("PART 2 SUMMARY: SAFER MEDICATION PATHWAY RECOMMENDATION")
+print("PART 2 SUMMARY: KNOWLEDGE-DRIVEN SAFER MEDICATION PATHWAY")
+print("Section 3.5.4: Knowledge-Driven Explainability (XAI) Framework")
 print("="*80)
 
+# Determine which model was used
+if 'dt_model' in globals() or 'dt_model' in locals():
+    model_name = "Decision Tree"
+    model_accuracy = accuracy  # from Part 1
+elif 'rf_model' in globals() or 'rf_model' in locals():
+    model_name = "Random Forest"
+    model_accuracy = accuracy
+elif 'xgb_model' in globals() or 'xgb_model' in locals():
+    model_name = "XGBoost"
+    model_accuracy = accuracy
+else:
+    model_name = "Unknown"
+    model_accuracy = 0.0
+
 summary_text = f\"\"\"
-ARCHITECTURE IMPLEMENTED:
-  1. ✓ Model Prediction: Decision Tree predicts DDI severity (92% accuracy)
-  2. ✓ CPG Adjustments: Evidence-based utility scores applied
-  3. ✓ Pathway Ranking: Combinations sorted by safety score
+ARCHITECTURE IMPLEMENTED (Section 3.5.4):
+  1. ✓ ML Prediction: {model_name} predicts DDI severity ({model_accuracy*100:.2f}% accuracy)
+  2. ✓ XAI Framework: Knowledge-driven clinical context from literature
+  3. ✓ Integrated Output: Predictions + Evidence-based explanations
 
-EVIDENCE-BASED ADJUSTMENTS (CORRECTED HIERARCHY):
-  • Tier 1: ACEI +0.05 (Alcocer 2023 - ALL-CAUSE MORTALITY - HIGHEST PRIORITY)
-  • Tier 2: Indapamide +0.03 (Roush 2015 - CV event prevention - HIGH PRIORITY)
-  • Tier 3: ACEI -0.01 (Hu 2023 - cough risk 3.2x higher - LOWER PRIORITY)
-  • Net ACEI Effect: +0.04 (SUBSTANTIAL mortality benefit > adherence risk)
-  • Clinical Rationale: Survival > Morbidity > Adherence
+KNOWLEDGE-DRIVEN XAI RULES IMPLEMENTED:
+  • Rule A: ACEI vs ARB Mortality Benefit (Alcocer et al. 2023)
+      → ACEIs reduce all-cause mortality; ARBs do not
+      → Coverage: {rule_a_count} pairs ({rule_a_count/len(df_xai)*100:.1f}%)
 
-PATHWAY SCORES GENERATED:
-  • Total combinations analyzed: {len(df_cpg_valid)}
-  • Score range: [{df_cpg_valid['Pathway_Score'].min():.2f}, {df_cpg_valid['Pathway_Score'].max():.2f}]
-  • Higher score = Safer combination
+  • Rule B: ACEI Tolerability & Adherence (Hu et al. 2023)
+      → ACEIs have 3.2x higher cough risk vs ARBs
+      → Coverage: {rule_b_count} pairs ({rule_b_count/len(df_xai)*100:.1f}%)
+
+  • Rule C: CCB+RAAS Combination Therapy (Makani et al. 2011)
+      → Reduces peripheral edema by 38%; improves adherence by 62%
+      → Coverage: {rule_c_count} pairs ({rule_c_count/len(df_xai)*100:.1f}%)
+
+  • Rule D: Diuretic Efficacy Optimization (Roush et al. 2015)
+      → Indapamide superior to HCTZ for mortality/stroke/HF
+      → Coverage: {rule_d_count} pairs ({rule_d_count/len(df_xai)*100:.1f}%)
+
+  • Rule E: Beta-Blocker Phenotype Targeting (Mahfoud et al. 2024)
+      → Indicated for high heart rate phenotype (>80 bpm)
+      → Coverage: {rule_e_count} pairs ({rule_e_count/len(df_xai)*100:.1f}%)
+
+PREDICTIONS GENERATED:
+  • Total combinations analyzed: {len(df_xai_valid)}
+  • Pairs with XAI clinical context: {total_with_notes} ({total_with_notes/len(df_xai)*100:.1f}%)
+  • Pairs without XAI context: {len(df_xai) - total_with_notes} ({(len(df_xai) - total_with_notes)/len(df_xai)*100:.1f}%)
 
 CLINICAL SCENARIOS ANALYZED:
-  1. ✓ ACEI+CCB vs ARB+CCB combinations
-  2. ✓ Indapamide vs HCTZ for diuretic selection
-  3. ✓ Drug class combination safety rankings
+  1. ✓ ACEI+CCB vs ARB+CCB combinations (Rules A, B, C)
+  2. ✓ Indapamide vs HCTZ for diuretic selection (Rule D)
+  3. ✓ Beta-Blocker for high heart rate phenotype (Rule E)
 
 KEY FINDINGS:
-  • ACEI+CCB combinations score ~0.04 higher than ARB+CCB due to mortality benefit
-  • Indapamide combinations score ~0.03 higher than HCTZ due to CV outcomes
-  • Model predictions (DDI severity) combined with clinical evidence (CPG)
-  • Hierarchy: All-cause mortality > CV events > Adherence issues
+  • ML predictions provide probabilistic severity classification
+  • XAI Framework adds clinical context that ML cannot capture
+  • ACEI+CCB preferred for high-risk patients (mortality benefit)
+  • Indapamide superior to HCTZ (cardiovascular outcomes)
+  • Beta-Blockers appropriate for sympathetic overactivity phenotype
+  • System explains WHY certain combinations are preferred
 
-ACADEMIC DEFENSE:
-  • NOT subjective drug performance ratings
-  • Based on published literature (Roush, Alcocer, Hu)
-  • Objective clinical endpoints (mortality, CV events, adverse events)
-  • Respects therapeutic equivalence within drug classes
-  • Aligns with Malaysian CPG + international evidence
+ADVANTAGES OVER NUMERIC SCORING:
+  • Transparent: Explicit literature citations
+  • Interpretable: Clinician-readable explanations
+  • Evidence-based: Grounded in peer-reviewed meta-analyses
+  • Actionable: Specific recommendations with clinical rationale
+  • Adaptable: Easy to add new rules as evidence emerges
 
 NEXT STEPS:
-  • Present pathway recommendations to clinical collaborators
-  • Validate rankings against Malaysian CPG preferred pathways
-  • Extend to additional clinical scenarios (e.g., comorbidities)
-  • Deploy as clinical decision support tool
+  • Clinical validation with Dr. Nurulhuda Abdul Manaf (collaborator)
+  • Align with Malaysian CPG for Hypertension (2018)
+  • Integrate XAI notes into clinical decision support interface
+  • Expand rules to cover additional drug classes and scenarios
 \"\"\"
 
 print(summary_text)
@@ -448,23 +592,26 @@ print("="*80)
 # ==============================================================================
 if __name__ == "__main__":
     print("="*80)
-    print("PART 2: SAFER MEDICATION PATHWAY RECOMMENDATION")
-    print("Copy these cells into your Jupyter notebook")
+    print("PART 2: KNOWLEDGE-DRIVEN SAFER MEDICATION PATHWAY")
+    print("Section 3.5.4: Knowledge-Driven Explainability (XAI) Framework")
+    print("="*80)
+    print("\nCopy these cells into your Jupyter notebook (Decision Tree, Random Forest, or XGBoost)")
     print("="*80)
 
     cells = [
-        ("Load CPG-Adjusted Dataset", CELL_LOAD_CPG),
+        ("Load XAI-Enhanced Dataset", CELL_LOAD_XAI),
         ("Severity to Risk Score Mapping", CELL_SEVERITY_MAPPING),
         ("Generate Predictions for All Pairs", CELL_PREDICTIONS),
-        ("Apply CPG Adjustments", CELL_APPLY_CPG),
+        ("Display XAI Clinical Context", CELL_XAI_CONTEXT),
         ("Clinical Scenario 1: ACEI/ARB + CCB", CELL_SCENARIO_1),
         ("Clinical Scenario 2: Diuretic Selection", CELL_SCENARIO_2),
-        ("Visualization", CELL_VISUALIZATION),
+        ("Clinical Scenario 3: Beta-Blocker Phenotype", CELL_SCENARIO_3),
+        ("Visualization with XAI Coverage", CELL_VISUALIZATION),
         ("Summary", CELL_SUMMARY),
     ]
 
     for i, (title, code) in enumerate(cells, 1):
-        print(f"\\n{'='*80}")
+        print(f"\n{'='*80}")
         print(f"CELL {i}: {title}")
         print("="*80)
         print(code)
