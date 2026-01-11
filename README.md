@@ -382,4 +382,4 @@ University of Malaya
 
 ## Acknowledgments
 
-Special thanks to Dr. Nurulhuda Abdul Manaf (UPNM) for clinical expertise and collaboration, and to the University of Malaya for supporting this research project.
+Special thanks to Dr. Nurulhuda Abdul Manaf and Dr. Nur Aishah Che Roos (UPNM) for clinical expertise and collaboration, and to the University of Malaya for supporting this research project.
