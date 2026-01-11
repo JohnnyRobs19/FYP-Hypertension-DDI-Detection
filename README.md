@@ -1,4 +1,4 @@
-# ML-Driven Detection of Drug Interactions in Hypertensive Patients
+# Machine Learning-Driven Prediction for Safe Medication Pathways among Hypertensive Patients
 
 **Final Year Project - University of Malaya**
 
@@ -10,9 +10,9 @@
 
 ## Project Overview
 
-Hypertension is one of the most prevalent chronic diseases in Malaysia, particularly among adults who are prescribed multiple medications simultaneously. This increases the risk of inappropriate prescribing and drug-drug interactions (DDIs), which can lead to serious adverse events such as kidney failure, hypoglycemia, and cardiovascular complications. Despite the availability of Malaysian Clinical Practice Guidelines (CPGs), there is limited systematic analysis of prescribing patterns and DDIs in hypertensive patients.
+Hypertension is one of the most prevalent chronic diseases in Malaysia, particularly among patients who are prescribed multiple medications simultaneously. This increases the risk of inappropriate prescribing and drug–drug interactions (DDIs), which can lead to serious adverse events such as kidney failure, hypoglycemia, and cardiovascular complications. Despite the availability of Malaysian Clinical Practice Guidelines (CPGs), there is limited systematic analysis of prescribing patterns and DDIs in hypertensive patients in Malaysia.
 
-This project aims to address this gap by leveraging machine learning techniques to identify inappropriate prescriptions and predict potential DDIs, ultimately supporting safer prescribing decisions.
+This project aims to address this gap by leveraging machine learning techniques to identify inappropriate prescriptions and through predicting the optimal medication pathway, ultimately supporting safer prescribing decisions.
 
 ### Project Objectives
 
@@ -20,7 +20,7 @@ This project aims to address this gap by leveraging machine learning techniques 
 2. Assess the prevalence of potential DDIs using standard interaction checkers
 3. Propose a safer medication pathway aligned with local guidelines
 
-The study focuses on adult hypertensive patients using data derived from Malaysian CPGs. Through literature review, drug interaction analysis, and data-driven modeling, the project will highlight high-risk prescribing patterns and recommend optimized treatment pathways. The expected outcome is a data-informed framework that supports clinicians in reducing medication errors and improving patient safety in Malaysian healthcare settings.
+The study will focus on medications consumed by hypertensive patients using data derived from Malaysian CPGs. Through literature review, drug interaction analysis, and data-driven modeling, the project aims to recommend optimized treatment pathways. The expected outcome is a data-informed framework that supports clinicians in reducing medication errors and improving patient safety in Malaysian healthcare settings.
 
 ---
 
